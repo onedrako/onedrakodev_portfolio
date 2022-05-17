@@ -1,12 +1,22 @@
 import { useContext, ReactNode } from 'react'
+import { useRouter } from 'next/router'
+
 import { ThemeContext } from '@contexts/ThemeContext'
 import Header from '../Header/Header'
 
-const Layout = ({ children }: {children: ReactNode}) => {
+const Layout = ({ children, conditionForStyle }: {children: ReactNode, conditionForStyle: boolean }) => {
   const { theme } = useContext(ThemeContext)
+  const route = useRouter()
+
+  let actualRoute = route.pathname.split('/')[1]
+
+  if (actualRoute === '') {
+    actualRoute = 'home'
+  }
+
   return (
     <>
-      <Header/>
+      <Header actualRoute={actualRoute}/>
       {children}
 
       <style jsx global>{`
