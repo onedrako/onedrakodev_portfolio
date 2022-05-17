@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 import { ElementSelectedOnTabNav } from '@customTypes/types'
 
@@ -46,44 +46,29 @@ const SideNavigation = () => {
     <>
       <div className='SideNavigation'>
         <ul>
-        <li className={'SideNavigation__li'} style={
-              {
-                // color: `${selectedNavigation.home ? 'blue' : '#ffffff'}`,
-                borderColor: `${selectedNavigation.home ? 'blue' : '#ffffff'}`
-              }}>
-              <Link href="/"><a>Home</a></Link>
-            </li>
-            <li className={'SideNavigation__li'} style={
-              {
-                // color: `${selectedNavigation.home ? 'blue' : '#ffffff'}`,
-                borderColor: `${selectedNavigation.portfolio ? 'blue' : '#ffffff'}`
-              }}>
-              <Link href="/portfolio"><a>Portfolio</a></Link>
-            </li>
+          <li className={'SideNavigation__li'} >
+            <Link href="/"><a>Home</a></Link>
+            {selectedNavigation.home && <hr className="bottomLineInLinkActive" />}
+          </li>
+          <li className={'SideNavigation__li'}>
+            <Link href="/portfolio"><a>Portfolio</a></Link>
+            {selectedNavigation.portfolio && <hr className="bottomLineInLinkActive" />}
+          </li>
 
-            <li className={'SideNavigation__li'} style={
-              {
-                // color: `${selectedNavigation.home ? 'blue' : '#ffffff'}`,
-                borderColor: `${selectedNavigation.certifications ? 'blue' : '#ffffff'}`
-              }}>
-              <Link href="certifications">Certifications</Link>
-            </li>
+          <li className={'SideNavigation__li'}>
+            <Link href="certifications">Certifications</Link>
+            {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
+          </li>
 
-            <li className={'SideNavigation__li'} style={
-              {
-                // color: `${selectedNavigation.home ? 'blue' : '#ffffff'}`,
-                borderColor: `${selectedNavigation.personal ? 'blue' : '#ffffff'}`
-              }}>
-              <Link href="personal">Personal</Link>
-            </li>
+          <li className={'SideNavigation__li'}>
+            <Link href="personal">Personal</Link>
+            {selectedNavigation.personal && <hr className="bottomLineInLinkActive" />}
+          </li>
 
-            <li className={'SideNavigation__li'} style={
-              {
-                // color: `${selectedNavigation.home ? 'blue' : '#ffffff'}`,
-                borderColor: `${selectedNavigation.about ? 'blue' : '#ffffff'}`
-              }}>
-              <Link href="about">About Me</Link>
-            </li>
+          <li className={'SideNavigation__li'}>
+            <Link href="about">About Me</Link>
+            {selectedNavigation.about && <hr className="bottomLineInLinkActive" />}
+          </li>
         </ul>
       </div>
       <style jsx>{`
@@ -97,16 +82,56 @@ const SideNavigation = () => {
         }
         .SideNavigation__li {
           width: 60%;
+          height: 35px;
           font-size: 4rem;
           display: flex;
-          align-items: center;
-          border-bottom: 4px solid #fff;
+          flex-direction: column;
+
         }
+        .bottomLineInLinkActive {
+          height: 5px;
+          width: 0%;
+          background: #fff;
+          margin: 0px;
+          animation-name: stretchBorderLineActive;
+          animation-duration: 1.5s;
+          animation-fill-mode: forwards;
+        }
+        .bottomLineInLinkInactive {
+          height: 5px;
+          width: 100%;
+          background: #fff;
+          margin: 0px;
+          animation-name: stretchBorderLineInactive;
+          animation-duration: 1.5s;
+          animation-fill-mode: forwards;
+        }
+        
+
+        
         ul {
           padding: 0;
           display: flex;
           flex-direction: column;
           gap: 15px;
+        }
+
+        @keyframes stretchBorderLineActive {
+            from {
+              width: 0%;
+            }
+            to {
+              width: 100%;
+            } 
+          }
+        
+        @keyframes stretchBorderLineInactive {
+          from {
+            width: 100%;
+          }
+          to {
+            width: 0%;
+          } 
         }
       `}</style>
     </>

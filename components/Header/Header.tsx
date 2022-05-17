@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import { SideNavigation } from './SideNavigations'
-
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Header = () => {
