@@ -1,5 +1,5 @@
 // THEME
-export const darkBackgroundColor: string = '#000210'
+export const darkBackgroundColor: string = '#00040a'
 export const darkTextColor: string = '#ffffff'
 
 export const lightBackgroundColor: string = '#e3edff'

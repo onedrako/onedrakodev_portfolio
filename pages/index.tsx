@@ -1,8 +1,11 @@
 import type { NextPage } from 'next'
+import { HomeComponent } from '@components/Home/HomeComponent'
 
 const Home: NextPage = () => {
   return (
-    <p>Home</p>
+    <>
+      <HomeComponent />
+    </>
   )
 }
 

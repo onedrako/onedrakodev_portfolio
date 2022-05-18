@@ -86,6 +86,7 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
           left: -300px;
           background: ${theme.modalBackgroundColor};
           padding: 25px;
+          z-index: 2;
         }
 
         .showSideNavigation{

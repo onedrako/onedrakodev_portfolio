@@ -1,6 +1,6 @@
 import { RefObject, useState } from 'react'
 
-import { SideNavigation } from './SideNavigations'
+import { SideNavigation } from './SideNavigation'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Header = () => {
@@ -11,20 +11,22 @@ const Header = () => {
       setIsTheMenuOpen(!isTheMenuOpen)
       return
     }
-    const actualNode = node
-    if (actualNode) {
-      actualNode.current.classList.remove('showSideNavigation')
-      actualNode.current.classList.add('hideSideNavigation')
-    }
+    if (node) {
+      const actualNode: RefObject<HTMLDivElement> = node
+      if (actualNode !== null && actualNode.current !== null) {
+        actualNode.current.classList.remove('showSideNavigation')
+        actualNode.current.classList.add('hideSideNavigation')
+      }
 
-    setTimeout(() => {
-      setIsTheMenuOpen(!isTheMenuOpen)
-    }, 1000)
+      setTimeout(() => {
+        setIsTheMenuOpen(!isTheMenuOpen)
+      }, 1000)
+    }
   }
 
   return (
     <>
-      <header>
+      <header className='header'>
         <nav>
           <GiHamburgerMenu color="#fff" size={25} onClick={() => handleSideMenuClick('open')} />
           {isTheMenuOpen && <SideNavigation closeMenu={handleSideMenuClick} />}
@@ -32,6 +34,12 @@ const Header = () => {
         </nav>
       </header>
       <style jsx>{`
+        .header {
+          position: fixed;
+          width: 100vw;
+          z-index: 1;
+        }
+
         nav {
           padding: 15px;
           position: relative;
