@@ -1,9 +1,13 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { RefObject, useContext, useEffect, useRef, useState } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 import { ElementSelectedOnTabNav } from '@customTypes/types'
 
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+
+import { AiFillCloseCircle } from 'react-icons/ai'
+
+import styles from '../../styles/reactIconsStyles.module.css'
 
 const initialState = {
   home: false,
@@ -13,15 +17,16 @@ const initialState = {
   about: false
 }
 
-const SideNavigation = () => {
+const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefObject<HTMLDivElement>) => void }) => {
   const [selectedNavigation, setSelectedNavigation] = useState<ElementSelectedOnTabNav>(initialState)
 
   const route = useRouter()
+  const navigator = useRef<HTMLDivElement>(null)
 
   const { theme } = useContext(ThemeContext)
 
   const handleSelectedNavigation = () => {
-    let actualRoute = route.pathname.split('/')[1]
+    let actualRoute: string = route.pathname.split('/')[1]
     if (actualRoute === '') {
       actualRoute = 'home'
     }
@@ -44,28 +49,29 @@ const SideNavigation = () => {
 
   return (
     <>
-      <div className='SideNavigation'>
+      <div ref={navigator} className='SideNavigation showSideNavigation'>
+        <AiFillCloseCircle className={styles.closeIcon} color="#ffffff" size={25} onClick={() => closeMenu('close', navigator)} />
         <ul>
-          <li className={'SideNavigation__li'} >
+          <li className={'SideNavigation__li'} onClick={selectedNavigation.home ? () => null : () => closeMenu('close', navigator)} >
             <Link href="/"><a>Home</a></Link>
             {selectedNavigation.home && <hr className="bottomLineInLinkActive" />}
           </li>
-          <li className={'SideNavigation__li'}>
+          <li className={'SideNavigation__li'} onClick={selectedNavigation.portfolio ? () => null : () => closeMenu('close', navigator)}>
             <Link href="/portfolio"><a>Portfolio</a></Link>
             {selectedNavigation.portfolio && <hr className="bottomLineInLinkActive" />}
           </li>
 
-          <li className={'SideNavigation__li'}>
+          <li className={'SideNavigation__li'} onClick={selectedNavigation.certifications ? () => null : () => closeMenu('close', navigator)}>
             <Link href="certifications">Certifications</Link>
             {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
           </li>
 
-          <li className={'SideNavigation__li'}>
+          <li className={'SideNavigation__li'} onClick={selectedNavigation.personal ? () => null : () => closeMenu('close', navigator)}>
             <Link href="personal">Personal</Link>
             {selectedNavigation.personal && <hr className="bottomLineInLinkActive" />}
           </li>
 
-          <li className={'SideNavigation__li'}>
+          <li className={'SideNavigation__li'} onClick={selectedNavigation.about ? () => null : () => closeMenu('close', navigator)}>
             <Link href="about">About Me</Link>
             {selectedNavigation.about && <hr className="bottomLineInLinkActive" />}
           </li>
@@ -77,9 +83,23 @@ const SideNavigation = () => {
           width:  90%;
           position: absolute;
           top: 15px;
+          left: -300px;
           background: ${theme.modalBackgroundColor};
           padding: 25px;
         }
+
+        .showSideNavigation{
+          animation-name: showMenu;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+        }
+ 
+        .hideSideNavigation{
+          animation-name: hideMenu;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+        }
+
         .SideNavigation__li {
           width: 60%;
           height: 35px;
@@ -106,7 +126,9 @@ const SideNavigation = () => {
           animation-duration: 1.5s;
           animation-fill-mode: forwards;
         }
-        
+        .closeIcon {
+          position: absolute;
+        }
 
         
         ul {
@@ -131,6 +153,24 @@ const SideNavigation = () => {
           }
           to {
             width: 0%;
+          } 
+        }
+
+        @keyframes showMenu {
+          from {
+            left: -300px;
+          }
+          to {
+            left: 0px;
+          } 
+        }
+
+        @keyframes hideMenu {
+          from {
+            left: 0px;
+          }
+          to {
+            left: -300px;
           } 
         }
       `}</style>
