@@ -1,4 +1,13 @@
-import { darkBackgroundColor, darkTextColor, lightBackgroundColor, lightTextColor, darkModalBackgroundColor, lightModalBackgroundColor } from './constants'
+import {
+  darkBackgroundColor,
+  darkTextColor,
+  lightBackgroundColor,
+  lightTextColor,
+  darkModalBackgroundColor,
+  lightModalBackgroundColor,
+  darkActiveElement,
+  lightActiveElement
+} from './constants'
 import { ThemeColors } from '@customTypes/types'
 
 export const defineGlobalTheme = (theme: string): ThemeColors => {
@@ -6,13 +15,15 @@ export const defineGlobalTheme = (theme: string): ThemeColors => {
     return {
       backgroundColor: darkBackgroundColor,
       textColor: darkTextColor,
-      modalBackgroundColor: darkModalBackgroundColor
+      modalBackgroundColor: darkModalBackgroundColor,
+      activeElementColor: darkActiveElement
     }
   } else {
     return {
       backgroundColor: lightBackgroundColor,
       textColor: lightTextColor,
-      modalBackgroundColor: lightModalBackgroundColor
+      modalBackgroundColor: lightModalBackgroundColor,
+      activeElementColor: lightActiveElement
     }
   }
 }

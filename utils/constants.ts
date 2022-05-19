@@ -7,3 +7,6 @@ export const lightTextColor: string = '#000000'
 
 export const darkModalBackgroundColor: string = '#0a1e32'
 export const lightModalBackgroundColor: string = '#ffffff'
+
+export const darkActiveElement: string = '#0080ff'
+export const lightActiveElement: string = '#0080ff'

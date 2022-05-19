@@ -7,6 +7,7 @@ export interface ThemeColors {
   backgroundColor: string
   textColor: string
   modalBackgroundColor: string
+  activeElementColor: string
 }
 
 // HEADER / NAVIGATION
@@ -25,4 +26,14 @@ export interface ElementSelectedOnTabNav {
   certifications: boolean
   personal: boolean
   about: boolean
+}
+
+// HOME
+export interface TechnologiesSelector {
+  all: boolean
+  frontend: boolean
+  backend: boolean
+  mobile: boolean
+  databases: boolean
+  others: boolean
 }
