@@ -1,7 +1,12 @@
-import { useContext, useRef, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
+import axios from 'axios'
+
 import { ThemeContext } from '@contexts/ThemeContext'
 
 import { TechnologiesSelector } from '@customTypes/types'
+import { TechnologyItem } from './TechnologyItem'
+
+import type { TechnologiesData } from '@customTypes/backendTypes'
 
 const initialState: TechnologiesSelector = {
   all: true,
@@ -9,14 +14,16 @@ const initialState: TechnologiesSelector = {
   mobile: false,
   backend: false,
   databases: false,
+  libraries: false,
   others: false
 }
 
 const Technologies = () => {
+  const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
+  const [actualTechnology, setActualTechnology] = useState<string>('all')
 
   const { theme } = useContext(ThemeContext)
-  const selectedNode = useRef<HTMLDivElement>(null)
 
   const handleSelectedTechnology = (technology: string): void => {
     const actualElements = { ...selectedTechnology }
@@ -31,7 +38,17 @@ const Technologies = () => {
       ...actualElements,
       [technology]: true
     })
+
+    setActualTechnology(technology)
   }
+
+  useEffect(() => {
+    axios.get('/api/technologies')
+      .then(res => {
+        const data = res.data as TechnologiesData[]
+        setTechnologies(data)
+      })
+  }, [])
 
   return (
     <>
@@ -45,19 +62,29 @@ const Technologies = () => {
             <li className={`technologies__filter-list--item ${selectedTechnology.mobile && 'active-filter'}`} onClick={() => handleSelectedTechnology('mobile')}>Mobile</li>
             <li className={`technologies__filter-list--item ${selectedTechnology.backend && 'active-filter'}`} onClick={() => handleSelectedTechnology('backend')}>Backend</li>
             <li className={`technologies__filter-list--item ${selectedTechnology.databases && 'active-filter'}`} onClick={() => handleSelectedTechnology('databases')}>Databases</li>
+            <li className={`technologies__filter-list--item ${selectedTechnology.libraries && 'active-filter'}`} onClick={() => handleSelectedTechnology('libraries')}>{"Principal Library's"}</li>
             <li className={`technologies__filter-list--item ${selectedTechnology.others && 'active-filter'}`} onClick={() => handleSelectedTechnology('others')}>Others</li>
           </ul>
         </nav>
-        <div>
-        </div>
+        <article>
+          <ul className='technologies__list'>
+            {selectedTechnology.all
+              ? technologies.map(technology => <TechnologyItem key={technology.id} data={technology} />)
+              : technologies.filter(technology => technology.category === actualTechnology)
+                .map(technology => <TechnologyItem key={technology.id} data={technology} />)}
+
+          </ul>
+
+        </article>
       </section>
 
       <style jsx>{`
         .technologies {
           display: flex;
           flex-direction: column;
-          width: 90%;
+          width: 100%;
           margin: 25px auto;
+          padding: 20px;
         }
         .technologies__title{
           font-size: 2.2rem;
@@ -80,10 +107,23 @@ const Technologies = () => {
           background: ${theme.modalBackgroundColor};
           border-radius: 0 0 10px 0;
           text-align : center;
+          height: 40px;
         }
 
         .active-filter{
           background: ${theme.activeElementColor};
+        }
+
+        .technologies__list {
+          display: grid;
+          grid-template-columns: repeat(3, 30%);
+          justify-content: center;
+          list-style: none;
+          padding: 10px;
+          margin-top: 20px;
+          border-radius: 10px;
+          gap: 20px;
+          /* background: ${theme.modalBackgroundColor}; */
         }
 
       `}</style>

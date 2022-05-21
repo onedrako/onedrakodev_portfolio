@@ -35,5 +35,6 @@ export interface TechnologiesSelector {
   backend: boolean
   mobile: boolean
   databases: boolean
+  libraries: boolean
   others: boolean
 }
