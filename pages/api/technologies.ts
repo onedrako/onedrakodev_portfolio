@@ -42,7 +42,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'Next JS',
   description: 'Web Frontend Framework that works with React JS, have SSR and SSG',
   category: 'frontend',
-  image: 'https://i.imgur.com/k8vqfhf.png'
+  image: 'https://i.imgur.com/kLvapT0.png'
 },
 {
   id: 7,
@@ -56,7 +56,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'stylus',
   description: 'CSS Preprocessor to build styles for Frontend apps',
   category: 'frontend',
-  image: 'https://i.imgur.com/HgsSB5K.png'
+  image: 'https://i.imgur.com/w1X4eHN.png'
 },
 {
   id: 9,
@@ -125,7 +125,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'Joi',
   description: 'Validation library for Node JS',
   category: 'libraries',
-  image: 'https://i.imgur.com/PF3PPKN.png'
+  image: 'https://i.imgur.com/n2YVBzP.png'
 },
 {
   id: 19,
@@ -146,7 +146,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'Express',
   description: 'Web library for Node JS',
   category: 'backend',
-  image: 'https://i.imgur.com/PTSlvR2.png'
+  image: 'https://i.imgur.com/F0DNje9.png'
 },
 {
   id: 22,
@@ -174,7 +174,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'MongoDB',
   description: 'Database engine for NoSQL databases',
   category: 'databases',
-  image: 'https://i.imgur.com/55sVHoF.jpg'
+  image: 'https://i.imgur.com/wMidvNv.png'
 },
 {
   id: 26,

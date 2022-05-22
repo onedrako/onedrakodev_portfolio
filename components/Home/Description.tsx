@@ -8,9 +8,7 @@ const Description = () => {
         <hr />
         <p>{'I´m a Frontend and Backend (FullStack) JavaScript Developer.'}</p>
         <p>{'Also I´m a bachelor on administration by UNAM (Universidad Autónoma de México).'}</p>
-        <p>{'Started to learn about programming on early 2021, I´m a self-taught programmer.'}</p>
-        <p>{'I starter with HTML, CSS and JavaScript for frontend, nowadays programming with React Js, Next Js for frontend and node Js with Express, ORM Sequelize, and PostgreSQL for backend.'}</p>
-
+        <p>{'Started as self-taught programming on early 2021; starting with HTML, CSS and JavaScript for frontend, nowadays programming with React Js, Next Js for frontend and node Js with Express, ORM Sequelize, and PostgreSQL for backend .'}</p>
         <p>{'I love to program and create projects and keep learning about new technologies to resolve new and different problems.'}</p>
 
       </section>

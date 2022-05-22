@@ -10,7 +10,7 @@ const TechnologyItem = ({ data }: {data: TechnologiesData}) => {
       <li className='technology-item'>
         <div className='technology-item__container'>
           <div className='technology-item__Image'>
-            <Image src={data.image} alt={data.name} width={45} height={45} style={{ borderRadius: '10px' }}/>
+            <Image src={data.image} alt={data.name} width={45} height={45}/>
           </div>
           <h3>{data.name}</h3>
           <div className='technology-item__description'>
@@ -38,7 +38,7 @@ const TechnologyItem = ({ data }: {data: TechnologiesData}) => {
           width: 100%;
           height: 80px;
           /* background-color: #808183; */
-          border-radius: 50%;
+          /* border-radius: 50%; */
         }
 
 
@@ -48,7 +48,7 @@ const TechnologyItem = ({ data }: {data: TechnologiesData}) => {
           justify-content: center;
           width: 45px;
           border-radius: 50%;
-          background-color: #ffff ;
+          /* background-color: #ffff ; */
           position: relative;
         }
 

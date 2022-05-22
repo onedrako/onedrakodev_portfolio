@@ -7,6 +7,7 @@ import { TechnologiesSelector } from '@customTypes/types'
 import { TechnologyItem } from './TechnologyItem'
 
 import type { TechnologiesData } from '@customTypes/backendTypes'
+import { PaginationBar } from './PaginationBar'
 
 const initialState: TechnologiesSelector = {
   all: true,
@@ -67,8 +68,10 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
+            <PaginationBar/>
           <ul className='technologies__list'>
             {selectedTechnology.all
+
               ? technologies.map(technology => <TechnologyItem key={technology.id} data={technology} />)
               : technologies.filter(technology => technology.category === actualTechnology)
                 .map(technology => <TechnologyItem key={technology.id} data={technology} />)}
@@ -104,10 +107,13 @@ const Technologies = () => {
         .technologies__filter-list--item {
           list-style: none;
           font-size: 1.5rem;
-          background: ${theme.modalBackgroundColor};
+          border: 1px solid ${theme.modalBackgroundColor};
           border-radius: 0 0 10px 0;
           text-align : center;
           height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .active-filter{
