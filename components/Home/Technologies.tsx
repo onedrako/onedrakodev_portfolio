@@ -4,6 +4,7 @@ import axios from 'axios'
 import { ThemeContext } from '@contexts/ThemeContext'
 
 import { TechnologiesSelector } from '@customTypes/types'
+
 import { TechnologyItem } from './TechnologyItem'
 
 import type { TechnologiesData } from '@customTypes/backendTypes'
@@ -23,10 +24,11 @@ const Technologies = () => {
   const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
   const [actualTechnology, setActualTechnology] = useState<string>('all')
+  const [numberOfTechnologies, setNumberOfTechnologies] = useState<number>(technologies.length)
 
   const { theme } = useContext(ThemeContext)
 
-  const handleSelectedTechnology = (technology: string): void => {
+  const handleSelectedTechnology = (technology: keyof TechnologiesSelector): void => {
     const actualElements = { ...selectedTechnology }
 
     Object.keys(actualElements).forEach(key => {
@@ -43,13 +45,26 @@ const Technologies = () => {
     setActualTechnology(technology)
   }
 
+  const defineNumberOfTechnologies = (): void => {
+    if (actualTechnology === 'all') {
+      setNumberOfTechnologies(technologies.length)
+      return
+    }
+    setNumberOfTechnologies(technologies.filter(technology => technology.category === actualTechnology).length)
+  }
+
   useEffect(() => {
     axios.get('/api/technologies')
       .then(res => {
         const data = res.data as TechnologiesData[]
         setTechnologies(data)
       })
+    defineNumberOfTechnologies()
   }, [])
+
+  useEffect(() => {
+    defineNumberOfTechnologies()
+  }, [technologies, actualTechnology])
 
   return (
     <>
@@ -68,7 +83,7 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
-            <PaginationBar/>
+            {numberOfTechnologies > 6 && <PaginationBar numberOfTechnologies={numberOfTechnologies} /> }
           <ul className='technologies__list'>
             {selectedTechnology.all
 

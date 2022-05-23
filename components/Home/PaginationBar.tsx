@@ -1,8 +1,12 @@
-import { FcNext, FcPrevious } from 'react-icons/fc'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
+import { FcNext, FcPrevious } from 'react-icons/fc'
 
-const PaginationBar = () => {
+const PaginationBar = ({ numberOfTechnologies }: {numberOfTechnologies: number}) => {
+  const [actualPage, setActualPage] = useState<number>(1)
+  const numberofPages = Math.ceil(numberOfTechnologies / 6)
+  console.log(numberofPages)
+
   const { theme } = useContext(ThemeContext)
 
   return (
@@ -14,9 +18,10 @@ const PaginationBar = () => {
         </span>
 
         <span className="pagination-bar__element"><div>1</div></span>
-        <span className="pagination-bar__division">...</span>
+
+        {actualPage >= 4 && <span className="pagination-bar__division">...</span> }
         <span className=" pagination-bar__element"><div>2</div></span>
-        <span className="pagination-bar__actual-element pagination-bar__element"><div>3</div></span>
+        <span className="pagination-bar__actual-element pagination-bar__element"><div>{actualPage}</div></span>
         <span className=" pagination-bar__element"><div>4</div></span>
         <span className="pagination-bar__division">...</span>
         <span className="pagination-bar__last pagination-bar__element" ><div>5</div></span>
@@ -34,7 +39,7 @@ const PaginationBar = () => {
           justify-content: space-between;
           align-items: center;
           font-size: 2.4rem;
-          margin: 20px 0 0 auto;
+          margin: 20px auto;
           border-radius: 10px;
           border: 1px solid ${theme.activeElementColor};
         }
