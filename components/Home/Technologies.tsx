@@ -83,7 +83,7 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
-            {numberOfTechnologies > 6 && <PaginationBar numberOfTechnologies={numberOfTechnologies} /> }
+            {numberOfTechnologies > 6 && <PaginationBar numberOfTechnologies={numberOfTechnologies} actualTechnology={actualTechnology}/> }
           <ul className='technologies__list'>
             {selectedTechnology.all
 

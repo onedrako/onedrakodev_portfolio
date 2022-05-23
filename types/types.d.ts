@@ -38,3 +38,13 @@ export interface TechnologiesSelector {
   libraries: boolean
   others: boolean
 }
+
+export interface ActualPagesTechnologiesSelector {
+  all: number
+  frontend: number
+  backend: number
+  mobile: number
+  databases: number
+  libraries: number
+  others: number
+}
