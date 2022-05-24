@@ -1,13 +1,16 @@
+// dependencies
 import { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 
+// Context
 import { ThemeContext } from '@contexts/ThemeContext'
 
-import { TechnologiesSelector } from '@customTypes/types'
-
-import { TechnologyItem } from './TechnologyItem'
-
+// Types
+import type { TechnologiesSelector, ActualPagesTechnologiesSelector } from '@customTypes/types'
 import type { TechnologiesData } from '@customTypes/backendTypes'
+
+// Components
+import { TechnologyItem } from './TechnologyItem'
 import { PaginationBar } from './PaginationBar'
 
 const initialState: TechnologiesSelector = {
@@ -25,6 +28,15 @@ const Technologies = () => {
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
   const [actualTechnology, setActualTechnology] = useState<string>('all')
   const [numberOfTechnologies, setNumberOfTechnologies] = useState<number>(technologies.length)
+  const [actualPages, setActualPages] = useState<ActualPagesTechnologiesSelector>({
+    all: 1,
+    frontend: 1,
+    mobile: 1,
+    backend: 1,
+    databases: 1,
+    libraries: 1,
+    others: 1
+  })
 
   const { theme } = useContext(ThemeContext)
 
@@ -51,6 +63,20 @@ const Technologies = () => {
       return
     }
     setNumberOfTechnologies(technologies.filter(technology => technology.category === actualTechnology).length)
+  }
+
+  // function to define the items for the pagination technologies
+  const defineItems = (): {start: number, end:number} => {
+    let start = 0
+    let end = 6
+    console.log(actualPages)
+    if (actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector] === 1) {
+      return { start, end }
+    } else {
+      start = ((actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector]) * 6) - 6
+      end = start + 6
+      return { start, end }
+    }
   }
 
   useEffect(() => {
@@ -83,12 +109,21 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
-            {numberOfTechnologies > 6 && <PaginationBar numberOfTechnologies={numberOfTechnologies} actualTechnology={actualTechnology}/> }
+            {numberOfTechnologies > 6 &&
+              <PaginationBar
+                numberOfTechnologies={numberOfTechnologies}
+                actualTechnology={actualTechnology}
+                actualPages={actualPages}
+                setActualPages={setActualPages}
+              />
+            }
+
           <ul className='technologies__list'>
             {selectedTechnology.all
 
-              ? technologies.map(technology => <TechnologyItem key={technology.id} data={technology} />)
+              ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={technology.id} data={technology} />)
               : technologies.filter(technology => technology.category === actualTechnology)
+                .slice(defineItems().start, defineItems().end)
                 .map(technology => <TechnologyItem key={technology.id} data={technology} />)}
 
           </ul>
