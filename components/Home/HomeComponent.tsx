@@ -2,6 +2,7 @@
 import { Profile } from './Profile'
 import { Description } from './Description'
 import { Technologies } from './Technologies'
+import { Projects } from './Projects'
 
 const HomeComponent = () => {
   return (
@@ -9,6 +10,7 @@ const HomeComponent = () => {
       <Profile />
       <Description />
       <Technologies/>
+      <Projects/>
     </>
   )
 }

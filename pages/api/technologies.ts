@@ -80,8 +80,8 @@ const allTechnologies: TechnologiesData[] = [{
 },
 {
   id: 12,
-  name: 'Formik and Yup',
-  description: 'Form and Validation libraries',
+  name: 'Formik',
+  description: 'Form library',
   category: 'libraries',
   image: 'https://i.imgur.com/SKh5u9E.png'
 },
@@ -132,7 +132,7 @@ const allTechnologies: TechnologiesData[] = [{
   name: 'bCrypt',
   description: 'Password encryption library for Node JS',
   category: 'libraries',
-  image: 'https://cdn-icons-png.flaticon.com/512/1995/1995711.png'
+  image: 'https://i.imgur.com/qn5l2pH.png'
 },
 {
   id: 20,
@@ -252,6 +252,13 @@ const allTechnologies: TechnologiesData[] = [{
   description: 'Redux is a library for managing application state',
   category: 'libraries',
   image: 'https://i.imgur.com/6psaDYh.png'
+},
+{
+  id: 37,
+  name: 'yup',
+  description: '´Validation data library for JavaScript',
+  category: 'libraries',
+  image: 'https://i.imgur.com/qn5l2pH.png'
 }
 ]
 

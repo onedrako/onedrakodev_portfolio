@@ -48,3 +48,19 @@ export interface ActualPagesTechnologiesSelector {
   libraries: number
   others: number
 }
+
+export interface ProjectsSelector {
+  all: boolean
+  frontend: boolean
+  backend: boolean
+  mobile: boolean
+  others: boolean
+}
+
+export interface ActualPagesProjectsSelector {
+  all: number
+  frontend: number
+  backend: number
+  mobile: number
+  others: number
+}

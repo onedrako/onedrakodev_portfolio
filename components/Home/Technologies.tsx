@@ -37,6 +37,7 @@ const Technologies = () => {
     libraries: 1,
     others: 1
   })
+  const [elementsPerPage, setElementsPerPage] = useState<number>(1)
 
   const { theme } = useContext(ThemeContext)
 
@@ -69,12 +70,11 @@ const Technologies = () => {
   const defineItems = (): {start: number, end:number} => {
     let start = 0
     let end = 6
-    console.log(actualPages)
     if (actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector] === 1) {
       return { start, end }
     } else {
-      start = ((actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector]) * 6) - 6
-      end = start + 6
+      start = ((actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector]) * elementsPerPage) - elementsPerPage
+      end = start + elementsPerPage
       return { start, end }
     }
   }
@@ -95,6 +95,7 @@ const Technologies = () => {
   return (
     <>
       <section className='technologies'>
+
         <h2 className='technologies__title'>Technologies that I used in my projects</h2>
         <hr />
         <nav className='technologies__filter-list'>
@@ -109,12 +110,13 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
-            {numberOfTechnologies > 6 &&
+            {numberOfTechnologies > elementsPerPage &&
               <PaginationBar
-                numberOfTechnologies={numberOfTechnologies}
-                actualTechnology={actualTechnology}
+                numberOfItems={numberOfTechnologies}
+                actualSelectedItem={actualTechnology}
                 actualPages={actualPages}
                 setActualPages={setActualPages}
+                elementsForPage={elementsPerPage}
               />
             }
 
@@ -151,7 +153,7 @@ const Technologies = () => {
           grid-template-columns: repeat(3, 1fr);
           gap: 6px;
           padding: 0px;
-
+          margin-top : 25px;
         }
 
         .technologies__filter-list--item {
@@ -164,6 +166,7 @@ const Technologies = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
 
         .active-filter{

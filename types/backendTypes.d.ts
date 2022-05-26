@@ -7,3 +7,16 @@ export type TechnologiesData = {
   category: category
   image: string
 }
+
+export type ProjectsData = {
+  id: number
+  name: string
+  description: string
+  githubUrl: string
+  projectUrl: string
+  category: category
+  images: string[]
+  stack: string[],
+  libraries: string[],
+  environment: string[]
+}

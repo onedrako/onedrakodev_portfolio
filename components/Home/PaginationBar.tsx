@@ -2,40 +2,30 @@ import { useContext, useRef } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 import { FcNext, FcPrevious } from 'react-icons/fc'
 
-import { ActualPagesTechnologiesSelector } from '@customTypes/types'
+import { ActualPagesTechnologiesSelector, ActualPagesProjectsSelector } from '@customTypes/types'
 
 const PaginationBar = ({
-  numberOfTechnologies,
-  actualTechnology,
+  numberOfItems,
+  actualSelectedItem,
   actualPages,
-  setActualPages
+  setActualPages,
+  elementsForPage
 }:{
-    numberOfTechnologies: number,
-    actualTechnology: string,
-    actualPages: ActualPagesTechnologiesSelector,
-    setActualPages: (actualPages: ActualPagesTechnologiesSelector) => void
+    numberOfItems: number,
+    actualSelectedItem: string,
+    actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector,
+    setActualPages: (actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector) => void,
+    elementsForPage: number
   }) => {
-  // const [actualPage, setActualPage] = useState<number>(1)
-  // const maxNumberOfPages = 36
-  // const [actualPages, setActualPages] = useState<ActualPagesTechnologiesSelector>({
-  //   all: 1,
-  //   frontend: 1,
-  //   mobile: 1,
-  //   backend: 1,
-  //   databases: 1,
-  //   libraries: 1,
-  //   others: 1
-  // })
-
   const inputPagination = useRef(null)
 
-  const maxNumberOfPages = Math.ceil(numberOfTechnologies / 6)
-  const actualPage = actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector]
+  const maxNumberOfPages = Math.ceil(numberOfItems / elementsForPage)
+  const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector)]
 
   let size:number = 0.90
 
   const defineSize = ():number => {
-    if (maxNumberOfPages >= 6 && (maxNumberOfPages !== actualPage)) {
+    if (maxNumberOfPages >= elementsForPage && (maxNumberOfPages !== actualPage)) {
       size = 0.95
       return size
     } else if (maxNumberOfPages <= 2) {
@@ -60,7 +50,7 @@ const PaginationBar = ({
     }
     setActualPages({
       ...actualPages,
-      [actualTechnology]: pageToGo
+      [actualSelectedItem]: pageToGo
     })
   }
 
@@ -69,7 +59,16 @@ const PaginationBar = ({
   return (
   <>
     <div className='pagination-container' >
-      <div className="pagination-bar">
+
+        <form className='pagination-go-to-page' onSubmit={(e) => {
+          e.preventDefault()
+          handleNumberOfPages(parseInt(inputPagination.current.value))
+        } }>
+              <p>Go to Page</p>
+              <input type="number" placeholder="1" ref={inputPagination} />
+              <FcNext size={20} onClick={() => handleNumberOfPages(parseInt(inputPagination.current.value)) } />
+          </form>
+        <div className="pagination-bar">
 
           <span className="pagination-bar__arrow previous-element" onClick={() => handleNumberOfPages(actualPage - 1)}>
             <FcPrevious size={15} />
@@ -94,15 +93,7 @@ const PaginationBar = ({
             <FcNext size={15} />
           </span>
         </div>
-        <form className='pagination-go-to-page' onSubmit={(e) => {
-          e.preventDefault()
-          handleNumberOfPages(parseInt(inputPagination.current.value))
-        } }>
-          <p>Go to Page</p>
-          <input type="number" placeholder="1" ref={inputPagination} />
-          <FcNext size={20} onClick={() => handleNumberOfPages(parseInt(inputPagination.current.value)) } />
 
-        </form>
     </div>
 
       <style jsx>{`
@@ -120,7 +111,7 @@ const PaginationBar = ({
           justify-content: space-between;
           align-items: center;
           font-size: 2.4rem;
-          margin: 20px 0 0 auto;
+          margin: 0 0 0 auto;
           border-radius: 10px;
           border: 1px solid ${theme.activeElementColor};
         }
@@ -141,6 +132,7 @@ const PaginationBar = ({
 
         .pagination-bar__element{
           display: inline-block;
+          cursor: pointer;
         }
 
         .pagination-bar__element div{
@@ -170,6 +162,7 @@ const PaginationBar = ({
           border: solid 2px ${theme.activeElementColor};
           border-radius: 15px;
           position: relative;
+          margin: 30px 0 0 0 ;
         }
 
         .pagination-go-to-page p{

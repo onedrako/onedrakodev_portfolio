@@ -1,3 +1,4 @@
+
 // THEME
 export const darkBackgroundColor: string = '#00040a'
 export const darkTextColor: string = '#ffffff'
