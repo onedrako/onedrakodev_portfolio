@@ -37,7 +37,7 @@ const Technologies = () => {
     libraries: 1,
     others: 1
   })
-  const [elementsPerPage, setElementsPerPage] = useState<number>(1)
+  const [elementsPerPage, setElementsPerPage] = useState<number>(6)
 
   const { theme } = useContext(ThemeContext)
 
@@ -123,10 +123,10 @@ const Technologies = () => {
           <ul className='technologies__list'>
             {selectedTechnology.all
 
-              ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={technology.id} data={technology} />)
+              ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)
               : technologies.filter(technology => technology.category === actualTechnology)
                 .slice(defineItems().start, defineItems().end)
-                .map(technology => <TechnologyItem key={technology.id} data={technology} />)}
+                .map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)}
 
           </ul>
 

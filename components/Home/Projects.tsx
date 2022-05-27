@@ -116,10 +116,10 @@ const Projects = () => {
           <ul className='projects__list'>
             {selectedProject.all
 
-              ? projects.slice(defineItems().start, defineItems().end).map(technology => <ProjectItem key={technology.id} data={technology} />)
-              : projects.filter(technology => technology.category === actualProject)
+              ? projects.slice(defineItems().start, defineItems().end).map(project => <ProjectItem key={`project-${project.id}`} data={project} />)
+              : projects.filter(project => project.category === actualProject)
                 .slice(defineItems().start, defineItems().end)
-                .map(technology => <ProjectItem key={technology.id} data={technology} />)}
+                .map(project => <ProjectItem key={`project-${project.id}`} data={project} />)}
 
           </ul>
 

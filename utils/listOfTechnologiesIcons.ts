@@ -65,7 +65,7 @@ export const technologiesList = {
     name: 'React',
     icon: FaReact
   },
-  nextjs: {
+  next: {
     name: 'Next.js',
     icon: SiNextdotjs
   },
@@ -228,5 +228,9 @@ export const technologiesList = {
   jsx: {
     name: 'JSX',
     icon: SiHtml5
+  },
+  nodemailer: {
+    name: 'Nodemailer',
+    icon: IoLibrary
   }
 }

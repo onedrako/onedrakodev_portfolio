@@ -1,8 +1,10 @@
-import { useContext, useRef } from 'react'
+import { useContext, useRef, Dispatch, SetStateAction } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 import { FcNext, FcPrevious } from 'react-icons/fc'
 
 import { ActualPagesTechnologiesSelector, ActualPagesProjectsSelector } from '@customTypes/types'
+
+type pagesSelector = ActualPagesTechnologiesSelector | ActualPagesProjectsSelector
 
 const PaginationBar = ({
   numberOfItems,
@@ -14,10 +16,10 @@ const PaginationBar = ({
     numberOfItems: number,
     actualSelectedItem: string,
     actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector,
-    setActualPages: (actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector) => void,
+    setActualPages: Dispatch<SetStateAction<any>>,
     elementsForPage: number
   }) => {
-  const inputPagination = useRef(null)
+  const inputPagination = useRef<HTMLInputElement>(null)
 
   const maxNumberOfPages = Math.ceil(numberOfItems / elementsForPage)
   const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector)]
@@ -43,6 +45,9 @@ const PaginationBar = ({
   defineSize()
 
   const handleNumberOfPages = (pageToGo:number): void => {
+    if (isNaN(pageToGo) || pageToGo === 0) {
+      return
+    }
     if (pageToGo < 1) {
       pageToGo = 1
     } else if (pageToGo > maxNumberOfPages) {
@@ -62,12 +67,19 @@ const PaginationBar = ({
 
         <form className='pagination-go-to-page' onSubmit={(e) => {
           e.preventDefault()
-          handleNumberOfPages(parseInt(inputPagination.current.value))
-        } }>
+          if (inputPagination.current) {
+            handleNumberOfPages(parseInt(inputPagination.current.value))
+          }
+        }}>
               <p>Go to Page</p>
               <input type="number" placeholder="1" ref={inputPagination} />
-              <FcNext size={20} onClick={() => handleNumberOfPages(parseInt(inputPagination.current.value)) } />
+              <FcNext size={20} onClick={() => {
+                if (inputPagination.current) {
+                  handleNumberOfPages(parseInt(inputPagination.current?.value))
+                }
+              }} />
           </form>
+
         <div className="pagination-bar">
 
           <span className="pagination-bar__arrow previous-element" onClick={() => handleNumberOfPages(actualPage - 1)}>
