@@ -1,11 +1,16 @@
+// Dependencies
 import { useContext, useRef, Dispatch, SetStateAction } from 'react'
-import { ThemeContext } from '@contexts/ThemeContext'
+
+// Icons
 import { FcNext, FcPrevious } from 'react-icons/fc'
 
+// Context
+import { ThemeContext } from '@contexts/ThemeContext'
+
+// Types
 import { ActualPagesTechnologiesSelector, ActualPagesProjectsSelector } from '@customTypes/types'
 
-type pagesSelector = ActualPagesTechnologiesSelector | ActualPagesProjectsSelector
-
+// COMPONENT
 const PaginationBar = ({
   numberOfItems,
   actualSelectedItem,

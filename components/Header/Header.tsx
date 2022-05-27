@@ -37,7 +37,7 @@ const Header = () => {
         .header {
           position: fixed;
           width: 100vw;
-          z-index: 1;
+          z-index: 2;
         }
 
         nav {

@@ -232,5 +232,9 @@ export const technologiesList = {
   nodemailer: {
     name: 'Nodemailer',
     icon: IoLibrary
+  },
+  yup: {
+    name: 'Yup',
+    icon: IoLibrary
   }
 }

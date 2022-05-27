@@ -6,12 +6,12 @@ import { Projects } from './Projects'
 
 const HomeComponent = () => {
   return (
-    <>
-      <Profile />
-      <Description />
-      <Technologies/>
-      <Projects/>
-    </>
+      <main>
+        <Profile />
+        <Description />
+        <Technologies/>
+        <Projects/>
+      </main>
   )
 }
 

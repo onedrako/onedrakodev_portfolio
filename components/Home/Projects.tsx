@@ -133,6 +133,7 @@ const Projects = () => {
           width: 100%;
           margin: 25px auto;
           padding: 20px;
+          position: absolute;
         }
         .projects__title{
           font-size: 2.2rem;
