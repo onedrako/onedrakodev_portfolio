@@ -22,6 +22,10 @@ svg{
   cursor: pointer;
 }
 
+.icon:hover{
+  cursor: default;
+}
+
 li{
   list-style: none;
 }

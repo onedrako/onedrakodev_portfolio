@@ -47,7 +47,7 @@ const allProjects: ProjectsData[] = [
     category: 'frontend',
     images: ['https://i.imgur.com/p5NtU7l.jpeg', 'https://i.imgur.com/ydGvwcV.jpeg', 'https://i.imgur.com/VvRJn5A.jpeg'],
     stack: ['next', 'react', 'cssInJs', 'javaScript', 'jsx'],
-    libraries: ['nextPwa', 'nextAuth', 'sanitazeHtml', 'formik', 'reactIcons', 'yup', 'moment', 'axios', 'dotenv'],
+    libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'moment', 'axios', 'dotenv'],
     environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
   },
   {
@@ -71,7 +71,7 @@ const allProjects: ProjectsData[] = [
     category: 'frontend',
     images: ['https://i.imgur.com/p5NtU7l.jpeg', 'https://i.imgur.com/ydGvwcV.jpeg', 'https://i.imgur.com/VvRJn5A.jpeg'],
     stack: ['next', 'react', 'typeScript', 'cssInJs', 'javaScript', 'jsx'],
-    libraries: ['nextPwa', 'nextAuth', 'sanitazeHtml', 'formik', 'reactIcons', 'yup', 'i18next', 'axios', 'dotenv'],
+    libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'i18next', 'axios', 'dotenv'],
     environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
   },
   {

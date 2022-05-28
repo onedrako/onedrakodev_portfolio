@@ -229,12 +229,16 @@ export const technologiesList = {
     name: 'JSX',
     icon: SiHtml5
   },
-  nodemailer: {
+  nodeMailer: {
     name: 'Nodemailer',
     icon: IoLibrary
   },
   yup: {
     name: 'Yup',
+    icon: IoLibrary
+  },
+  reactIcons: {
+    name: 'React Icons',
     icon: IoLibrary
   }
 }

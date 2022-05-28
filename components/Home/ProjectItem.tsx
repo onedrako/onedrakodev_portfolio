@@ -1,5 +1,5 @@
 // Dependencies
-import { useContext, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import Image from 'next/image'
 
 // Icons
@@ -12,17 +12,55 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 import { ThemeContext } from '@contexts/ThemeContext'
 
 // Utils
-import { technologiesList } from '@utils/listOfTechnologiesIcons'
 import { capitalizeFirstLetter } from '@utils/capitalize'
+import { handleNavigateNumberOfPages, defineMaxNumberOfPages } from '@utils/homeUtils'
 
 // Types
 import type { ProjectsData } from '@customTypes/backendTypes'
+import type { ActualPagesProjectsSelector } from '@customTypes/types'
+
+import ListOfTechnologiesInProject from './ListOfTechnologiesInProject'
 
 // COMPONENT
-const ProjectItem = ({ data }: {data: ProjectsData}) => {
+const ProjectItem = (
+  {
+    data,
+    numberOfProjects,
+    projectsForPage,
+    actualPages,
+    actualSelectedProject,
+    setPages
+  }:
+  {
+    data: ProjectsData,
+    numberOfProjects: number,
+    projectsForPage: number,
+    actualPages: ActualPagesProjectsSelector,
+    actualSelectedProject: string,
+    setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
+  }) => {
   const [isActive, setIsActive] = useState(true)
-
   const { theme } = useContext(ThemeContext)
+
+  const defineNumberOfPages = (selectedPageByUser: number): void => {
+    let pageToMove = selectedPageByUser
+
+    if (selectedPageByUser < 1) {
+      pageToMove = defineMaxNumberOfPages(numberOfProjects, projectsForPage)
+    } else if (selectedPageByUser > defineMaxNumberOfPages(numberOfProjects, projectsForPage)) {
+      pageToMove = 1
+    }
+
+    handleNavigateNumberOfPages(
+      pageToMove,
+      numberOfProjects,
+      projectsForPage,
+      actualPages,
+      actualSelectedProject,
+      setPages
+    )
+  }
+
   return (
     <>
       <article className="modal">
@@ -47,49 +85,17 @@ const ProjectItem = ({ data }: {data: ProjectsData}) => {
             <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[0]}></Image>
           </div>
 
-          <h3>Technologies</h3>
-          <div className='project-item__technologies'>
-            {data.stack.map(stack =>
-              <>
-                <div className='technology-item'>
-                  {technologiesList[stack as keyof typeof technologiesList].icon({ size: 30, color: '#fff' })}
-                  <p className='technology-item__name'>{technologiesList[stack as keyof typeof technologiesList].name}</p>
-                </div>
-              </>
-            )}
-          </div>
-
-          <h3>Principal Libraries</h3>
-          <div className='project-item__technologies'>
-            {data.libraries.map(library =>
-              <>
-                <div className='technology-item'>
-                  {technologiesList[library as keyof typeof technologiesList].icon({ size: 30, color: '#fff' })}
-                  <p className='technology-item__name'>{technologiesList[library as keyof typeof technologiesList].name}</p>
-                </div>
-              </>
-            )}
-          </div>
-
-          <h3>Environment Technologies</h3>
-          <div className='project-item__technologies'>
-            {data.environment.map(library =>
-              <>
-                <div className='technology-item'>
-                  {technologiesList[library as keyof typeof technologiesList].icon({ size: 30, color: '#fff' })}
-                  <p className='technology-item__name'>{technologiesList[library as keyof typeof technologiesList].name}</p>
-                </div>
-              </>
-            )}
-          </div>
+          <ListOfTechnologiesInProject title='Stack used:' data={data.stack} />
+          <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} />
+          <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} />
 
           {!isActive && <button className="project-item__see-details-button" type="button">See more</button>}
 
           <div className='project-item__navigation prev'>
-            <FcPrevious size={30} />
+            <FcPrevious size={30} onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] - 1)} />
           </div>
           <div className='project-item__navigation next'>
-            <FcNext size={30} />
+            <FcNext size={30} onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] + 1)}/>
           </div>
 
           <div className='project-item__navigation close'>
@@ -161,39 +167,7 @@ const ProjectItem = ({ data }: {data: ProjectsData}) => {
         }
 
         
-        .project-item__technologies {
-          margin-top: 5px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-          gap: 25px;
-        }
-
-        .technology-item {
-          position: relative;
-          font-size: 1.5rem;
-          display: flex;
-          justify-content: center;
-        }
-
-        .technology-item:hover .technology-item__name {
-          visibility: visible;
-        }
-
-        .technology-item__name{
-          position: absolute;
-          font-size: 1.2rem;
-          cursor:default;
-          background: rgba(0,0,0,0.8);
-          top: -10px;
-          width: 100%;
-          height: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 10px;
-          padding: 2px;
-          visibility: hidden;
-        }
+        
 
         .project-item__see-details-button {
           /* margin-top: 10px; */
