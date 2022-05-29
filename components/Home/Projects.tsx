@@ -34,6 +34,7 @@ const Projects = () => {
     others: 1
   })
   const [elementsPerPage, setElementsPerPage] = useState<number>(1)
+  const [isModalActive, setIsModalActive] = useState(false)
 
   const { theme } = useContext(ThemeContext)
 
@@ -125,6 +126,8 @@ const Projects = () => {
                   numberOfProjects={numberOfProjects}
                   actualSelectedProject={actualProject}
                   projectsForPage={elementsPerPage}
+                  setModalActive={setIsModalActive}
+                  isActive={isModalActive}
                   />)
               : projects.filter(project => project.category === actualProject)
                 .slice(defineItems().start, defineItems().end)

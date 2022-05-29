@@ -1,5 +1,5 @@
 // Dependencies
-import { Dispatch, SetStateAction, useContext, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useRef, useState } from 'react'
 import Image from 'next/image'
 
 // Icons
@@ -7,6 +7,8 @@ import { SiGithub } from 'react-icons/si'
 import { HiLink } from 'react-icons/hi'
 import { FcNext, FcPrevious } from 'react-icons/fc'
 import { AiFillCloseCircle } from 'react-icons/ai'
+import { MdWeb } from 'react-icons/md'
+import { FaServer, FaDatabase } from 'react-icons/fa'
 
 // Context
 import { ThemeContext } from '@contexts/ThemeContext'
@@ -29,7 +31,9 @@ const ProjectItem = (
     projectsForPage,
     actualPages,
     actualSelectedProject,
-    setPages
+    setPages,
+    isActive,
+    setModalActive
   }:
   {
     data: ProjectsData,
@@ -38,8 +42,10 @@ const ProjectItem = (
     actualPages: ActualPagesProjectsSelector,
     actualSelectedProject: string,
     setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
+    isActive: boolean,
+    setModalActive: Dispatch<SetStateAction<boolean>>
   }) => {
-  const [isActive, setIsActive] = useState(true)
+  // const [isActive, setIsActive] = useState(false)
   const { theme } = useContext(ThemeContext)
 
   const defineNumberOfPages = (selectedPageByUser: number): void => {
@@ -61,14 +67,42 @@ const ProjectItem = (
     )
   }
 
+  const container = useRef<HTMLElement>(null)
+  const item = useRef<HTMLDivElement>(null)
+
+  const openModal = () => {
+    console.log('openModal')
+    setModalActive(true)
+    container.current?.classList.add('modal')
+    item.current?.classList.add('active-element')
+  }
+
+  const closeModal = () => {
+    console.log('close')
+    setModalActive(false)
+    container.current?.classList.remove('modal')
+    item.current?.classList.remove('active-element')
+  }
+
   return (
     <>
-      <article className="modal">
-        <div className="project-item active-element">
+      <article ref={container}>
+        <div ref={item} className="project-item">
           <h2 className="project-item__title">{data.name}</h2>
-          <h3 className="project-item__category">{capitalizeFirstLetter(data.category)} project</h3>
+          <div className='project-item__category'>
+            <h3 className="project-item__category-title">{capitalizeFirstLetter(data.category)} project </h3>
+            {data.category === 'frontend' && <MdWeb size={30}/> }
+            {data.category === 'backend' &&
+              <>
+                <FaServer size={25}/>
+                <FaDatabase size={25}/>
+              </>
+            }
+          </div>
 
-          <div className="project-item__links">
+          {/* Links to Project and Github repository */}
+          {isActive &&
+            <div className="project-item__links">
             <a className='project-item__links--item' href={data.githubUrl} target="_blank" rel="noopener noreferrer">
               <SiGithub size={20} />
               <p className="project-item__icon-text">Repository</p>
@@ -78,6 +112,7 @@ const ProjectItem = (
               <p className="project-item__icon-text">Project</p>
             </a>
           </div>
+          }
 
           <p>Description: {data.description}</p>
 
@@ -85,22 +120,29 @@ const ProjectItem = (
             <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[0]}></Image>
           </div>
 
-          <ListOfTechnologiesInProject title='Stack used:' data={data.stack} />
-          <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} />
-          <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} />
+          { data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} />}
+          { (isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} />}
+          { (isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} />}
 
-          {!isActive && <button className="project-item__see-details-button" type="button">See more</button>}
+          {/* Button to open modal and see the details of the project */}
+          {!isActive && <button className="project-item__see-details-button" type="button" onClick={() => openModal()}>See more</button>}
 
-          <div className='project-item__navigation prev'>
-            <FcPrevious size={30} onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] - 1)} />
-          </div>
-          <div className='project-item__navigation next'>
-            <FcNext size={30} onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] + 1)}/>
-          </div>
+          {/* Navigation between items and close modal */}
+          {
+            isActive &&
+            <>
+              <div className='project-item__navigation prev' onClick={() => console.log('prev')}>
+                <FcPrevious size={30} />
+              </div>
+              <div className='project-item__navigation next' onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] + 1)}>
+                <FcNext size={30} />
+              </div>
 
-          <div className='project-item__navigation close'>
-            <AiFillCloseCircle size={30} onClick={() => setIsActive(!isActive)} />
-          </div>
+              <div className='project-item__navigation close' onClick={() => closeModal()}>
+                <AiFillCloseCircle size={30} />
+              </div>
+            </>
+          }
 
         </div>
       </article>
@@ -111,7 +153,7 @@ const ProjectItem = (
           border: 1px solid #ccc;
           border-radius: 15px;
           font-size: 2.2rem;
-          padding: 50px;
+          padding: 15px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -127,7 +169,13 @@ const ProjectItem = (
           color: ${theme.activeElementColor};
         }
 
-        .project-item__category{
+        .project-item__category {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .project-item__category-title{
           border-bottom: 1px solid #ccc;
           font-size : 1.6rem;
           height: 35px;
@@ -204,6 +252,7 @@ const ProjectItem = (
           margin-top: 45px;
           overflow: auto;
           border: none;
+          padding: 50px;
         }
 
 
@@ -232,8 +281,11 @@ const ProjectItem = (
         }
 
         .close{
-          top: 15px;
+          top: 50px;
           right: 15px;
+          position: fixed;
+          z-index: 3;
+          cursor: pointer;
         }
       `} </style>
     </>
