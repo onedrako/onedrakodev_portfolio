@@ -1,5 +1,5 @@
 // Dependencies
-import { Dispatch, SetStateAction, useContext, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 // Icons
@@ -84,10 +84,18 @@ const ProjectItem = (
     item.current?.classList.remove('active-element')
   }
 
+  useEffect(() => {
+    if (isActive) {
+      openModal()
+    } else {
+      closeModal()
+    }
+  }, [isActive])
+
   return (
     <>
       <article ref={container}>
-        <div ref={item} className="project-item">
+        <div ref={item} className="project-item" >
           <h2 className="project-item__title">{data.name}</h2>
           <div className='project-item__category'>
             <h3 className="project-item__category-title">{capitalizeFirstLetter(data.category)} project </h3>
@@ -131,7 +139,7 @@ const ProjectItem = (
           {
             isActive &&
             <>
-              <div className='project-item__navigation prev' onClick={() => console.log('prev')}>
+              <div className='project-item__navigation prev' onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] - 1)}>
                 <FcPrevious size={30} />
               </div>
               <div className='project-item__navigation next' onClick={() => defineNumberOfPages(actualPages[actualSelectedProject as keyof ActualPagesProjectsSelector] + 1)}>

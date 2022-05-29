@@ -131,7 +131,17 @@ const Projects = () => {
                   />)
               : projects.filter(project => project.category === actualProject)
                 .slice(defineItems().start, defineItems().end)
-                .map(project => <ProjectItem key={`project-${project.id}`} data={project} />)}
+                .map(project => <ProjectItem
+                  key={`project-${project.id}`}
+                  data={project}
+                  actualPages={actualPages}
+                  setPages={setActualPages}
+                  numberOfProjects={numberOfProjects}
+                  actualSelectedProject={actualProject}
+                  projectsForPage={elementsPerPage}
+                  setModalActive={setIsModalActive}
+                  isActive={isModalActive}
+                  />)}
 
           </ul>
 
