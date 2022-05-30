@@ -47,6 +47,7 @@ const ProjectItem = (
   }) => {
   // const [isActive, setIsActive] = useState(false)
   const { theme } = useContext(ThemeContext)
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
   const defineNumberOfPages = (selectedPageByUser: number): void => {
     let pageToMove = selectedPageByUser
@@ -80,6 +81,20 @@ const ProjectItem = (
     setModalActive(false)
     container.current?.classList.remove('modal')
     item.current?.classList.remove('active-element')
+  }
+
+  const handleImageNavigation = (image:number) => {
+    const maxImages = data.images.length - 1
+    console.log('max', maxImages)
+    console.log(image)
+    if (image < 0) {
+      setSelectedImage(data.images.length - 1)
+    } else if (image > data.images.length - 1) {
+      setSelectedImage(0)
+    } else {
+      setSelectedImage(image)
+    }
+    console.log(selectedImage)
   }
 
   useEffect(() => {
@@ -122,8 +137,22 @@ const ProjectItem = (
 
           <p>Description: {data.description}</p>
 
+          {/* Project´s image */}
           <div className='project-item__image'>
-            <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[0]}></Image>
+            <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[selectedImage]}></Image>
+
+            {data.images.length > 1 && selectedImage !== data.images.length - 1 &&
+              <div className='project-item__image--navigation next-image' onClick={() => handleImageNavigation(selectedImage + 1)}>
+                <FcNext size={30} />
+              </div>
+            }
+
+            {
+              data.images.length > 1 && selectedImage > 0 &&
+              <div className='project-item__image--navigation prev-image' onClick={() => handleImageNavigation(selectedImage - 1)}>
+                <FcPrevious size={30} />
+              </div>
+            }
           </div>
 
           { data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name}/>}
@@ -196,6 +225,36 @@ const ProjectItem = (
           display: flex;
           justify-content: center;
           border-radius: 50%;
+          position: relative;
+        }
+
+        .project-item__image--navigation{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          z-index: 3;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: ${theme.backgroundColor};
+          border: 1px solid ${theme.textColor};
+          cursor: pointer;
+          opacity: 0.7;
+        }
+
+        .project-item__image--navigation:hover{
+          opacity: 1;
+        }
+
+        .next-image{
+          right: 10px;
+          top: 45%;
+        }
+
+        .prev-image{
+          left: 10px;
+          top: 45%;
         }
 
         .project-item__links {

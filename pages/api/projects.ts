@@ -9,7 +9,7 @@ const allProjects: ProjectsData[] = [
     githubUrl: 'https://github.com/onedrako/onedrako-socials-page',
     projectUrl: 'https://onedrako.vercel.app/discord/huellita',
     category: 'frontend',
-    images: ['https://i.imgur.com/8CjeTLs.png,https://i.imgur.com/a17FY9E.png'],
+    images: ['https://i.imgur.com/8CjeTLs.png', 'https://i.imgur.com/a17FY9E.png'],
     stack: ['react', 'styledComponents', 'javaScript', 'jsx'],
     libraries: ['reactRouter', 'i18next', 'formik', 'yup', 'axios', 'dotenv'],
     environment: ['vercel', 'webpack', 'babel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
@@ -21,7 +21,7 @@ const allProjects: ProjectsData[] = [
     githubUrl: 'https://github.com/onedrako/onedrako-socials-page',
     projectUrl: 'https://onedrako.vercel.app/chill',
     category: 'frontend',
-    images: ['https://i.imgur.com/q8m9D0W.png, https://i.imgur.com/obx3lFB.png, https://i.imgur.com/3cGL3RM.jpg, https://i.imgur.com/1LiAPgK.jpg'],
+    images: ['https://i.imgur.com/q8m9D0W.png', 'https://i.imgur.com/obx3lFB.png', 'https://i.imgur.com/3cGL3RM.jpg', 'https://i.imgur.com/1LiAPgK.jpg'],
     stack: ['react', 'styledComponents', 'javaScript', 'jsx'],
     libraries: ['reactRouter', 'moment', 'axios', 'dotenv'],
     environment: ['vercel', 'webpack', 'babel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
@@ -45,7 +45,7 @@ const allProjects: ProjectsData[] = [
     githubUrl: 'https://github.com/onedrako/theWinterGallerySchedules_Frontend',
     projectUrl: 'https://thewintergallery.vercel.app/',
     category: 'frontend',
-    images: ['https://i.imgur.com/FoJ3l2M.png, https://i.imgur.com/wfUVWap.png, https://i.imgur.com/yEKWBHd.png, https://i.imgur.com/H8XCkc9.png'],
+    images: ['https://i.imgur.com/FoJ3l2M.png', 'https://i.imgur.com/wfUVWap.png', 'https://i.imgur.com/yEKWBHd.png', 'https://i.imgur.com/H8XCkc9.png'],
     stack: ['next', 'react', 'cssInJs', 'javaScript', 'jsx'],
     libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'moment', 'axios', 'dotenv'],
     environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
@@ -81,7 +81,7 @@ const allProjects: ProjectsData[] = [
     githubUrl: 'https://github.com/onedrako/dejando-huellita-form-v1',
     projectUrl: 'https://onedrako.github.io/dejando-huellita-form-v1/discord.html',
     category: 'frontend',
-    images: ['https://i.imgur.com/Ax8EWpj.png, https://i.imgur.com/mmnM484.png'],
+    images: ['https://i.imgur.com/Ax8EWpj.png', 'https://i.imgur.com/mmnM484.png'],
     stack: ['javaScript', 'stylus', 'html'],
     libraries: [],
     environment: ['git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']

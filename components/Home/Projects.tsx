@@ -142,7 +142,6 @@ const Projects = () => {
                   setModalActive={setIsModalActive}
                   isActive={isModalActive}
                   />)}
-
           </ul>
 
         </article>
