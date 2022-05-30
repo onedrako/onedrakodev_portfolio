@@ -85,16 +85,13 @@ const ProjectItem = (
 
   const handleImageNavigation = (image:number) => {
     const maxImages = data.images.length - 1
-    console.log('max', maxImages)
-    console.log(image)
     if (image < 0) {
-      setSelectedImage(data.images.length - 1)
-    } else if (image > data.images.length - 1) {
+      setSelectedImage(maxImages)
+    } else if (image > maxImages) {
       setSelectedImage(0)
     } else {
       setSelectedImage(image)
     }
-    console.log(selectedImage)
   }
 
   useEffect(() => {
@@ -346,7 +343,7 @@ const ProjectItem = (
         }
 
         .close{
-          top: 50px;
+          top: 15px;
           right: 15px;
           position: fixed;
           z-index: 3;

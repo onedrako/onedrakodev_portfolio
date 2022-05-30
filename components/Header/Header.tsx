@@ -5,9 +5,11 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Header = () => {
   const [isTheMenuOpen, setIsTheMenuOpen] = useState<boolean>(false)
+  const [headerViewWidth, setHeaderViewWidth] = useState<number>(10)
 
   const handleSideMenuClick = (action?: string, node?: RefObject<HTMLDivElement>): void => {
     if (action === 'open') {
+      setHeaderViewWidth(100)
       setIsTheMenuOpen(!isTheMenuOpen)
       return
     }
@@ -20,6 +22,7 @@ const Header = () => {
 
       setTimeout(() => {
         setIsTheMenuOpen(!isTheMenuOpen)
+        setHeaderViewWidth(10)
       }, 1000)
     }
   }
@@ -36,7 +39,7 @@ const Header = () => {
       <style jsx>{`
         .header {
           position: fixed;
-          width: 100vw;
+          width: ${`${headerViewWidth}vw`};
           z-index: 2;
         }
 
