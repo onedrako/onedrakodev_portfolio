@@ -71,14 +71,12 @@ const ProjectItem = (
   const item = useRef<HTMLDivElement>(null)
 
   const openModal = () => {
-    console.log('openModal')
     setModalActive(true)
     container.current?.classList.add('modal')
     item.current?.classList.add('active-element')
   }
 
   const closeModal = () => {
-    console.log('close')
     setModalActive(false)
     container.current?.classList.remove('modal')
     item.current?.classList.remove('active-element')
@@ -128,9 +126,9 @@ const ProjectItem = (
             <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[0]}></Image>
           </div>
 
-          { data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} />}
-          { (isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} />}
-          { (isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} />}
+          { data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name}/>}
+          { (isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} projectName={data.name}/>}
+          { (isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} projectName={data.name} />}
 
           {/* Button to open modal and see the details of the project */}
           {!isActive && <button className="project-item__see-details-button" type="button" onClick={() => openModal()}>See more</button>}

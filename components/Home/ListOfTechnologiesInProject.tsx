@@ -6,19 +6,17 @@ import { ThemeContext } from '@contexts/ThemeContext'
 // Icons
 import { technologiesList } from '@utils/listOfTechnologiesIcons'
 
-const ListOfTechnologiesInProject = ({ title, data }: {title: string, data: string[]}) => {
+const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: string, data: string[], projectName:string}) => {
   const { theme } = useContext(ThemeContext)
   return (
     <>
       <h3 className='project-item__title'>{title}</h3>
       <div className='project-item__technologies'>
         {data.map(elem =>
-          <>
-            <div className='technology-item'>
+            <div key={`${projectName}-${title}-${data.indexOf(elem)}`} className='technology-item'>
               {technologiesList[elem as keyof typeof technologiesList].icon({ size: 30, color: '#fff', className: 'icon' })}
               <p className='technology-item__name'>{technologiesList[elem as keyof typeof technologiesList].name}</p>
             </div>
-          </>
         )}
       </div>
 

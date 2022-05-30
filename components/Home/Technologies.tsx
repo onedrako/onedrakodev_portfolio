@@ -96,7 +96,7 @@ const Technologies = () => {
     <>
       <section className='technologies'>
 
-        <h2 className='technologies__title'>Technologies that I used in my projects</h2>
+        <h2 className='technologies__title'>Technologies I´ve used</h2>
         <hr />
         <nav className='technologies__filter-list'>
           <ul>
