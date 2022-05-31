@@ -1,5 +1,11 @@
 {
   "cSpell.enableFiletypes": [
     "typescriptreact"
+  ],
+  "grammarly.selectors": [
+    {
+      "language": "typescript",
+      "scheme": "file"
+    }
   ]
 }

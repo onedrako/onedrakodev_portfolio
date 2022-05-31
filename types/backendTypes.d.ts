@@ -1,22 +1,32 @@
+import { IconType } from 'react-icons'
+
 export type category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'libraries' | 'others'
 
-export type TechnologiesData = {
+export interface IdData{
   id: number
-  name: string
-  description: string
-  category: category
+}
+
+export interface DefaultData extends IdData {
+  name: string,
+  description: string,
+  category: category,
+}
+
+export interface TechnologiesData extends DefaultData {
   image: string
 }
 
-export type ProjectsData = {
-  id: number
-  name: string
-  description: string
-  githubUrl: string
-  projectUrl: string
-  category: category
-  images: string[]
+export interface ProjectsData extends DefaultData {
+  githubUrl: string,
+  projectUrl: string,
+  images: string[],
   stack: string[],
   libraries: string[],
   environment: string[]
+}
+
+export interface SoftSkillsData extends IdData {
+  name: string,
+  description: string,
+  icon: string
 }
