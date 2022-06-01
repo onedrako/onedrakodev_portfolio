@@ -20,14 +20,14 @@ const PaginationBar = ({
 }:{
     numberOfItems: number,
     actualSelectedItem: string,
-    actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector,
+    actualPages: ActualPagesTechnologiesSelector | ActualPagesProjectsSelector | {all:number},
     setActualPages: Dispatch<SetStateAction<any>>,
     elementsForPage: number
   }) => {
   const inputPagination = useRef<HTMLInputElement>(null)
 
   const maxNumberOfPages = Math.ceil(numberOfItems / elementsForPage)
-  const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector)]
+  const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector | {all:number})]
 
   let size:number = 0.90
 

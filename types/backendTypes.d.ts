@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons'
-
 export type category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'libraries' | 'others'
 
 export interface IdData{

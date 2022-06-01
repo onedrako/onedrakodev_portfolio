@@ -10,7 +10,8 @@ const nextConfig = {
       '1143667985-files.gitbook.io',
       'img.stackshare.io',
       'scontent.fmex1-2.fna.fbcdn.net',
-      'i.imgur.com'
+      'i.imgur.com',
+      'cdn-icons.flaticon.com'
     ]
   }
 }
