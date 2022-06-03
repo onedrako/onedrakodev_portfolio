@@ -11,3 +11,12 @@ export const lightModalBackgroundColor: string = '#ffffff'
 
 export const darkActiveElement: string = '#0080ff'
 export const lightActiveElement: string = '#0080ff'
+
+// CATEGORIES
+export const CategoryColorsForTimeLine = {
+  Technology: '#12b515',
+  Business: '#9c0819',
+  Investments: '#0080ff',
+  Languages: '#9c0819',
+  Others: '#ebb923'
+}

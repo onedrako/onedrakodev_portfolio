@@ -11,7 +11,11 @@ const nextConfig = {
       'img.stackshare.io',
       'scontent.fmex1-2.fna.fbcdn.net',
       'i.imgur.com',
-      'cdn-icons.flaticon.com'
+      'cdn-icons.flaticon.com',
+      'www.gob.mx',
+      'static.platzi.com',
+      'upload.wikimedia.org',
+      'scontent.fmex2-1.fna.fbcdn.net'
     ]
   }
 }
