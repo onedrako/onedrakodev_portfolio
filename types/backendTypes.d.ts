@@ -33,7 +33,7 @@ export interface SoftSkillsData extends IdData {
 
 export interface LaboralExperienceData extends IdData {
   institution: string
-  position: string
+  title: string
   startDate: string
   endDate: string
   description: string
@@ -46,7 +46,7 @@ export interface EducationData extends IdData {
   institution: string
   startDate: string
   endDate: string
-  description: string
+  title: string
   category: educationCategory
   iconUrl: string
   important?: boolean

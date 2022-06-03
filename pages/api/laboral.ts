@@ -5,7 +5,7 @@ const laboralExperience: LaboralExperienceData[] = [
   {
     id: 1,
     institution: 'Investor on my own',
-    position: 'Investor',
+    title: 'Investor',
     startDate: '2017-11-01',
     endDate: 'Present',
     description: 'Investing on the Mexican Stock Market, SIC and cryptocurrencies',
@@ -16,7 +16,7 @@ const laboralExperience: LaboralExperienceData[] = [
   {
     id: 2,
     institution: 'Centro Nacional de Control del Gas Natural',
-    position: 'Social Service',
+    title: 'Social Service',
     startDate: '2017-11-01',
     endDate: '2018-03-01',
     category: 'Business',
@@ -27,7 +27,7 @@ const laboralExperience: LaboralExperienceData[] = [
   {
     id: 3,
     institution: 'Centro Nacional de Control del Gas Natural',
-    position: 'Jr Analyst',
+    title: 'Jr Analyst',
     startDate: '2018-01-03',
     endDate: '2019-01-02',
     category: 'Business',
@@ -38,7 +38,7 @@ const laboralExperience: LaboralExperienceData[] = [
   {
     id: 4,
     institution: 'El Compi / Sabor a Mi',
-    position: 'Co-founder / Manager',
+    title: 'Co-founder / Manager',
     startDate: '2019-07-17',
     endDate: '2021-03-31',
     category: 'Business',

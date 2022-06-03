@@ -15,7 +15,7 @@ export const lightActiveElement: string = '#0080ff'
 // CATEGORIES
 export const CategoryColorsForTimeLine = {
   Technology: '#12b515',
-  Business: '#9c0819',
+  Business: '#d99a11',
   Investments: '#0080ff',
   Languages: '#9c0819',
   Others: '#ebb923'

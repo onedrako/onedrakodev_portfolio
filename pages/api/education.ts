@@ -8,8 +8,8 @@ const laboralExperience: EducationData[] = [
     startDate: '2010-08-01',
     endDate: '2013-06-17',
     category: 'Languages',
-    description: 'English Intermediate',
-    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_de_la_UAEMex.svg/1200px-Logo_de_la_UAEMex.svg.png'
+    title: 'English Intermediate',
+    iconUrl: 'https://i.imgur.com/GtvLKOw.jpg'
   },
   {
     id: 2,
@@ -17,92 +17,92 @@ const laboralExperience: EducationData[] = [
     startDate: '2013-10-27',
     endDate: '2013-10-27',
     category: 'Languages',
-    description: 'English Intermediate',
-    iconUrl: 'https://seeklogo.com/images/U/unam-logo-32B6627636-seeklogo.com.png'
+    title: 'English Intermediate',
+    iconUrl: 'https://i.imgur.com/9HBHsNb.jpg'
   },
   {
     id: 3,
     institution: 'National Autonomous University of Mexico(UNAM)',
-    startDate: '2013-01-08',
-    endDate: '2017-01-06',
+    startDate: '2013-08-01',
+    endDate: '2017-06-01',
     category: 'Business',
-    description: 'Bachelor´s in Administration',
-    iconUrl: 'https://seeklogo.com/images/U/unam-logo-32B6627636-seeklogo.com.png'
+    title: 'Bachelor´s in Administration',
+    iconUrl: 'https://i.imgur.com/9HBHsNb.jpg'
   },
   {
     id: 4,
     institution: 'National Autonomous University of Mexico(UNAM)',
-    startDate: '2018-01-09',
-    endDate: '2019-01-05',
+    startDate: '2018-09-01',
+    endDate: '2019-05-01',
     category: 'Business',
-    description: 'Degree Diploma in Tourist Business Administration',
-    iconUrl: 'https://seeklogo.com/images/U/unam-logo-32B6627636-seeklogo.com.png'
+    title: 'Degree Diploma in Tourist Business Administration',
+    iconUrl: 'https://i.imgur.com/9HBHsNb.jpg'
   },
   {
     id: 5,
     institution: 'Platzi',
-    startDate: '2019-15-04',
-    endDate: '2021-06-03',
+    startDate: '2021-04-15',
+    endDate: '2022-03-06',
     category: 'Technology',
-    description: 'JavaScript School',
+    title: 'JavaScript School',
     progress: 23,
     total: 23,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {
     id: 6,
     institution: 'Platzi',
-    startDate: '2019-15-04',
-    endDate: '2021-02-04',
+    startDate: '2021-04-15',
+    endDate: '2022-04-02',
     category: 'Technology',
-    description: 'Frontend with React',
+    title: 'Frontend with React',
     progress: 32,
     total: 32,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {
     id: 7,
     institution: 'Platzi',
-    startDate: '2019-15-04',
-    endDate: '2021-02-04',
+    startDate: '2021-04-15',
+    endDate: '2022-04-02',
     category: 'Technology',
-    description: 'App Development with React Native',
+    title: 'App Development with React Native',
     progress: 17,
     total: 17,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {
     id: 8,
     institution: 'Platzi',
-    startDate: '2019-15-04',
-    endDate: '2021-07-04',
+    startDate: '2021-04-15',
+    endDate: '2022-04-07',
     category: 'Languages',
-    description: 'Platzi English Academy',
+    title: 'Platzi English Academy',
     progress: 32,
     total: 32,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {
     id: 9,
     institution: 'Platzi',
-    startDate: '2021-15-04',
+    startDate: '2021-04-15',
     endDate: 'Present',
     category: 'Technology',
-    description: 'Backend Development with Node.js',
+    title: 'Backend Development with Node.js',
     progress: 20,
     total: 32,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {
     id: 10,
     institution: 'Platzi',
-    startDate: '2021-15-04',
+    startDate: '2021-04-15',
     endDate: 'Present',
     category: 'Technology',
-    description: 'Web Development School',
+    title: 'Web Development School',
     progress: 70,
     total: 121,
-    iconUrl: 'https://static.platzi.com/media/platzi-isotipo@2x.png'
+    iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   }
 
 ]

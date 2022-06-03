@@ -4,7 +4,7 @@ import { Description } from './Description'
 import { Technologies } from './Technologies'
 import { Projects } from './Projects'
 import { SoftSkills } from './SoftSkills'
-import { LaboralExperience } from './Experience'
+import { TimeLineContainer } from './TimeLineContainer'
 
 const HomeComponent = () => {
   return (
@@ -14,7 +14,8 @@ const HomeComponent = () => {
         <Technologies/>
         <Projects/>
         <SoftSkills/>
-        <LaboralExperience/>
+        <TimeLineContainer title={'Laboral Experience'} orientation={'right'} endPoint={'/api/laboral'} />
+        <TimeLineContainer title={'Education'} orientation={'left'} endPoint={'/api/education'} redirectTo="/"/>
       </main>
   )
 }

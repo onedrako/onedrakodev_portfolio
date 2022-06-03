@@ -1,11 +1,10 @@
-import { LaboralExperienceData } from '@customTypes/backendTypes'
 import Image from 'next/image'
 import { useContext } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 
 import { CategoryColorsForTimeLine } from '@utils/constants'
 
-const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
+const TimeLine = ({ data, orientation }: {data: any, orientation: string }) => {
   const { theme } = useContext(ThemeContext)
 
   const defineColorPoint = (category: string) => {
@@ -22,18 +21,19 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
       return `${month} ${year}`
     }
   }
-
   return (
     <>
       <div className='laboral-container'>
-        {data.map((item, index) =>
-          <article className='laboral-item' key={`laboral-experience-${item.id}`}>
-            <div className='laboral-item__titles'>
+        {data.map((item: any) =>
+          <article className='laboral-item' key={`laboral-experience-${item.id}`} >
+            <div className='laboral-item__titles' >
               <figure className='laboral-item__container-image'>
                 <Image className='laboral-item__image' src={item.iconUrl} width={50} height={50} style={{ borderRadius: `${50}%` }} ></Image>
               </figure>
               <div>
-                <h3 className='laboral-item__titles--position'>{item.position}</h3>
+
+                <h3 className='laboral-item__titles--position' >{item.title}</h3>
+
                 <h4 className='laboral-item__titles--institution'>{item.institution }</h4>
               </div>
               <div className='laboral-item__dates'>
@@ -43,7 +43,19 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
                 <p className='laboral-item__dates--date'>{formatDate(item.startDate)}</p>
               </div>
             </div>
-            <p className='laboral-item__description'>{item.description}</p>
+            {item.description && <p className='laboral-item__description'>{item.description}</p>}
+            {
+              item?.progress &&
+              <div className="laboral-item__progress" >
+                  <div className="laboral-item__progress--percentage">
+                    <div className="laboral-item__progress--percentage--bar" style={{ background: defineColorPoint(item.category), width: `${Math.round((item.progress / item.total) * 100)}%` }} >
+                      <p className='laboral-item__progress--text'>{`${Math.round((item.progress / item.total) * 100)}%`}</p>
+                    </div>
+                  </div>
+                  <p className='laboral-item__progress--text'>{`Courses Completed: ${item.progress}/${item.total}`}</p>
+              </div>
+            }
+
           </article>
         )}
       </div>
@@ -58,17 +70,17 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
         .laboral-item {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: flex-end;
           border-left: 3px solid #ccc;
-          padding: 15px 0px 15px 50px;
+          padding: 45px 0px 45px 50px;
           position: relative;
-          margin : 5px 0 ;
+          /* margin : 20px 0 ; */
         }
         .laboral-item__titles {
           display: grid;
           grid-template-columns: 50px 1fr;
           gap: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
           width: 100%;
         }
         .laboral-item__container-image {
@@ -101,6 +113,8 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
           text-align: end;
           width: 100%;
         } 
+
+
         .laboral-item__dates {
           display: flex;
           flex-direction: column;
@@ -125,7 +139,6 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
           width: 110%;
           background: ${theme.backgroundColor};
           text-align: center;
-          
         }
         .laboral-item__dates--category {
           font-size: 1.3rem;
@@ -139,7 +152,33 @@ const TimeLine = ({ data }: {data: LaboralExperienceData[]}) => {
         .laboral-item__dates:hover .laboral-item__dates--category{
           display: block;
           z-index: 2;
-        }        
+        }    
+
+        .laboral-item__progress{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 5px;
+        }
+        .laboral-item__progress--percentage {
+          border: 1px solid #ccc;
+          border-radius: 15px ;
+          width: 100%;   
+          height: 25px;
+        }
+        .laboral-item__progress--percentage--bar {
+          border-right: 1px solid #ccc;
+          border-radius: 15px ;
+          width: 100%;   
+          height: 100%;
+        }
+        .laboral-item__progress--text{
+          font-size: 1.4rem;
+          text-align: center;
+        }    
       `}</style>
     </>
   )
