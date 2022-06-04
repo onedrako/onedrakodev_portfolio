@@ -1,6 +1,9 @@
-// dependencies
+// Dependencies
 import { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
+
+// Icons
+import { SiGithub } from 'react-icons/si'
 
 // Context
 import { ThemeContext } from '@contexts/ThemeContext'
@@ -116,7 +119,6 @@ const Projects = () => {
 
           <ul className='projects__list'>
             {selectedProject.all
-
               ? projects.slice(defineItems().start, defineItems().end).map(project =>
                 <ProjectItem
                   key={`project-${project.id}`}
@@ -143,6 +145,14 @@ const Projects = () => {
                   isActive={isModalActive}
                   />)}
           </ul>
+          {projects.filter(project => project.category === actualProject).length === 0 && actualProject !== 'all' &&
+              <div className='projects__empty'>
+                <p className='projects__empty--text' >No personal projects yet, but can see courses projects where I´ve used this technology.</p>
+                <a className='project-item__links--item' href="https://github.com/stars/onedrako/lists/courses" target="_blank" rel="noopener noreferrer">
+                  <SiGithub size={25}></SiGithub>
+                </a>
+              </div>
+          }
 
         </article>
       </section>
@@ -198,6 +208,24 @@ const Projects = () => {
           gap: 20px;
           /* background: ${theme.modalBackgroundColor}; */
         }
+
+        .projects__empty {
+          font-size: 1.5rem;
+          display: flex;
+          width: 100%;
+          margin: 0 auto;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          border-radius: 10px;
+          padding: 20px;
+          border: 1px solid ${theme.modalBackgroundColor};
+        }
+
+        .projects__empty--text {
+          font-size: 1.3rem;
+        }
+        
 
       `}</style>
     </>
