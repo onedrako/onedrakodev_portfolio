@@ -3,8 +3,11 @@ import { useContext } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 
 import { CategoryColorsForTimeLine } from '@utils/constants'
+import { LaboralExperienceData, EducationData } from '@customTypes/backendTypes'
 
-const TimeLine = ({ data, orientation }: {data: any, orientation: string }) => {
+type typeData = LaboralExperienceData | EducationData
+
+const TimeLine = ({ data, orientation }: {data: typeData[], orientation: string }) => {
   const { theme } = useContext(ThemeContext)
 
   const defineColorPoint = (category: string) => {

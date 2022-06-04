@@ -18,5 +18,5 @@ export const CategoryColorsForTimeLine = {
   Business: '#d99a11',
   Investments: '#0080ff',
   Languages: '#9c0819',
-  Others: '#ebb923'
+  Others: '#6931eb'
 }

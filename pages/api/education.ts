@@ -78,8 +78,8 @@ const laboralExperience: EducationData[] = [
     endDate: '2022-04-07',
     category: 'Languages',
     title: 'Platzi English Academy',
-    progress: 32,
-    total: 32,
+    progress: 72,
+    total: 72,
     iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
   {

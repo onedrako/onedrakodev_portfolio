@@ -5,14 +5,15 @@ import { TimeLine } from './TimeLine'
 import { CategoryOptions } from './CategoryOptions'
 
 import { ThemeContext } from '@contexts/ThemeContext'
-import { LaboralExperienceData, EducationData } from '@customTypes/backendTypes'
+import { LaboralExperienceData, EducationData, educationCategory, jobCategory } from '@customTypes/backendTypes'
 
 const TimeLineContainer = (
-  { title, orientation, endPoint, redirectTo }:
+  { title, orientation, endPoint, categories, redirectTo }:
   {
     title: string,
     orientation:string,
     endPoint:string
+    categories : educationCategory[] | jobCategory[],
     redirectTo?: string
   }) => {
   type typeData = LaboralExperienceData | EducationData
@@ -34,7 +35,7 @@ const TimeLineContainer = (
           <h2>{title}</h2>
           {redirectTo && <button type='button' className='seeAllButton'>See all</button>}
         </div>
-        <CategoryOptions/>
+        <CategoryOptions categories={categories} title={title}/>
         <TimeLine data={data} orientation={orientation} />
       </section>
       <style jsx>{`

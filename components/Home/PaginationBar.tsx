@@ -29,25 +29,25 @@ const PaginationBar = ({
   const maxNumberOfPages = Math.ceil(numberOfItems / elementsForPage)
   const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector | {all:number})]
 
-  let size:number = 0.90
+  // let size:number = 0.90
 
-  const defineSize = ():number => {
-    if (maxNumberOfPages >= elementsForPage && (maxNumberOfPages !== actualPage)) {
-      size = 0.95
-      return size
-    } else if (maxNumberOfPages <= 2) {
-      size = 0.50
-      return size
-    } else if (maxNumberOfPages === actualPage) {
-      size = 0.70
-      return size
-    } else {
-      size = 0.90
-      return size
-    }
-  }
+  // const defineSize = ():number => {
+  //   if (maxNumberOfPages >= elementsForPage && (maxNumberOfPages !== actualPage)) {
+  //     size = 0.95
+  //     return size
+  //   } else if (maxNumberOfPages <= 2) {
+  //     size = 0.50
+  //     return size
+  //   } else if (maxNumberOfPages === actualPage) {
+  //     size = 0.70
+  //     return size
+  //   } else {
+  //     size = 0.90
+  //     return size
+  //   }
+  // }
 
-  defineSize()
+  // defineSize()
 
   const handleNumberOfPages = (pageToGo:number): void => {
     if (isNaN(pageToGo) || pageToGo === 0) {
@@ -124,7 +124,8 @@ const PaginationBar = ({
         .pagination-bar {
           display: flex;
           height: 35px;
-          width: ${`${size * 100}%`};
+          
+          width: 275px;
           justify-content: space-between;
           align-items: center;
           font-size: 2.4rem;

@@ -5,8 +5,11 @@ import { Technologies } from './Technologies'
 import { Projects } from './Projects'
 import { SoftSkills } from './SoftSkills'
 import { TimeLineContainer } from './TimeLineContainer'
+import { educationCategory, jobCategory } from '@customTypes/backendTypes'
 
 const HomeComponent = () => {
+  const laboralCategories: jobCategory[] = ['Technology', 'Business', 'Investments']
+  const educationCategories: educationCategory[] = ['Languages', 'Technology', 'Business', 'Others']
   return (
       <main>
         <Profile />
@@ -14,8 +17,8 @@ const HomeComponent = () => {
         <Technologies/>
         <Projects/>
         <SoftSkills/>
-        <TimeLineContainer title={'Laboral Experience'} orientation={'right'} endPoint={'/api/laboral'} />
-        <TimeLineContainer title={'Education'} orientation={'left'} endPoint={'/api/education'} redirectTo="/"/>
+        <TimeLineContainer title={'Laboral Experience'} orientation={'right'} endPoint={'/api/laboral'} categories={laboralCategories} />
+        <TimeLineContainer title={'Education'} orientation={'left'} endPoint={'/api/education'} categories={educationCategories} redirectTo="/" />
       </main>
   )
 }
