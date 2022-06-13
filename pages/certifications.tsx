@@ -1,9 +1,10 @@
-import React from 'react'
+import { NextPage } from 'next'
+import { CertificationsComponent } from '@components/Certifications/CertificationsComponent'
 
-const certificactions = () => {
+const Certificactions: NextPage = () => {
   return (
-    <div>certificactions</div>
+    <CertificationsComponent />
   )
 }
 
-export default certificactions
+export default Certificactions

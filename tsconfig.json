@@ -6,6 +6,7 @@
       "@customTypes/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@contexts/*": ["context/*"],
+      "@hooks/*": ["hooks/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

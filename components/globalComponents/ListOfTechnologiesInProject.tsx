@@ -8,10 +8,11 @@ import { technologiesList } from '@utils/listOfTechnologiesIcons'
 
 const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: string, data: string[], projectName:string}) => {
   const { theme } = useContext(ThemeContext)
+
   return (
     <>
-      <h3 className='project-item__title'>{title}</h3>
-      <div className='project-item__technologies'>
+      <h3 className='technologies-list__title'>{title}</h3>
+      <div className='technologies-list__container'>
         {data.map(elem =>
             <div key={`${projectName}-${title}-${data.indexOf(elem)}`} className='technology-item'>
               {technologiesList[elem as keyof typeof technologiesList].icon({ size: 30, color: '#fff', className: 'icon' })}
@@ -21,11 +22,14 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
       </div>
 
       <style jsx>{`
-        .project-item__title {
+        .technologies-list__title {
           margin-top: 30px;
+          margin-bottom: 10px;
+          font-size: 1.8rem;
+          text-align: center;
         }
 
-        .project-item__technologies {
+        .technologies-list__container {
           margin-top: 5px;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));

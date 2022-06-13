@@ -17,13 +17,13 @@ import { ThemeContext } from '@contexts/ThemeContext'
 import { capitalizeFirstLetter } from '@utils/capitalize'
 import { handleNavigateNumberOfPages, defineMaxNumberOfPages } from '@utils/homeUtils'
 
+// Components
+import ListOfTechnologiesInProject from '@components/globalComponents/ListOfTechnologiesInProject'
+
 // Types
 import type { ProjectsData } from '@customTypes/backendTypes'
 import type { ActualPagesProjectsSelector } from '@customTypes/types'
 
-import ListOfTechnologiesInProject from './ListOfTechnologiesInProject'
-
-// COMPONENT
 const ProjectItem = (
   {
     data,
@@ -35,16 +35,16 @@ const ProjectItem = (
     isActive,
     setModalActive
   }:
-  {
-    data: ProjectsData,
-    numberOfProjects: number,
-    projectsForPage: number,
-    actualPages: ActualPagesProjectsSelector,
-    actualSelectedProject: string,
-    setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
-    isActive: boolean,
-    setModalActive: Dispatch<SetStateAction<boolean>>
-  }) => {
+    {
+      data: ProjectsData,
+      numberOfProjects: number,
+      projectsForPage: number,
+      actualPages: ActualPagesProjectsSelector,
+      actualSelectedProject: string,
+      setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
+      isActive: boolean,
+      setModalActive: Dispatch<SetStateAction<boolean>>
+    }) => {
   // const [isActive, setIsActive] = useState(false)
   const { theme } = useContext(ThemeContext)
   const [selectedImage, setSelectedImage] = useState<number>(0)
@@ -83,7 +83,7 @@ const ProjectItem = (
     item.current?.classList.remove('active-element')
   }
 
-  const handleImageNavigation = (image:number) => {
+  const handleImageNavigation = (image: number) => {
     const maxImages = data.images.length - 1
     if (image < 0) {
       setSelectedImage(maxImages)
@@ -109,11 +109,11 @@ const ProjectItem = (
           <h2 className="project-item__title">{data.name}</h2>
           <div className='project-item__category'>
             <h3 className="project-item__category-title">{capitalizeFirstLetter(data.category)} project </h3>
-            {data.category === 'frontend' && <MdWeb size={30}/> }
+            {data.category === 'frontend' && <MdWeb size={30} />}
             {data.category === 'backend' &&
               <>
-                <FaServer size={25}/>
-                <FaDatabase size={25}/>
+                <FaServer size={25} />
+                <FaDatabase size={25} />
               </>
             }
           </div>
@@ -121,15 +121,15 @@ const ProjectItem = (
           {/* Links to Project and Github repository */}
           {isActive &&
             <div className="project-item__links">
-            <a className='project-item__links--item' href={data.githubUrl} target="_blank" rel="noopener noreferrer">
-              <SiGithub size={20} />
-              <p className="project-item__icon-text">Repository</p>
-            </a>
-            <a className='project-item__links--item' href={data.projectUrl} target="_blank" rel="noopener noreferrer">
-              <HiLink size={20} />
-              <p className="project-item__icon-text">Project</p>
-            </a>
-          </div>
+              <a className='project-item__links--item' href={data.githubUrl} target="_blank" rel="noopener noreferrer">
+                <SiGithub size={20} />
+                <p className="project-item__icon-text">Repository</p>
+              </a>
+              <a className='project-item__links--item' href={data.projectUrl} target="_blank" rel="noopener noreferrer">
+                <HiLink size={20} />
+                <p className="project-item__icon-text">Project</p>
+              </a>
+            </div>
           }
 
           <p>Description: {data.description}</p>
@@ -152,9 +152,9 @@ const ProjectItem = (
             }
           </div>
 
-          { data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name}/>}
-          { (isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} projectName={data.name}/>}
-          { (isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} projectName={data.name} />}
+          {data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name} />}
+          {(isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} projectName={data.name} />}
+          {(isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} projectName={data.name} />}
 
           {/* Button to open modal and see the details of the project */}
           {!isActive && <button className="project-item__see-details-button" type="button" onClick={() => openModal()}>See more</button>}
@@ -274,10 +274,7 @@ const ProjectItem = (
 
         .project-item__icon-text{
           margin-left: 15px;
-        }
-
-        
-        
+        }        
 
         .project-item__see-details-button {
           /* margin-top: 10px; */

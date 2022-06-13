@@ -1,29 +1,23 @@
+// Dependencies
 import Image from 'next/image'
 import { useContext } from 'react'
+
+// Context
 import { ThemeContext } from '@contexts/ThemeContext'
 
-import { CategoryColorsForTimeLine } from '@utils/constants'
+// Types
 import { LaboralExperienceData, EducationData } from '@customTypes/backendTypes'
+
+// Functions
+import { defineColorPoint } from '@utils/defineColorPoint'
+import { formatDate } from '@utils/formatDate'
+import ProgressBar from '@components/globalComponents/ProgressBar'
 
 type typeData = LaboralExperienceData | EducationData
 
 const TimeLine = ({ data, orientation }: {data: typeData[], orientation: string }) => {
   const { theme } = useContext(ThemeContext)
 
-  const defineColorPoint = (category: string) => {
-    return CategoryColorsForTimeLine[category as keyof typeof CategoryColorsForTimeLine]
-  }
-
-  const formatDate = (date: string) => {
-    if (date === 'Present') {
-      return date
-    } else {
-      const formatDate = new Date(date)
-      const month = formatDate.toLocaleDateString('en-US', { month: 'short' })
-      const year = formatDate.getFullYear()
-      return `${month} ${year}`
-    }
-  }
   return (
     <>
       <div className='laboral-container'>
@@ -49,14 +43,7 @@ const TimeLine = ({ data, orientation }: {data: typeData[], orientation: string 
             {item.description && <p className='laboral-item__description'>{item.description}</p>}
             {
               item?.progress &&
-              <div className="laboral-item__progress" >
-                  <div className="laboral-item__progress--percentage">
-                    <div className="laboral-item__progress--percentage--bar" style={{ background: defineColorPoint(item.category), width: `${Math.round((item.progress / item.total) * 100)}%` }} >
-                      <p className='laboral-item__progress--text'>{`${Math.round((item.progress / item.total) * 100)}%`}</p>
-                    </div>
-                  </div>
-                  <p className='laboral-item__progress--text'>{`Courses Completed: ${item.progress}/${item.total}`}</p>
-              </div>
+              <ProgressBar category={item.category} progress={item.progress} total={item.total} />
             }
 
           </article>
@@ -155,33 +142,7 @@ const TimeLine = ({ data, orientation }: {data: typeData[], orientation: string 
         .laboral-item__dates:hover .laboral-item__dates--category{
           display: block;
           z-index: 2;
-        }    
-
-        .laboral-item__progress{
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          width: 100%;
-          justify-content: flex-end;
-          align-items: center;
-          padding: 5px;
-        }
-        .laboral-item__progress--percentage {
-          border: 1px solid #ccc;
-          border-radius: 15px ;
-          width: 100%;   
-          height: 25px;
-        }
-        .laboral-item__progress--percentage--bar {
-          border-right: 1px solid #ccc;
-          border-radius: 15px ;
-          width: 100%;   
-          height: 100%;
-        }
-        .laboral-item__progress--text{
-          font-size: 1.4rem;
-          text-align: center;
-        }    
+        }       
       `}</style>
     </>
   )

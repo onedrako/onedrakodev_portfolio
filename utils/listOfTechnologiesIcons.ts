@@ -37,7 +37,12 @@ import {
   SiVercel,
   SiPwa,
   SiCss3,
-  SiHtml5
+  SiHtml5,
+  SiWebcomponentsdotorg,
+  SiSvelte,
+  SiVuedotjs,
+  SiAngular,
+  SiJest
 } from 'react-icons/si'
 
 import { IoLibrary } from 'react-icons/io5'
@@ -239,6 +244,30 @@ export const technologiesList = {
   },
   reactIcons: {
     name: 'React Icons',
+    icon: IoLibrary
+  },
+  webComponents: {
+    name: 'Web Components',
+    icon: SiWebcomponentsdotorg
+  },
+  vue: {
+    name: 'Vue.js',
+    SiVuedotjs
+  },
+  angular: {
+    name: 'Angular',
+    icon: SiAngular
+  },
+  svelte: {
+    name: 'Svelte',
+    icon: SiSvelte
+  },
+  jest: {
+    name: 'Jest',
+    icon: SiJest
+  },
+  mongoose: {
+    name: 'Mongoose',
     icon: IoLibrary
   }
 }

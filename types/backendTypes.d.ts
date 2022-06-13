@@ -1,7 +1,23 @@
 export type category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'libraries' | 'others'
 export type jobCategory = 'Technology' | 'Business' | 'Investments'
 export type educationCategory = 'Languages' | 'Technology' | 'Business' | 'Others'
+export type courseCategory = 'English' | 'Technology' | 'Business' | 'Others'
 
+export type route =
+  'Web Development School' |
+  'Backend Development with Node.js' |
+  'English Academy' |
+  'App Development with React Native' |
+  'Frontend with React' |
+  'JavaScript School' |
+  'Backend with Python and Django' |
+  'Others'
+
+export type LearningPath = {
+    learningPath: route,
+    order: number,
+    level?: 'Basic' | 'Intermediate' | 'Advanced' | 'Complementary'
+  }
 export interface IdData{
   id: number
 }
@@ -52,4 +68,26 @@ export interface EducationData extends IdData {
   important?: boolean
   progress?: number
   total?: number
+}
+
+export interface CertificationsData extends IdData {
+  name: string
+  institution: string
+  learningPath: LearningPath[]
+  technologies?: string[],
+  courseCategory: courseCategory
+  date: string
+  image: string
+  courseUrl: string
+  certificateUrl: string
+}
+
+export interface SchoolsAndRoutesData extends IdData {
+  name: route
+  institution: string
+  date: string
+  image: string
+  technologies?: string[]
+  routeUrl: string
+  certificateUrl: string
 }
