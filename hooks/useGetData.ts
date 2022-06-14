@@ -1,11 +1,21 @@
-// customhook to get data from api
+// custom hook to get data from api with query parameters
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useGetData = (endPoint: string): [any[], boolean, any] => {
-  const [data, setData] = useState([])
+const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] => {
+  const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
+
+  const defineQueryParameters = () => {
+    let queryParameters
+    if (data.length > 0) {
+      queryParameters = `?limit=10&offset=${data.length}`
+    } else {
+      queryParameters = '?limit=10&offset=0'
+    }
+    return queryParameters
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +23,7 @@ const useGetData = (endPoint: string): [any[], boolean, any] => {
       try {
         const result = await axios(endPoint)
         setData(result.data)
-        console.log(result.data)
+        console.log('data1', result.data)
       } catch (error: any) {
         setError(error)
       }
@@ -21,6 +31,24 @@ const useGetData = (endPoint: string): [any[], boolean, any] => {
     }
     fetchData()
   }, [])
+
+  useEffect(() => {
+    if (inView) {
+      const queryParameters = defineQueryParameters()
+      const fetchData = async () => {
+        setLoading(true)
+        try {
+          const result = await axios(`${endPoint}${queryParameters}`)
+          setData([...data, ...result.data])
+          console.log('data2', result.data)
+        } catch (error: any) {
+          setError(error)
+        }
+        setLoading(false)
+      }
+      fetchData()
+    }
+  }, [inView])
 
   return [data, loading, error]
 }
