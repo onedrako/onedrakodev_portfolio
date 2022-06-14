@@ -13,6 +13,7 @@ const useGetData = (endPoint: string): [any[], boolean, any] => {
       try {
         const result = await axios(endPoint)
         setData(result.data)
+        console.log(result.data)
       } catch (error: any) {
         setError(error)
       }

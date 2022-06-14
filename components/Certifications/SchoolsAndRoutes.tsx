@@ -8,7 +8,7 @@ const SchoolsAndRoutes = () => {
   const [routesData, loading, error]: [SchoolsAndRoutesData[], boolean, any] = useGetData('/api/schools')
 
   const orderSchools = routesData.sort((a: SchoolsAndRoutesData, b: SchoolsAndRoutesData) => {
-    return new Date(b.date) - new Date(a.date)
+    return new Date(b.date).valueOf() - new Date(a.date).valueOf()
   })
 
   return (
