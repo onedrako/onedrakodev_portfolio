@@ -23,7 +23,6 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
       try {
         const result = await axios(endPoint)
         setData(result.data)
-        console.log('data1', result.data)
       } catch (error: any) {
         setError(error)
       }
@@ -40,7 +39,6 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
         try {
           const result = await axios(`${endPoint}${queryParameters}`)
           setData([...data, ...result.data])
-          console.log('data2', result.data)
         } catch (error: any) {
           setError(error)
         }

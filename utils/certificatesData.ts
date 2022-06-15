@@ -7,11 +7,10 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Basic', order: 2 }],
     courseCategory: 'Technology',
-    technologies: ['javascript', 'css', 'html'],
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2218-course/diploma/detalle/',
     courseUrl: 'https://platzi.com/cursos/pensamiento-logico-2021/',
     image: 'https://i.imgur.com/Qcnthp8.png',
-    date: '2021-23-05'
+    date: '2021-05-23'
   },
   {
     id: 2,
@@ -23,7 +22,7 @@ export const certifications: CertificationsData[] = [
     image: 'https://i.imgur.com/UVVJZ9q.png',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1050-course/diploma/detalle/',
     courseUrl: 'https://platzi.com/cursos/programacion-basica/',
-    technologies: ['html', 'css', 'js']
+    technologies: ['html', 'css', 'javaScript']
   },
   {
     id: 3,
@@ -504,7 +503,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 37 }],
     courseCategory: 'Technology',
-    technologies: ['typescript'],
+    technologies: ['typeScript'],
     date: '2021-07-28',
     image: 'https://i.imgur.com/nw3ZFwK.png',
     courseUrl: 'https://platzi.com/cursos/typescript-2020/',
@@ -516,7 +515,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 38 }],
     courseCategory: 'Technology',
-    technologies: ['typescript'],
+    technologies: ['typeScript'],
     date: '2022-04-15',
     image: 'https://i.imgur.com/287Unsl.png',
     courseUrl: 'https://platzi.com/cursos/typescript/',
@@ -568,7 +567,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Intermediate', order: 44 }],
     courseCategory: 'Technology',
-    technologies: ['javaScript, html, css'],
+    technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-05',
     image: 'https://i.imgur.com/ZwcSGZw.png',
     courseUrl: 'https://platzi.com/cursos/spa-javascript/',
@@ -580,7 +579,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Intermediate', order: 45 }],
     courseCategory: 'Technology',
-    technologies: ['css, html'],
+    technologies: ['css', 'html'],
     date: '2021-08-09',
     image: 'https://i.imgur.com/VH9NIZi.png',
     courseUrl: 'https://platzi.com/cursos/animaciones-css-practico/',
@@ -686,7 +685,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Frontend with React', order: 12 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react, vue, angular, svelte'],
+    technologies: ['react', 'vue', 'angular', 'svelte'],
     date: '2021-26-09',
     image: 'https://i.imgur.com/gCsAI7e.png',
     courseUrl: 'https://platzi.com/cursos/frameworks-javascript/',
@@ -719,7 +718,7 @@ export const certifications: CertificationsData[] = [
     ],
     courseCategory: 'Technology',
     technologies: ['react'],
-    date: '2021-01-10',
+    date: '2022-10-10',
     image: 'https://i.imgur.com/7LLx0s8.png',
     courseUrl: 'https://platzi.com/cursos/react-patrones-render/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2457-course/diploma/detalle/'
@@ -837,7 +836,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'JavaScript School', level: 'Complementary', order: 15 }
     ],
     courseCategory: 'Technology',
-    technologies: ['mySql'],
+    technologies: ['mysql'],
     date: '2021-10-18',
     image: 'https://i.imgur.com/fotaguR.png',
     courseUrl: 'https://platzi.com/cursos/bd/',
@@ -849,7 +848,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Complementary', order: 94 }],
     courseCategory: 'Technology',
-    technologies: ['mySql'],
+    technologies: ['mysql'],
     date: '2021-12-16',
     image: 'https://i.imgur.com/rS3HJe5.png',
     courseUrl: 'https://platzi.com/cursos/sql-mysql/',
@@ -931,7 +930,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 17 }
     ],
     courseCategory: 'Technology',
-    technologies: ['node', 'express', 'Sequelize', 'Sequelize'],
+    technologies: ['node', 'express', 'postgres', 'sequelize'],
     date: '2021-10-24',
     image: 'https://i.imgur.com/EfGuZhG.png',
     courseUrl: 'https://platzi.com/cursos/backend-nodejs/',
@@ -947,7 +946,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 18 }
     ],
     courseCategory: 'Technology',
-    technologies: ['node', 'postgres', 'express', 'Sequelize'],
+    technologies: ['node', 'postgres', 'express', 'sequelize'],
     date: '2022-01-22',
     image: 'https://i.imgur.com/1y5DXoD.png',
     courseUrl: 'https://platzi.com/cursos/backend-nodejs-postgres/',
@@ -963,7 +962,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 19 }
     ],
     courseCategory: 'Technology',
-    technologies: ['node', 'express', 'jwt', 'Sequelize', 'postgres'],
+    technologies: ['node', 'express', 'jwt', 'sequelize', 'postgres'],
     date: '2022-01-27',
     image: 'https://i.imgur.com/W0Vl7zs.png',
     courseUrl: 'https://platzi.com/cursos/passport/',
@@ -979,7 +978,7 @@ export const certifications: CertificationsData[] = [
 
     ],
     courseCategory: 'Technology',
-    technologies: ['node', 'express', 'mongoose', 'mongodb'],
+    technologies: ['node', 'express', 'mongoose', 'mongo'],
     date: '2022-01-09',
     image: 'https://i.imgur.com/sKdeV8R.png',
     courseUrl: 'https://platzi.com/cursos/nodejs-mongo-websockets/',
@@ -1041,7 +1040,7 @@ export const certifications: CertificationsData[] = [
     ],
     courseCategory: 'Technology',
     technologies: ['next', 'typeScript'],
-    date: '2021-03-11',
+    date: '2022-03-11',
     image: 'https://i.imgur.com/IoAJpzw.png',
     courseUrl: 'https://platzi.com/cursos/nextjs-jamstack/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2362-course/diploma/detalle/'
@@ -1127,7 +1126,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Frontend with React', order: 19 }],
     courseCategory: 'Technology',
-    technologies: ['react', 'pwa'],
+    technologies: ['react', 'nextPwa'],
     date: '2021-10-31',
     image: 'https://i.imgur.com/POhzU9Q.png',
     courseUrl: 'https://platzi.com/cursos/pwa-react-js/',
@@ -1143,7 +1142,7 @@ export const certifications: CertificationsData[] = [
 
     ],
     courseCategory: 'Technology',
-    technologies: ['react', 'react-native'],
+    technologies: ['react', 'reactNative'],
     date: '2022-03-25',
     image: 'https://i.imgur.com/nkzIr0i.png',
     courseUrl: 'https://platzi.com/cursos/react-native/',
@@ -1159,7 +1158,7 @@ export const certifications: CertificationsData[] = [
 
     ],
     courseCategory: 'Technology',
-    technologies: ['react', 'react-native'],
+    technologies: ['react', 'reactNative'],
     date: '2022-03-28',
     image: 'https://i.imgur.com/wpyP9fu.png',
     courseUrl: 'https://platzi.com/cursos/react-native-listas-apis/',
@@ -1174,7 +1173,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 17 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react', 'react-native'],
+    technologies: ['react', 'reactNative'],
     date: '2022-03-29',
     image: 'https://i.imgur.com/5XUKwiP.png',
     courseUrl: 'https://platzi.com/cursos/react-native-formularios-almacenamiento/',
@@ -1278,7 +1277,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Others', order: 8 }],
     courseCategory: 'Technology',
-    technologies: ['javascript'],
+    technologies: ['javaScript'],
     date: '2021-05-21',
     image: 'https://i.imgur.com/vyMCgrM.png',
     courseUrl: '',
@@ -1507,10 +1506,10 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1979-course/diploma/detalle/'
   },
   {
-    id: 1022,
+    id: 1023,
     name: 'Curso de Inglés Básico: Escritura',
     institution: 'Platzi',
-    learningPath: [{ learningPath: 'English Academy', level: 'Basic', order: 22 }],
+    learningPath: [{ learningPath: 'English Academy', level: 'Basic', order: 23 }],
     courseCategory: 'English',
     date: '2021-08-11',
     image: 'https://i.imgur.com/nrZE0Jh.png',

@@ -23,7 +23,6 @@ export default function handler (
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  console.log(req.query)
   const { limit } = req.query || 5
   const { offset } = req.query || 0
   const { category } = req.query

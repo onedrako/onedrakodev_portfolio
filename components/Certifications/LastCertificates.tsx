@@ -1,6 +1,5 @@
 // Dependencies
 import { useInView } from 'react-intersection-observer'
-import Image from 'next/image'
 
 // Components
 import CertificatesPageTitles from './CertificatesPageTitles'
@@ -8,6 +7,7 @@ import CertificatesPageTitles from './CertificatesPageTitles'
 // Custom Hooks
 import { useGetData } from '@hooks/useGetData'
 import { CertificationsData } from '@customTypes/backendTypes'
+import CertificateItem from './CertificateItem'
 
 const LastCertificates = () => {
   const apiUrl = '/api/certificates/last'
@@ -24,13 +24,7 @@ const LastCertificates = () => {
         <div className='lastCertificates'>
           {certificatesData.map((certificate, index) => {
             return (
-              <article key={`last-certificates-item-${index}`} className="last-certificates-item">
-                <h2 className='last-certificates-item__title'>{certificate.name}</h2>
-                {/* <p className='last-certificates-institution'>{certificate.institution}</p> */}
-                <div>
-                  <Image src={certificate.image} alt={certificate.name} width={864} height={668} layout="responsive" />
-                </div>
-              </article>
+              <CertificateItem key={`last-certificates-item-${certificate.id}`} certificates={certificate}/>
             )
           }
           )}

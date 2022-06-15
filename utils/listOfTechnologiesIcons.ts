@@ -42,7 +42,9 @@ import {
   SiSvelte,
   SiVuedotjs,
   SiAngular,
-  SiJest
+  SiJest,
+  SiTravisci,
+  SiPython
 } from 'react-icons/si'
 
 import { IoLibrary } from 'react-icons/io5'
@@ -252,7 +254,7 @@ export const technologiesList = {
   },
   vue: {
     name: 'Vue.js',
-    SiVuedotjs
+    icon: SiVuedotjs
   },
   angular: {
     name: 'Angular',
@@ -269,5 +271,13 @@ export const technologiesList = {
   mongoose: {
     name: 'Mongoose',
     icon: IoLibrary
+  },
+  travis: {
+    name: 'Travis',
+    icon: SiTravisci
+  },
+  python: {
+    name: 'Python',
+    icon: SiPython
   }
 }

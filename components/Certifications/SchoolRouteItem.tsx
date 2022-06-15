@@ -79,6 +79,7 @@ const SchoolRouteItem = ({ routes }: {routes: SchoolsAndRoutesData }) => {
       .route__text{
         font-size: 1.8rem;
         margin-bottom: 10px;
+        height: 55px;
       }
       .route__date{
         display: flex;
