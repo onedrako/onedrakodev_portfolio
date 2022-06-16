@@ -88,7 +88,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 3 }
     ],
     courseCategory: 'Technology',
-    date: '2021-28-04',
+    date: '2021-04-28',
     image: 'https://i.imgur.com/HnJUHj5.png',
     courseUrl: 'https://platzi.com/cursos/prework-macos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2214-course/diploma/detalle/'
@@ -464,10 +464,22 @@ export const certifications: CertificationsData[] = [
   },
   {
     id: 35,
+    name: 'Curso Práctico de Consumo de API REST con JavaScript',
+    institution: 'Platzi',
+    learningPath: [{ learningPath: 'Web Development School', level: 'Intermediate', order: 35 }],
+    courseCategory: 'Technology',
+    technologies: ['javaScript'],
+    date: '2022-06-15',
+    image: 'https://i.imgur.com/7nAJ7zA.png',
+    courseUrl: 'https://platzi.com/cursos/api-practico/',
+    certificateUrl: 'https://platzi.com/p/onedrako/curso/2986-api-practico/diploma/detalle/'
+  },
+  {
+    id: 37,
     name: 'Curso de Gestión de Dependencias y Paquetes con NPM',
     institution: 'Platzi',
     learningPath: [
-      { learningPath: 'Web Development School', level: 'Intermediate', order: 35 },
+      { learningPath: 'Web Development School', level: 'Intermediate', order: 37 },
       { learningPath: 'JavaScript School', level: 'Intermediate', order: 10 },
       { learningPath: 'Frontend with React', order: 8 },
       { learningPath: 'App Development with React Native', order: 4 },
@@ -481,11 +493,11 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1763-course/diploma/detalle/'
   },
   {
-    id: 36,
+    id: 38,
     name: 'Curso Profesional de JavaScript',
     institution: 'Platzi',
     learningPath: [
-      { learningPath: 'Web Development School', level: 'Advanced', order: 36 },
+      { learningPath: 'Web Development School', level: 'Advanced', order: 38 },
       { learningPath: 'Frontend with React', order: 9 },
       { learningPath: 'App Development with React Native', order: 5 },
       { learningPath: 'Backend Development with Node.js', order: 13 }
@@ -498,10 +510,10 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1642-course/diploma/detalle/'
   },
   {
-    id: 37,
+    id: 39,
     name: 'Curso de Fundamentos de TypeScript 2021',
     institution: 'Platzi',
-    learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 37 }],
+    learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 39 }],
     courseCategory: 'Technology',
     technologies: ['typeScript'],
     date: '2021-07-28',
@@ -510,10 +522,10 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1869-course/diploma/detalle/'
   },
   {
-    id: 38,
+    id: 40,
     name: 'Curso de Fundamentos de TypeScript',
     institution: 'Platzi',
-    learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 38 }],
+    learningPath: [{ learningPath: 'Web Development School', level: 'Advanced', order: 41 }],
     courseCategory: 'Technology',
     technologies: ['typeScript'],
     date: '2022-04-15',
@@ -718,7 +730,7 @@ export const certifications: CertificationsData[] = [
     ],
     courseCategory: 'Technology',
     technologies: ['react'],
-    date: '2022-10-10',
+    date: '2021-10-10',
     image: 'https://i.imgur.com/7LLx0s8.png',
     courseUrl: 'https://platzi.com/cursos/react-patrones-render/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2457-course/diploma/detalle/'

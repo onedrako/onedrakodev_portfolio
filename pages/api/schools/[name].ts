@@ -7,5 +7,8 @@ export default function handler (
   req: NextApiRequest,
   res: NextApiResponse<EducationData[]>
 ) {
-  res.status(200).json(education)
+  const { name } = req.query
+  const selectedSchool: EducationData[] = education.filter(route => route.title === name)
+
+  res.status(200).json(selectedSchool)
 }

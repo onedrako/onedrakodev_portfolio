@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { CertificationsData } from '@customTypes/backendTypes'
-import { certifications } from '@utils/certificatesData'
+import { certifications } from '@utils/data/certificatesData'
 
 export default function handler (
   req: NextApiRequest,

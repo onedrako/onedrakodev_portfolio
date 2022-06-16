@@ -60,7 +60,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
           {certificates.technologies.length > 0 &&
             <ListOfTechnologiesInProject title="Technologies Learned" data={certificates.technologies.slice(0, numberOfElements)} projectName={`${certificates.name}`} />
           }
-          {numberOfElements && <button className="certificate-technologies__button" onClick={() => handleShowMoreTechnologies() } >{numberOfElements === 3 ? 'Show All' : 'Show Less' }</button> }
+          {certificates.technologies?.length > 3 && <button className="certificate-technologies__button" onClick={() => handleShowMoreTechnologies() } >{numberOfElements === 3 ? 'Show All' : 'Show Less' }</button> }
         </div>
       }
     </article>
@@ -81,7 +81,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
       .certificate__text{
         font-size: 1.8rem;
         margin-bottom: 10px;
-        height: 100px;
+        height: 110px;
       }
       .certificate__date{
         display: flex;
@@ -147,4 +147,4 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
   )
 }
 
-export default CertificateItem
+export { CertificateItem }

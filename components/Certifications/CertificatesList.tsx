@@ -6,25 +6,37 @@ import CertificatesPageTitles from './CertificatesPageTitles'
 
 // Custom Hooks
 import { useGetData } from '@hooks/useGetData'
-import { CertificationsData } from '@customTypes/backendTypes'
-import CertificateItem from './CertificateItem'
 
-const LastCertificates = () => {
-  const apiUrl = '/api/certificates/last'
+// Components
+import { CertificateItem } from './CertificateItem'
+import ProgressBar from '@components/globalComponents/ProgressBar'
 
+// Types
+import { CertificationsData, EducationData, route } from '@customTypes/backendTypes'
+
+const CertificatesList = ({ apiUrl, title, type }: {apiUrl:string, title: route | 'Last Certificates', type: string}) => {
   const { ref, inView } = useInView({
     threshold: 0
   })
 
   const [certificatesData, loading]: [CertificationsData[], boolean, any] = useGetData(apiUrl, inView)
+  const [routeData]: [EducationData[], boolean, any] = useGetData(`/api/schools/${title}`)
+  let total, progress, category
+
+  if (type === 'route') {
+    total = routeData[0]?.total
+    progress = routeData[0]?.progress
+    category = routeData[0]?.category
+  }
 
   return (
     <>
-      <CertificatesPageTitles title='Last Certificates'>
-        <div className='lastCertificates'>
+      <CertificatesPageTitles title={title}>
+        {type === 'route' && <ProgressBar progress={progress as number} total={total as number} category={category as string} />}
+        <div className='CertificatesList'>
           {certificatesData.map((certificate, index) => {
             return (
-              <CertificateItem key={`last-certificates-item-${certificate.id}`} certificates={certificate}/>
+              <CertificateItem key={`CertificatesList-item-${certificate.id}`} certificates={certificate}/>
             )
           }
           )}
@@ -40,23 +52,13 @@ const LastCertificates = () => {
           padding: 15px 15px 0px 15px;
           font-size: 2.5rem;
         }
-        .lastCertificates{
+        .CertificatesList{
           width: 100%;
           display: flex; 
           gap: 20px;
           overflow: auto;
-          margin-top: 25px;
+          margin-top: 5px;
           margin-bottom: 25px;
-        }
-        .last-certificates-item{
-          min-width: 257px;
-          border-radius: 5px;
-          border: 1px solid #e6e6e6;
-          padding: 15px;
-        }
-        .last-certificates-item__title{
-          font-size: 1.8rem;
-          text-align: center;
         }
         .loading{
           display: flex;
@@ -80,4 +82,4 @@ const LastCertificates = () => {
   )
 }
 
-export default LastCertificates
+export { CertificatesList }
