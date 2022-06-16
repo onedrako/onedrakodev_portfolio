@@ -1,10 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { CertificationsData } from '@customTypes/backendTypes'
+import { CertificationsData, SchoolsAndRoutesData } from '@customTypes/backendTypes'
 import { certifications } from '@utils/data/certificatesData'
+import { schoolAndRoutes } from '@utils/data/schoolsData'
 
-const getOrdererElementsByDate = (limit:string, offset:string, data:CertificationsData[]) => {
+const getOrdererElementsByDate = (limit:string, offset:string, data:(CertificationsData | SchoolsAndRoutesData)[]) => {
   const orderedCertificates = data.sort((a, b) => {
     if (a.date > b.date) {
       return -1
@@ -14,7 +15,7 @@ const getOrdererElementsByDate = (limit:string, offset:string, data:Certificatio
     }
     return 0
   })
-  const listOfElements: CertificationsData[] = orderedCertificates.slice(parseInt(offset), (parseInt(offset) + parseInt(limit)))
+  const listOfElements: (CertificationsData | SchoolsAndRoutesData)[] = orderedCertificates.slice(parseInt(offset), (parseInt(offset) + parseInt(limit)))
   return listOfElements
 }
 
@@ -32,6 +33,11 @@ const getOrdererElementsBySchoolOrder = (limit:string, offset:string, data:Certi
   return listOfElements
 }
 
+const getFilterData = (filter: string) => {
+  const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === filter)[0]))
+  return filterData
+}
+
 export default function handler (
   req: NextApiRequest,
   res: NextApiResponse<any>
@@ -40,34 +46,49 @@ export default function handler (
   const { offset } = req.query || 0
   const { route } = req.query
 
-  let orderData: CertificationsData[]
+  let orderData: (CertificationsData | SchoolsAndRoutesData)[]
 
   if (route === 'last') {
     orderData = getOrdererElementsByDate(limit as string, offset as string, certifications)
   } else if (route === 'web') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'Web Development School')[0]))
+    const filterData = getFilterData('Web Development School')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'Web Development School')
   } else if (route === 'english') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'English Academy')[0]))
+    const filterData = getFilterData('English Academy')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'English Academy')
   } else if (route === 'react') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'Frontend with React')[0]))
+    const filterData = getFilterData('Frontend with React')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'Frontend with React')
   } else if (route === 'react-native') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'App Development with React Native')[0]))
+    const filterData = getFilterData('App Development with React Native')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'App Development with React Native')
   } else if (route === 'js') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'JavaScript School')[0]))
+    const filterData = getFilterData('JavaScript School')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'JavaScript School')
   } else if (route === 'python') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'Backend with Python and Django')[0]))
+    const filterData = getFilterData('Backend with Python and Django')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'Backend with Python and Django')
   } else if (route === 'node') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'Backend Development with Node.js')[0]))
+    const filterData = getFilterData('Backend Development with Node.js')
     orderData = getOrdererElementsBySchoolOrder(limit as string, offset as string, filterData, 'Backend Development with Node.js')
   } else if (route === 'others') {
-    const filterData = certifications.filter(certificate => certificate.learningPath.includes(certificate.learningPath.filter(learningPath => learningPath.learningPath === 'Others')[0]))
+    const filterData = getFilterData('Others')
     orderData = getOrdererElementsByDate(limit as string, offset as string, filterData)
+  } else if (route === 'search') {
+    const find: string = req.query.find as string
+    // Getting all data by name and technologies
+
+    // Getting all the schools and routes
+    const schoolsSearch: SchoolsAndRoutesData[] = schoolAndRoutes.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
+
+    // Getting all certifications by name and technologies
+    const certificationsSearch: CertificationsData[] = certifications.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
+    const certificationsPerTechnology: CertificationsData[] = certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
+    const totalCertifications = [...certificationsSearch, ...certificationsPerTechnology]
+
+    // Schools, Routes and Certifications are merged and ordered by date
+    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...schoolsSearch, ...totalCertifications]
+    orderData = getOrdererElementsByDate(limit as string, offset as string, completeData)
   } else {
     orderData = certifications
   }

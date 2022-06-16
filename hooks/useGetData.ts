@@ -10,9 +10,9 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
   const defineQueryParameters = () => {
     let queryParameters
     if (data.length > 0) {
-      queryParameters = `?limit=10&offset=${data.length}`
+      queryParameters = `limit=10&offset=${data.length}`
     } else {
-      queryParameters = '?limit=10&offset=0'
+      queryParameters = 'limit=10&offset=0'
     }
     return queryParameters
   }
