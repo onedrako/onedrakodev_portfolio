@@ -79,17 +79,18 @@ export default function handler (
     // Getting all data by name and technologies
 
     // Getting all the schools and routes
-    const schoolsSearch: SchoolsAndRoutesData[] = schoolAndRoutes.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
-    const schoolsPerTechnology: SchoolsAndRoutesData[] = schoolAndRoutes.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
-    const totalSchools = new Set([...schoolsSearch, ...schoolsPerTechnology])
+    const schoolsSearch: SchoolsAndRoutesData[] = [...(schoolAndRoutes.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))), ...(schoolAndRoutes.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase())))]
+    // const schoolsPerTechnology: SchoolsAndRoutesData[] =
+    // const totalSchools = new Set([...schoolsSearch, ...schoolsPerTechnology])
 
     // Getting all certifications by name and technologies
-    const certificationsSearch: CertificationsData[] = certifications.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
-    const certificationsPerTechnology: CertificationsData[] = certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
-    const totalCertifications = new Set([...certificationsSearch, ...certificationsPerTechnology])
+    const certificationsSearch: CertificationsData[] = [...(certifications.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))), ...(certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase())))]
+    // const certificationsPerTechnology: CertificationsData[] = certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
+    // const totalCertifications = new Set([...certificationsSearch, ...certificationsPerTechnology])
 
     // Schools, Routes and Certifications are merged and ordered by date
-    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...totalSchools, ...totalCertifications]
+
+    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...schoolsSearch, ...certificationsSearch]
     orderData = getOrdererElementsByDate(limit as string, offset as string, completeData)
   } else {
     orderData = []
