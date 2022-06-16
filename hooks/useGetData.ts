@@ -48,6 +48,24 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
     }
   }, [inView])
 
+  useEffect(() => {
+    if (endPoint.includes('search')) {
+      const queryParameters = defineQueryParameters()
+      console.log(`${endPoint}${queryParameters}`)
+      const fetchData = async () => {
+        setLoading(true)
+        try {
+          const result = await axios(`${endPoint}&${queryParameters}`)
+          setData(result.data)
+        } catch (error: any) {
+          setError(error)
+        }
+        setLoading(false)
+      }
+      fetchData()
+    }
+  }, [endPoint])
+
   return [data, loading, error]
 }
 

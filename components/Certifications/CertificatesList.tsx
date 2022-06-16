@@ -13,8 +13,9 @@ import ProgressBar from '@components/globalComponents/ProgressBar'
 
 // Types
 import { CertificationsData, EducationData, route } from '@customTypes/backendTypes'
+type CertificatesListTitle = 'Last Certificates' | 'Results'
 
-const CertificatesList = ({ apiUrl, title, type }: {apiUrl:string, title: route | 'Last Certificates', type: string}) => {
+const CertificatesList = ({ apiUrl, title, type }: {apiUrl:string, title: route | CertificatesListTitle, type: string}) => {
   const { ref, inView } = useInView({
     threshold: 0
   })
@@ -29,6 +30,8 @@ const CertificatesList = ({ apiUrl, title, type }: {apiUrl:string, title: route 
     category = routeData[0]?.category
   }
 
+  console.log(certificatesData)
+
   return (
     <>
       <CertificatesPageTitles title={title}>
@@ -36,7 +39,7 @@ const CertificatesList = ({ apiUrl, title, type }: {apiUrl:string, title: route 
         <div className='CertificatesList'>
           {certificatesData.map((certificate, index) => {
             return (
-              <CertificateItem key={`CertificatesList-item-${certificate.id}`} certificates={certificate}/>
+              <CertificateItem key={`CertificatesList-item-${title}-${certificate.id}`} certificates={certificate}/>
             )
           }
           )}

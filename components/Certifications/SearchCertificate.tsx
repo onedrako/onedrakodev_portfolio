@@ -1,15 +1,23 @@
-import { useContext, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
+import { CertificatesList } from './CertificatesList'
 
 const SearchCertificate = () => {
   const { theme } = useContext(ThemeContext)
   const [searchElement, setSearchElement] = useState<string>('')
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchElement(e.target.value)
+    console.log(searchElement)
+  }
+
   return (
     <>
       <section className="searcher">
         <h2 className="searcher__title">Search</h2>
-        <input type="text" name="certificate-searcher" placeholder="Type a technology or course"/>
+        <input type="text" name="certificate-searcher" placeholder="Type a technology or course" onChange={(e) => handleChange(e) }/>
+        { searchElement !== '' && <CertificatesList apiUrl={`api/certificates/search?find=${searchElement}&`} title="Results" type='all'/>}
+
         {/* // results */}
       </section>
       <style jsx>{`

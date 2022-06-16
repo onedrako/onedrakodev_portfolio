@@ -80,17 +80,19 @@ export default function handler (
 
     // Getting all the schools and routes
     const schoolsSearch: SchoolsAndRoutesData[] = schoolAndRoutes.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
+    const schoolsPerTechnology: SchoolsAndRoutesData[] = schoolAndRoutes.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
+    const totalSchools = new Set([...schoolsSearch, ...schoolsPerTechnology])
 
     // Getting all certifications by name and technologies
     const certificationsSearch: CertificationsData[] = certifications.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))
     const certificationsPerTechnology: CertificationsData[] = certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase()))
-    const totalCertifications = [...certificationsSearch, ...certificationsPerTechnology]
+    const totalCertifications = new Set([...certificationsSearch, ...certificationsPerTechnology])
 
     // Schools, Routes and Certifications are merged and ordered by date
-    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...schoolsSearch, ...totalCertifications]
+    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...totalSchools, ...totalCertifications]
     orderData = getOrdererElementsByDate(limit as string, offset as string, completeData)
   } else {
-    orderData = certifications
+    orderData = []
   }
 
   res.status(200).json(orderData)

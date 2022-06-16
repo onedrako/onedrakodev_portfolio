@@ -20,7 +20,7 @@ const CertificationsComponent: NextPage = () => {
         title is the name of the route or the name of the school,
         and apiUrl to bring the certificates for every route */}
 
-        <CertificatesList apiUrl="/api/certificates/last?" title="Last Certificates" type="all"/>
+        {/* <CertificatesList apiUrl="/api/certificates/last?" title="Last Certificates" type="all"/>
         <CertificatesList apiUrl="/api/certificates/web?" title="Web Development School" type="route"/>
         <CertificatesList apiUrl="/api/certificates/node?" title="Backend Development with Node.js" type="route"/>
         <CertificatesList apiUrl="/api/certificates/english?" title="English Academy" type="route"/>
@@ -28,7 +28,7 @@ const CertificationsComponent: NextPage = () => {
         <CertificatesList apiUrl="/api/certificates/react?" title="Frontend with React" type="route"/>
         <CertificatesList apiUrl="/api/certificates/js?" title="JavaScript School" type="route"/>
         <CertificatesList apiUrl="/api/certificates/others?" title="Others" type="all"/>
-        <CertificatesList apiUrl="/api/certificates/python?" title="Backend with Python and Django" type="all"/>
+        <CertificatesList apiUrl="/api/certificates/python?" title="Backend with Python and Django" type="all"/> */}
       </main>
 
       <style jsx>{`
