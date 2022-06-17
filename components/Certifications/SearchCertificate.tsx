@@ -1,3 +1,4 @@
+import { useDebounce } from '@hooks/useDebounce'
 import { ChangeEvent, useContext, useState } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
 import { CertificatesList } from './CertificatesList'
@@ -8,15 +9,16 @@ const SearchCertificate = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchElement(e.target.value)
-    console.log(searchElement)
   }
+
+  const searchItem = useDebounce(searchElement, 500)
 
   return (
     <>
       <section className="searcher">
         <h2 className="searcher__title">Search</h2>
         <input type="text" name="certificate-searcher" placeholder="Type a technology or course" onChange={(e) => handleChange(e) }/>
-        { searchElement !== '' && <CertificatesList apiUrl={`api/certificates/search?find=${searchElement}&`} title="Results" type='all'/>}
+        { searchItem !== '' && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
 
         {/* // results */}
       </section>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] => {
+const useGetData = (endPoint: string, inView?:boolean, searchValue?: string): [any[], boolean, any] => {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
@@ -17,6 +17,7 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
     return queryParameters
   }
 
+  // Effect that executes for schools
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
@@ -31,8 +32,10 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
     fetchData()
   }, [])
 
+  // It turnes more complex, have 2 cases: when have inview for intersection observer , but it depends on if this is a search o normal certificates list
   useEffect(() => {
-    if (inView) {
+    // For normal list
+    if (inView && !endPoint.includes('search')) {
       const queryParameters = defineQueryParameters()
       const fetchData = async () => {
         setLoading(true)
@@ -45,17 +48,36 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
         setLoading(false)
       }
       fetchData()
-    }
-  }, [inView])
 
-  useEffect(() => {
-    if (endPoint.includes('search')) {
+      // For search list
+    } else if (inView && endPoint.includes('search') && data.length > 0) {
+      if (data.length % 10) {
+        return
+      }
       const queryParameters = defineQueryParameters()
-      console.log(`${endPoint}${queryParameters}`)
       const fetchData = async () => {
         setLoading(true)
         try {
-          const result = await axios(`${endPoint}&${queryParameters}`)
+          const result = await axios(`${endPoint}${searchValue}&${queryParameters}`)
+          setData([...data, ...result.data])
+        } catch (error: any) {
+          setError(error)
+        }
+        setLoading(false)
+      }
+      fetchData()
+    }
+  }, [inView])
+
+  // It executes for search, only when user type on search bar bringing the initial data, always start on offset 0
+  useEffect(() => {
+    if ((endPoint.includes('search') && searchValue) && searchValue.length > 3) {
+      const queryParameters = 'limit=10&offset=0'
+      const fetchData = async () => {
+        setLoading(true)
+        try {
+          const result = await axios(`${endPoint}${searchValue}&${queryParameters}`)
+          // console.log(result.data)
           setData(result.data)
         } catch (error: any) {
           setError(error)
@@ -64,7 +86,7 @@ const useGetData = (endPoint: string, inView?:boolean): [any[], boolean, any] =>
       }
       fetchData()
     }
-  }, [endPoint])
+  }, [searchValue])
 
   return [data, loading, error]
 }
