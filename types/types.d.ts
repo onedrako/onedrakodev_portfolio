@@ -64,3 +64,5 @@ export interface ActualPagesProjectsSelector {
   mobile: number
   others: number
 }
+
+export type CertificatesListTitle = 'Last Certificates' | 'Results'

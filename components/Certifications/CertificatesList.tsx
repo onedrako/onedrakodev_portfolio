@@ -13,7 +13,7 @@ import ProgressBar from '@components/globalComponents/ProgressBar'
 
 // Types
 import { CertificationsData, EducationData, route } from '@customTypes/backendTypes'
-type CertificatesListTitle = 'Last Certificates' | 'Results'
+import { CertificatesListTitle } from '@customTypes/types'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
