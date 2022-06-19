@@ -8,7 +8,11 @@ import { CertificatesList } from './CertificatesList'
 import { SchoolsAndRoutes } from './SchoolsAndRoutes'
 import { SearchCertificate } from './SearchCertificate'
 
+// CustomHooks
 import { useGetData } from '@hooks/useGetData'
+
+// Types
+import { CertificatesToRenderType } from '@customTypes/backendTypes'
 
 const CertificationsComponent: NextPage = () => {
   const [numberOfList, setNumberOfList] = useState<number>(0)
@@ -16,7 +20,7 @@ const CertificationsComponent: NextPage = () => {
     threshold: 1
   })
 
-  const [certificationsGroups] = useGetData('api/certifications-groups')
+  const [certificationsGroups] = useGetData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
     if (numberOfList < certificationsGroups.length) {

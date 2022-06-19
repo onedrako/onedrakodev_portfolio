@@ -11,7 +11,7 @@ const SearchCertificate = () => {
     setSearchElement(e.target.value)
   }
 
-  const searchItem = useDebounce(searchElement, 500)
+  const searchItem = useDebounce<string>(searchElement, 500)
 
   return (
     <>

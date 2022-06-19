@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useGetData = (endPoint: string, inView?:boolean, searchValue?: string): [any[], boolean, any] => {
+const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string): [DataType[], boolean, any] => {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
@@ -77,7 +77,6 @@ const useGetData = (endPoint: string, inView?:boolean, searchValue?: string): [a
         setLoading(true)
         try {
           const result = await axios(`${endPoint}${searchValue}&${queryParameters}`)
-          // console.log(result.data)
           setData(result.data)
         } catch (error: any) {
           setError(error)

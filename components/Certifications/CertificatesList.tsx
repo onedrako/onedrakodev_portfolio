@@ -20,7 +20,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     threshold: 0
   })
 
-  const [certificatesData, loading]: [CertificationsData[], boolean, any] = useGetData(apiUrl, inView, searchValue)
+  const [certificatesData, loading] = useGetData<CertificationsData>(apiUrl, inView, searchValue)
   const [routeData]: [EducationData[], boolean, any] = useGetData(`/api/schools/${title}`)
   let total, progress, category
 
