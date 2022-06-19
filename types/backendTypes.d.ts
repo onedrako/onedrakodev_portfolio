@@ -1,3 +1,5 @@
+import { CertificatesListTitle } from './types'
+
 export type category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'libraries' | 'others'
 export type jobCategory = 'Technology' | 'Business' | 'Investments'
 export type educationCategory = 'Languages' | 'Technology' | 'Business' | 'Others'
@@ -91,3 +93,5 @@ export interface SchoolsAndRoutesData extends IdData {
   routeUrl: string
   certificateUrl: string
 }
+
+export type CertificatesToRenderType = {apiUrl:string, title: route | CertificatesListTitle, type: string}
