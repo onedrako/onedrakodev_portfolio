@@ -11,14 +11,15 @@ const SearchCertificate = () => {
     setSearchElement(e.target.value)
   }
 
-  const searchItem = useDebounce<string>(searchElement, 500)
+  const searchItem = useDebounce<string>(searchElement, 250)
 
   return (
     <>
       <section className="searcher">
         <h2 className="searcher__title">Search</h2>
         <input type="text" name="certificate-searcher" placeholder="Type a technology or course" onChange={(e) => handleChange(e) }/>
-        { searchItem !== '' && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
+
+        { searchItem !== '' && searchItem.length >= 3 && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
       </section>
 
       <style jsx>{`

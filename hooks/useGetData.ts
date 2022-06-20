@@ -1,8 +1,15 @@
 // custom hook to get data from api with query parameters
-import { useState, useEffect } from 'react'
+import { useState, useEffect, RefObject } from 'react'
 import axios from 'axios'
 
-const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string): [DataType[], boolean, any] => {
+// This Hook works to get data from api for certificates page, get the list of certifications and get more data when user scroll. Also works for search bar for certificates
+
+// endPoint: is the url where the data is stored,
+// inView: When user makes scroll, the hook will call the api to get more data,
+// searchValue: the value of the search bar
+// searchSection: the section where the results will be shown, use it to reload the scroll
+
+const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string, searchSection?: RefObject<HTMLDivElement>): [DataType[], boolean, any] => {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
@@ -19,17 +26,19 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
 
   // Effect that executes for schools
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      try {
-        const result = await axios(endPoint)
-        setData(result.data)
-      } catch (error: any) {
-        setError(error)
+    if (!endPoint.includes('search')) {
+      const fetchData = async () => {
+        setLoading(true)
+        try {
+          const result = await axios(endPoint)
+          setData(result.data)
+        } catch (error: any) {
+          setError(error)
+        }
+        setLoading(false)
       }
-      setLoading(false)
+      fetchData()
     }
-    fetchData()
   }, [])
 
   // It turnes more complex, have 2 cases: when have inview for intersection observer , but it depends on if this is a search o normal certificates list
@@ -71,7 +80,8 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
 
   // It executes for search, only when user type on search bar bringing the initial data, always start on offset 0
   useEffect(() => {
-    if ((endPoint.includes('search') && searchValue) && searchValue.length > 3) {
+    searchSection?.current?.scrollTo(0, 0)
+    if ((endPoint.includes('search') && searchValue) && searchValue.length >= 3) {
       const queryParameters = 'limit=10&offset=0'
       const fetchData = async () => {
         setLoading(true)

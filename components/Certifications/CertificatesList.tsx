@@ -14,14 +14,17 @@ import ProgressBar from '@components/globalComponents/ProgressBar'
 // Types
 import { CertificationsData, EducationData, route } from '@customTypes/backendTypes'
 import { CertificatesListTitle } from '@customTypes/types'
+import { useRef } from 'react'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
     threshold: 0
   })
 
-  const [certificatesData, loading] = useGetData<CertificationsData>(apiUrl, inView, searchValue)
-  const [routeData]: [EducationData[], boolean, any] = useGetData(`/api/schools/${title}`)
+  const searchSection = useRef<HTMLDivElement>(null)
+
+  const [routeData] = useGetData<EducationData>(`/api/schools/${title}`)
+  const [certificatesData, loading] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
   let total, progress, category
 
   if (type === 'route') {
@@ -34,14 +37,15 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     <>
       <CertificatesPageTitles title={title}>
         {type === 'route' && <ProgressBar progress={progress as number} total={total as number} category={category as string} />}
-        <div className='CertificatesList'>
-          {certificatesData.map((certificate, index) => {
+        <div ref={searchSection} className='CertificatesList'>
+          {certificatesData.map((certificate) => {
             return (
               <CertificateItem key={`CertificatesList-item-${title}-${certificate.id}-${certificate.name}`} certificates={certificate}/>
             )
           }
           )}
-        {loading && <p className='loading'>Loading More Certificates...</p>}
+        {loading && <p className='loading'>Loading Certificates...</p>}
+        {certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
         <span ref={ref}></span>
         </div>
       </CertificatesPageTitles>
@@ -75,6 +79,11 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           border-radius: 25px;
           padding: 15px;
           font-size: 2rem;
+        }
+        .CertificatesList__no-results{
+          display: flex;
+          font-size: 2.5rem;
+          padding: 15px;
         }
 
 
