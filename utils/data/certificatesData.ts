@@ -468,7 +468,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Web Development School', level: 'Intermediate', order: 35 }],
     courseCategory: 'Technology',
-    technologies: ['javaScript'],
+    technologies: ['javaScript', 'axios'],
     date: '2022-06-15',
     image: 'https://i.imgur.com/7nAJ7zA.png',
     courseUrl: 'https://platzi.com/cursos/api-practico/',
@@ -486,7 +486,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 12 }
     ],
     courseCategory: 'Technology',
-    technologies: ['npm'],
+    technologies: ['npm', 'ubuntuTerminal'],
     date: '2021-06-14',
     image: 'https://i.imgur.com/mFZUNmf.png',
     courseUrl: 'https://platzi.com/cursos/npm/',
@@ -567,7 +567,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 9 }
     ],
     courseCategory: 'Technology',
-    technologies: ['webpack'],
+    technologies: ['webpack', 'babel'],
     date: '2021-08-03',
     image: 'https://i.imgur.com/j5szRB2.png',
     courseUrl: 'https://platzi.com/cursos/webpack/',
@@ -713,7 +713,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 6 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'reactRouter'],
     date: '2021-10-07',
     image: 'https://i.imgur.com/Zbfa2kt.png',
     courseUrl: 'https://platzi.com/cursos/react/',
@@ -729,7 +729,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 7 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'reactRouter'],
     date: '2021-10-10',
     image: 'https://i.imgur.com/7LLx0s8.png',
     courseUrl: 'https://platzi.com/cursos/react-patrones-render/',
@@ -745,7 +745,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 8 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'reactRouter'],
     date: '2021-12-01',
     image: 'https://i.imgur.com/eJP3jq8.png',
     courseUrl: 'https://platzi.com/cursos/react-estado/',
@@ -763,7 +763,7 @@ export const certifications: CertificationsData[] = [
 
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'reactRouter', 'webpack', 'babel', 'axios'],
     date: '2021-10-15',
     image: 'https://i.imgur.com/9fcy45V.png',
     courseUrl: 'https://platzi.com/cursos/react-practico/',
@@ -779,7 +779,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 12 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'reactRouter', 'webpack', 'babel', 'axios'],
     date: '2021-10-30',
     image: 'https://i.imgur.com/HGhzN0p.png',
     courseUrl: 'https://platzi.com/cursos/react-hooks/',
@@ -811,7 +811,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 13 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react'],
+    technologies: ['react', 'graphql', 'apollo', 'styledComponents', 'reactRouter', 'eslint', 'cypress', 'reactIcons', 'bapel'],
     date: '2021-11-10',
     image: 'https://i.imgur.com/2Yw9acU.png',
     courseUrl: 'https://platzi.com/cursos/react-avanzado/',
@@ -1021,7 +1021,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Frontend with React', order: 22 }
     ],
     courseCategory: 'Technology',
-    technologies: ['next'],
+    technologies: ['next', 'axios', 'nextPwa', 'eslint'],
     date: '2022-03-01',
     image: 'https://i.imgur.com/DcwDKGw.png',
     courseUrl: 'https://platzi.com/cursos/nextjs-practico/',
@@ -1036,7 +1036,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'JavaScript School', level: 'Advanced', order: 14 }
     ],
     courseCategory: 'Technology',
-    technologies: ['next'],
+    technologies: ['next', 'axios', 'eslint'],
     date: '2022-03-06',
     image: 'https://i.imgur.com/vVpWDvQ.png',
     courseUrl: 'https://platzi.com/cursos/profesional-nextjs/',

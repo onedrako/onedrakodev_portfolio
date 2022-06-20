@@ -18,7 +18,7 @@ import { useRef } from 'react'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
-    threshold: 0
+    threshold: 1
   })
 
   const searchSection = useRef<HTMLDivElement>(null)
@@ -44,9 +44,9 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
             )
           }
           )}
-        {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
-        {loading && <p className='loading'>Loading Certificates...</p>}
-        <span ref={ref}></span>
+          {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
+          {loading && <p className='loading'>Loading Certificates...</p>}
+          <span ref={ref}></span>
         </div>
       </CertificatesPageTitles>
 

@@ -44,7 +44,10 @@ import {
   SiAngular,
   SiJest,
   SiTravisci,
-  SiPython
+  SiPython,
+  SiGraphql,
+  SiApollographql,
+  SiCypress
 } from 'react-icons/si'
 
 import { IoLibrary } from 'react-icons/io5'
@@ -279,5 +282,17 @@ export const technologiesList = {
   python: {
     name: 'Python',
     icon: SiPython
+  },
+  graphql: {
+    name: 'GraphQL',
+    icon: SiGraphql
+  },
+  apollo: {
+    name: 'Apollo Client',
+    icon: SiApollographql
+  },
+  cypress: {
+    name: 'Cypress',
+    icon: SiCypress
   }
 }

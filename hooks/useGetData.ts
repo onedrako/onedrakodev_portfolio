@@ -14,12 +14,14 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
 
+  const limit = 5
+
   const defineQueryParameters = () => {
     let queryParameters
     if (data.length > 0) {
-      queryParameters = `limit=10&offset=${data.length}`
+      queryParameters = `limit=${limit}&offset=${data.length}`
     } else {
-      queryParameters = 'limit=10&offset=0'
+      queryParameters = `limit=${limit}&offset=0`
     }
     return queryParameters
   }
@@ -60,7 +62,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
 
       // For search list
     } else if (inView && endPoint.includes('search')) {
-      if (data.length % 10) {
+      if (data.length % 5) {
         return
       }
       const queryParameters = defineQueryParameters()
@@ -82,7 +84,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   useEffect(() => {
     searchSection?.current?.scrollTo(0, 0)
     if ((endPoint.includes('search') && searchValue) && searchValue.length >= 3) {
-      const queryParameters = 'limit=10&offset=0'
+      const queryParameters = `limit=${limit}&offset=0`
       const fetchData = async () => {
         setLoading(true)
         try {
