@@ -50,7 +50,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
       fetchData()
 
       // For search list
-    } else if (inView && endPoint.includes('search') && data.length > 0) {
+    } else if (inView && endPoint.includes('search')) {
       if (data.length % 10) {
         return
       }

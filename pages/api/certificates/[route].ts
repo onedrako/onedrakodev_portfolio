@@ -75,14 +75,15 @@ export default function handler (
     const filterData = getFilterData('Others')
     orderData = getOrdererElementsByDate(limit as string, offset as string, filterData)
   } else if (route === 'search') {
-    const find: string = req.query.find as string
+    const findTerm: string = req.query.find as string
     // Getting all data by name and technologies
 
     // Getting all the schools and routes
-    const schoolsSearch: Set<SchoolsAndRoutesData> = new Set([...(schoolAndRoutes.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))), ...(schoolAndRoutes.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase())))])
-    const certificationsSearch: Set<CertificationsData> = new Set([...(certifications.filter(route => route.name.toLowerCase().includes(find.toLowerCase()))), ...(certifications.filter(route => route.technologies?.map(technology => technology.toLowerCase()).includes(find.toLowerCase())))])
+    const schoolsSearch: Set<SchoolsAndRoutesData> = new Set([...(schoolAndRoutes.filter(route => route.name.toLowerCase().includes(findTerm.toLowerCase()))), ...(schoolAndRoutes.filter(route => route.technologies && route.technologies?.filter(technology => technology.toLowerCase().includes(findTerm.toLowerCase())).length > 0))])
 
-    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...schoolsSearch, ...certificationsSearch]
+    const certificatesSearch: Set<CertificationsData> = new Set([...(certifications.filter(route => route.name.toLowerCase().includes(findTerm.toLowerCase()))), ...(certifications.filter(route => route.technologies && route.technologies?.filter(technology => technology.toLowerCase().includes(findTerm.toLowerCase())).length > 0))])
+
+    const completeData: (CertificationsData | SchoolsAndRoutesData)[] = [...schoolsSearch, ...certificatesSearch]
     orderData = getOrdererElementsByDate(limit as string, offset as string, completeData)
   } else {
     orderData = []
