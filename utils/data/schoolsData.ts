@@ -19,7 +19,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     image: 'https://i.imgur.com/w65aU59.png',
     routeUrl: 'https://platzi.com/desarrollo-react/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/8-desarrollo-react/diploma/detalle/',
-    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
+    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     image: 'https://i.imgur.com/BITF0hG.png',
     routeUrl: 'https://platzi.com/desarrollo-react-native/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/12-react-native/diploma/detalle/',
-    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
+    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
   {
     id: 4,

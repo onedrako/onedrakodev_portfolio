@@ -50,7 +50,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
       </div>
 
       <div className='certificate__links'>
-        <a href={certificates.certificateUrl} target='_blank' rel='noopener noreferrer'><HiLink size={25} /> Description</a>
+        <a href={certificates.courseUrl} target='_blank' rel='noopener noreferrer'><HiLink size={25} /> Description</a>
         <a href={certificates.certificateUrl} target='_blank' rel='noopener noreferrer'><TbCertificate size={25}/> Certificate</a>
       </div>
 
