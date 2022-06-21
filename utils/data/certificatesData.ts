@@ -698,7 +698,7 @@ export const certifications: CertificationsData[] = [
     ],
     courseCategory: 'Technology',
     technologies: ['react', 'vue', 'angular', 'svelte'],
-    date: '2021-26-09',
+    date: '2021-09-26',
     image: 'https://i.imgur.com/gCsAI7e.png',
     courseUrl: 'https://platzi.com/cursos/frameworks-javascript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2239-course/diploma/detalle/'

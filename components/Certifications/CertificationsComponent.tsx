@@ -15,14 +15,15 @@ import { useGetData } from '@hooks/useGetData'
 import { CertificatesToRenderType } from '@customTypes/backendTypes'
 
 const CertificationsComponent: NextPage = () => {
-  const [numberOfList, setNumberOfList] = useState<number>(0)
+  const [numberOfList, setNumberOfList] = useState<number>(1)
   const { ref, inView } = useInView({
-    threshold: 1
+    threshold: 0
   })
 
   const [certificationsGroups] = useGetData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
+    console.log('effect')
     if (numberOfList < certificationsGroups.length) {
       setNumberOfList(numberOfList + 2)
     }
@@ -40,17 +41,27 @@ const CertificationsComponent: NextPage = () => {
         type: all or route, route is when the data exist on educationData to bring the total and progress for the progressBar component,
         title is the name of the route or the name of the school,
         and apiUrl to bring the certificates for every route */}
-        {certificationsGroups.slice(0, numberOfList).map((certificate) =>
+
+        {certificationsGroups?.slice(0, numberOfList).map((certificate) =>
           <CertificatesList key={`CertificatesList-${certificate.title}`} apiUrl={certificate.apiUrl} title={certificate.title} type={certificate.type}/>
         )}
 
-        <span ref={ref}></span>
+        <span className='intersection-observer' ref={ref}></span>
       </main>
 
       <style jsx>{`
+        main{
+          overflow: default;
+        }
         .certifications-title{
           font-size: 2.5rem;
           padding: 50px 15px 0px 15px;
+        }
+        .intersection-observer{
+          display: block;
+          width: 100%;
+          height: 10px;
+        }
         `}</style>
     </>
   )

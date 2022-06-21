@@ -33,6 +33,8 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     category = routeData[0]?.category
   }
 
+  console.log(certificatesData)
+
   return (
     <>
       <CertificatesPageTitles title={title}>

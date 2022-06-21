@@ -18,13 +18,14 @@ const SearchCertificate = () => {
       <section className="searcher">
         <h2 className="searcher__title">Search</h2>
         <input type="text" name="certificate-searcher" placeholder="Type a technology or course" onChange={(e) => handleChange(e) }/>
-
-        { searchItem !== '' && searchItem.length >= 3 && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
       </section>
+      { searchItem !== '' && searchItem.length >= 3 && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
 
       <style jsx>{`
         .searcher{
           padding: 15px;
+          margin-top: 15px;
+          background-color: ${theme.modalBackgroundColor};
         }
         .searcher__title{
           font-size: 1.8rem;
