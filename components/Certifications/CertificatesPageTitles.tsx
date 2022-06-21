@@ -18,6 +18,11 @@ const CertificatesPageTitles = ({ title, children }: {title: string, children: R
           font-size: 2.2rem;
           border-bottom: 1px solid #ccc;
         }
+        @media (min-width: 768px){
+          .title{
+            font-size: 3rem;
+          }
+        }
       `}</style>
     </>
   )

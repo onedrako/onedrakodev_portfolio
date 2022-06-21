@@ -811,7 +811,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'App Development with React Native', order: 13 }
     ],
     courseCategory: 'Technology',
-    technologies: ['react', 'graphql', 'apollo', 'styledComponents', 'reactRouter', 'eslint', 'cypress', 'reactIcons', 'bapel'],
+    technologies: ['react', 'graphql', 'apollo', 'styledComponents', 'reactRouter', 'eslint', 'cypress', 'reactIcons', 'babel'],
     date: '2021-11-10',
     image: 'https://i.imgur.com/2Yw9acU.png',
     courseUrl: 'https://platzi.com/cursos/react-avanzado/',

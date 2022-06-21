@@ -23,7 +23,6 @@ const CertificationsComponent: NextPage = () => {
   const [certificationsGroups] = useGetData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
-    console.log('effect')
     if (numberOfList < certificationsGroups.length) {
       setNumberOfList(numberOfList + 2)
     }
@@ -52,6 +51,8 @@ const CertificationsComponent: NextPage = () => {
       <style jsx>{`
         main{
           overflow: default;
+          width: 90%;
+          margin: 0 auto;
         }
         .certifications-title{
           font-size: 2.5rem;
@@ -61,6 +62,11 @@ const CertificationsComponent: NextPage = () => {
           display: block;
           width: 100%;
           height: 10px;
+        }
+        @media (min-width: 768px) {
+          .certifications-title{
+            font-size: 3.5rem;
+          }
         }
         `}</style>
     </>

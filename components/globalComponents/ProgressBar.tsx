@@ -23,6 +23,7 @@ const ProgressBar = ({ category, progress, total }: {category: string, progress:
           justify-content: flex-end;
           align-items: center;
           padding: 5px;
+          margin: 0 auto; 
         }
         .progress--percentage {
           border: 1px solid #ccc;
@@ -39,6 +40,24 @@ const ProgressBar = ({ category, progress, total }: {category: string, progress:
         .progress--text{
           font-size: 1.4rem;
           text-align: center;
+        }
+        @media (min-width: 768px){
+          .progress{
+            margin-top: 10px;
+            width: 60%;
+            display: flex;
+          }
+          .progress--percentage {
+            height: 40px;
+          }
+          .progress--percentage--bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .progress--text{
+            font-size: 1.8rem;
+          }
         } 
       `}</style>
     </>

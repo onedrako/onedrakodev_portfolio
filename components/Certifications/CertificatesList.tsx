@@ -18,7 +18,7 @@ import { useRef } from 'react'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
-    threshold: 1
+    threshold: 0.5
   })
 
   const searchSection = useRef<HTMLDivElement>(null)
@@ -33,7 +33,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     category = routeData[0]?.category
   }
 
-  console.log(certificatesData)
+  console.log(inView)
 
   return (
     <>
@@ -48,7 +48,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           )}
           {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
           {loading && <p className='loading'>Loading Certificates...</p>}
-          <span ref={ref}></span>
+          <span className='intersection-observer-certificates-item' ref={ref}></span>
         </div>
       </CertificatesPageTitles>
 
@@ -87,7 +87,10 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           font-size: 2.5rem;
           padding: 15px;
         }
-
+        .intersection-observer-certificates-item{
+          height: 100px;
+          width: 100%;
+        }
 
       `}</style>
     </>

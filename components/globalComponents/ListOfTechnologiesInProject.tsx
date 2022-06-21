@@ -33,7 +33,8 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
           margin-top: 5px;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-          gap: 25px;
+          gap: 15px;
+          width: 100%;
         }
 
         .technology-item:hover {
@@ -84,6 +85,10 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
           font-size: 1.2rem;
           margin-top: 5px;
           text-align: center;
+        }
+
+        @media (min-width: 768px){
+
         }
       `}</style>
     </>

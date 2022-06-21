@@ -36,10 +36,19 @@ const SearchCertificate = () => {
           height: 35px;
           background-color: ${theme.backgroundColor};
           border: 1px solid ${theme.activeElementColor};
-          border-radius: 5px;
+          border-radius: 10px;
           padding: 0px 10px;
           font-size: 1.5rem;
           color: ${theme.textColor};
+        }
+        @media (min-width: 768px) {
+          .searcher__title{
+            font-size: 3rem;
+          }
+            .searcher input{
+              width: 60%;
+            }
+          }
       `}</style>
     </>
   )
