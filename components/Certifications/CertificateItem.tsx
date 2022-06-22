@@ -17,7 +17,8 @@ import { ThemeContext } from '@contexts/ThemeContext'
 import { formatDate } from '@utils/formatDate'
 
 // Types
-import { CertificationsData } from '@customTypes/backendTypes'
+import { CertificationsData, SchoolsAndRoutesData } from '@customTypes/backendTypes'
+type items = CertificationsData | SchoolsAndRoutesData
 
 const detectScreenForNumberOfElements = () => {
   if (window.innerWidth < 767) {
@@ -27,7 +28,11 @@ const detectScreenForNumberOfElements = () => {
   }
 }
 
-const CertificateItem = ({ certificates }: {certificates: CertificationsData }) => {
+interface CertificateItemProps<T> {
+  certificates: T
+}
+
+const CertificateItem = <T extends items>({ certificates }: CertificateItemProps<T>) => {
   const { theme } = useContext(ThemeContext)
   const [numberOfElements, setNumberOfElements] = useState<number>(detectScreenForNumberOfElements())
   const [showScroll, setShowScroll] = useState<boolean>(false)
@@ -61,7 +66,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
       </div>
 
       <div className='certificate__links'>
-        <a href={certificates.courseUrl} target='_blank' rel='noopener noreferrer'><HiLink size={25} /> Description</a>
+        <a href={certificates.platformUrl} target='_blank' rel='noopener noreferrer'><HiLink size={25} /> Description</a>
         <a href={certificates.certificateUrl} target='_blank' rel='noopener noreferrer'><TbCertificate size={25}/> Certificate</a>
       </div>
 
