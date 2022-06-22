@@ -54,12 +54,12 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
         const queryParameters = defineQueryParameters()
         try {
           const result = await axios(`${endPoint}${queryParameters}`)
-          if (result.data.length === 0) {
+          setData([...data, ...result.data])
+          if (result.data.length < limit) {
             setFullData(true)
             setLoading(false)
             return
           }
-          setData([...data, ...result.data])
         } catch (error: any) {
           setError(error)
         }
@@ -74,12 +74,12 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
         setLoading(true)
         try {
           const result = await axios(`${endPoint}${searchValue}&${queryParameters}`)
-          if (result.data.length === 0) {
+          setData([...data, ...result.data])
+          if (result.data.length < limit) {
             setFullData(true)
             setLoading(false)
             return
           }
-          setData([...data, ...result.data])
         } catch (error: any) {
           setError(error)
         }

@@ -24,7 +24,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
   const searchSection = useRef<HTMLDivElement>(null)
 
   const [routeData] = useGetData<EducationData>(`/api/schools/${title}`)
-  const [certificatesData, loading, _, fullData] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
+  const [certificatesData, loading, error, fullData] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
   let total, progress, category
 
   if (type === 'route') {
@@ -35,20 +35,22 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
 
   return (
     <>
-      <CertificatesPageTitles title={title}>
-        {type === 'route' && <ProgressBar progress={progress as number} total={total as number} category={category as string} />}
-        <div ref={searchSection} className='CertificatesList'>
-          {certificatesData.map((certificate) => {
-            return (
-              <CertificateItem key={`CertificatesList-item-${title}-${certificate.id}-${certificate.name}`} certificates={certificate}/>
-            )
-          }
-          )}
-          {!fullData && <span className='intersection-observer' ref={ref}>.</span>}
-          {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
-          {loading && <p className='loading'>Loading Certificates...</p>}
-        </div>
-      </CertificatesPageTitles>
+    {!error &&
+        <CertificatesPageTitles title={title}>
+          {type === 'route' && <ProgressBar progress={progress as number} total={total as number} category={category as string} />}
+          <div ref={searchSection} className='CertificatesList'>
+            {certificatesData.map((certificate) => {
+              return (
+                <CertificateItem key={`CertificatesList-item-${title}-${certificate.id}-${certificate.name}`} certificates={certificate}/>
+              )
+            }
+            )}
+            {!fullData && <span className='intersection-observer' ref={ref}>.</span>}
+            {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
+            {loading && <p className='loading'>Loading Certificates...</p>}
+          </div>
+        </CertificatesPageTitles>
+    }
 
       <style jsx>{`
         .certificates{
