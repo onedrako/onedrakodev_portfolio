@@ -15,17 +15,21 @@ import { useGetData } from '@hooks/useGetData'
 import { CertificatesToRenderType } from '@customTypes/backendTypes'
 
 const CertificationsComponent: NextPage = () => {
-  const [numberOfList, setNumberOfList] = useState<number>(1)
+  const [numberOfList, setNumberOfList] = useState<number>(0)
   const { ref, inView } = useInView({
     threshold: 0
   })
 
-  const [certificationsGroups] = useGetData<CertificatesToRenderType>('api/certifications-groups')
+  const [certificationsGroups, loading] = useGetData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
-    if (numberOfList < certificationsGroups.length) {
-      setNumberOfList(numberOfList + 2)
+    if (certificationsGroups.length > 0) {
+      if (numberOfList >= certificationsGroups.length) {
+        console.log('reset')
+      }
     }
+    if (!loading) { setNumberOfList(numberOfList + 2) }
+    console.log(numberOfList)
   }, [inView])
 
   return (
@@ -45,7 +49,12 @@ const CertificationsComponent: NextPage = () => {
           <CertificatesList key={`CertificatesList-${certificate.title}`} apiUrl={certificate.apiUrl} title={certificate.title} type={certificate.type}/>
         )}
 
-        <span className='intersection-observer' ref={ref}></span>
+        {
+          (certificationsGroups.length > 0 && numberOfList >= certificationsGroups.length)
+            ? null
+            : <span className='intersection-observer' ref={ref}></span>
+
+        }
       </main>
 
       <style jsx>{`
@@ -61,7 +70,7 @@ const CertificationsComponent: NextPage = () => {
         .intersection-observer{
           display: block;
           width: 100%;
-          height: 10px;
+          height: 100px;
         }
         @media (min-width: 768px) {
           .certifications-title{

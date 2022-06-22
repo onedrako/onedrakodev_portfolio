@@ -33,7 +33,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     category = routeData[0]?.category
   }
 
-  console.log(inView)
+  // console.log(inView)
 
   return (
     <>
