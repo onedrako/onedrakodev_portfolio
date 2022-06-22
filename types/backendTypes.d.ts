@@ -80,7 +80,7 @@ export interface CertificationsData extends IdData {
   courseCategory: courseCategory
   date: string
   image: string
-  courseUrl: string
+  platformUrl: string
   certificateUrl: string
 }
 
@@ -90,7 +90,7 @@ export interface SchoolsAndRoutesData extends IdData {
   date: string
   image: string
   technologies?: string[]
-  routeUrl: string
+  platformUrl: string
   certificateUrl: string
 }
 

@@ -8,7 +8,7 @@ export const certifications: CertificationsData[] = [
     learningPath: [{ learningPath: 'Web Development School', level: 'Basic', order: 2 }],
     courseCategory: 'Technology',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2218-course/diploma/detalle/',
-    courseUrl: 'https://platzi.com/cursos/pensamiento-logico-2021/',
+    platformUrl: 'https://platzi.com/cursos/pensamiento-logico-2021/',
     image: 'https://i.imgur.com/Qcnthp8.png',
     date: '2021-05-23'
   },
@@ -21,7 +21,7 @@ export const certifications: CertificationsData[] = [
     date: '2019-05-30',
     image: 'https://i.imgur.com/UVVJZ9q.png',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1050-course/diploma/detalle/',
-    courseUrl: 'https://platzi.com/cursos/programacion-basica/',
+    platformUrl: 'https://platzi.com/cursos/programacion-basica/',
     technologies: ['html', 'css', 'javaScript']
   },
   {
@@ -33,7 +33,7 @@ export const certifications: CertificationsData[] = [
     date: '2021-02-03',
     image: 'https://i.imgur.com/aM6oJ5I.png',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2053-course/diploma/detalle/',
-    courseUrl: 'https://platzi.com/cursos/introweb/'
+    platformUrl: 'https://platzi.com/cursos/introweb/'
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2019-05-24',
     image: 'https://i.imgur.com/I9brrXJ.png',
-    courseUrl: 'https://platzi.com/cursos/ingenieria/',
+    platformUrl: 'https://platzi.com/cursos/ingenieria/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1098-course/diploma/detalle/'
   },
   {
@@ -59,7 +59,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['wsl'],
     date: '2021-01-27',
     image: 'https://i.imgur.com/ndsMHUb.png',
-    courseUrl: 'https://platzi.com/cursos/prework-windows/',
+    platformUrl: 'https://platzi.com/cursos/prework-windows/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2042-course/diploma/detalle/'
   },
   {
@@ -75,7 +75,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2021-12-12',
     image: 'https://i.imgur.com/Qg9DDbw.png',
-    courseUrl: 'https://platzi.com/cursos/prework-linux/',
+    platformUrl: 'https://platzi.com/cursos/prework-linux/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2383-course/diploma/detalle/'
   },
   {
@@ -90,7 +90,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2021-04-28',
     image: 'https://i.imgur.com/HnJUHj5.png',
-    courseUrl: 'https://platzi.com/cursos/prework-macos/',
+    platformUrl: 'https://platzi.com/cursos/prework-macos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2214-course/diploma/detalle/'
   },
   {
@@ -105,7 +105,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['ubuntuTerminal', 'bash'],
     date: '2021-05-22',
     image: 'https://i.imgur.com/U3C1v53.png',
-    courseUrl: 'https://platzi.com/cursos/terminal/',
+    platformUrl: 'https://platzi.com/cursos/terminal/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2292-course/diploma/detalle/'
   },
   {
@@ -120,7 +120,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['git', 'github', 'ubuntuTerminal', 'bash'],
     date: '2021-01-22',
     image: 'https://i.imgur.com/twOupII.png',
-    courseUrl: 'https://platzi.com/cursos/git-github/',
+    platformUrl: 'https://platzi.com/cursos/git-github/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1557-course/diploma/detalle/'
   },
   {
@@ -135,7 +135,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['vsCode'],
     date: '2021-04-12',
     image: 'https://i.imgur.com/Y9Mtydt.png',
-    courseUrl: 'https://platzi.com/cursos/desarrollo-moderno-codestream/',
+    platformUrl: 'https://platzi.com/cursos/desarrollo-moderno-codestream/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2157-course/diploma/detalle/'
   },
   {
@@ -151,7 +151,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-09-30',
     image: 'https://i.imgur.com/yMZMyZr.png',
-    courseUrl: 'https://platzi.com/cursos/frontend-developer/',
+    platformUrl: 'https://platzi.com/cursos/frontend-developer/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2467-course/diploma/detalle/'
   },
   {
@@ -167,7 +167,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-10-02',
     image: 'https://i.imgur.com/qi8rzaq.png',
-    courseUrl: 'https://platzi.com/cursos/frontend-developer-practico/',
+    platformUrl: 'https://platzi.com/cursos/frontend-developer-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2477-course/diploma/detalle/'
   },
   {
@@ -179,7 +179,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-04-09',
     image: 'https://i.imgur.com/AK0wR43.png',
-    courseUrl: 'https://platzi.com/cursos/html-css/',
+    platformUrl: 'https://platzi.com/cursos/html-css/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2008-course/diploma/detalle/'
   },
   {
@@ -191,7 +191,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-04-14',
     image: 'https://i.imgur.com/IxemalD.png',
-    courseUrl: 'https://platzi.com/cursos/html-practico/',
+    platformUrl: 'https://platzi.com/cursos/html-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1758-course/diploma/detalle/'
   },
   {
@@ -203,7 +203,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-04-19',
     image: 'https://i.imgur.com/6HF1omn.png',
-    courseUrl: 'https://platzi.com/cursos/mobile-first/',
+    platformUrl: 'https://platzi.com/cursos/mobile-first/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2030-course/diploma/detalle/'
   },
   {
@@ -214,7 +214,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2021-05-24',
     image: 'https://i.imgur.com/ue8F2ZF.png',
-    courseUrl: 'https://platzi.com/cursos/diseno-programadores/',
+    platformUrl: 'https://platzi.com/cursos/diseno-programadores/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1906-course/diploma/detalle/'
   },
   {
@@ -225,7 +225,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2021-04-20',
     image: 'https://i.imgur.com/ukduNaG.png',
-    courseUrl: 'https://platzi.com/cursos/sistemas-diseno/',
+    platformUrl: 'https://platzi.com/cursos/sistemas-diseno/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1420-course/diploma/detalle/'
   },
   {
@@ -237,7 +237,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-10-31',
     image: 'https://i.imgur.com/3ZQkq34.png',
-    courseUrl: 'https://platzi.com/cursos/css-grid/',
+    platformUrl: 'https://platzi.com/cursos/css-grid/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2474-course/diploma/detalle/'
   },
   {
@@ -249,7 +249,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-05-02',
     image: 'https://i.imgur.com/7rzfvme.png',
-    courseUrl: 'https://platzi.com/cursos/practico-css/',
+    platformUrl: 'https://platzi.com/cursos/practico-css/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1744-course/diploma/detalle/'
   },
   {
@@ -261,7 +261,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-04-22',
     image: 'https://i.imgur.com/AEQ7Gda.png',
-    courseUrl: 'https://platzi.com/cursos/css-grid-layout/',
+    platformUrl: 'https://platzi.com/cursos/css-grid-layout/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2222-course/diploma/detalle/'
   },
   {
@@ -273,7 +273,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-04-28',
     image: 'https://i.imgur.com/ciTZejY.png',
-    courseUrl: 'https://platzi.com/cursos/flexbox-css-grid/',
+    platformUrl: 'https://platzi.com/cursos/flexbox-css-grid/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2229-course/diploma/detalle/'
   },
   {
@@ -285,7 +285,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-05-29',
     image: 'https://i.imgur.com/bkItCTW.png',
-    courseUrl: 'https://platzi.com/cursos/transformaciones-transiciones-css/',
+    platformUrl: 'https://platzi.com/cursos/transformaciones-transiciones-css/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2336-course/diploma/detalle/'
   },
   {
@@ -297,7 +297,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-05-30',
     image: 'https://i.imgur.com/vcD4pey.png',
-    courseUrl: 'https://platzi.com/cursos/animaciones-css/',
+    platformUrl: 'https://platzi.com/cursos/animaciones-css/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2337-course/diploma/detalle/'
   },
   {
@@ -315,7 +315,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-05-08',
     image: 'https://i.imgur.com/KbtyF4f.png',
-    courseUrl: 'https://platzi.com/cursos/basico-javascript/',
+    platformUrl: 'https://platzi.com/cursos/basico-javascript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1814-course/diploma/detalle/'
   },
   {
@@ -331,7 +331,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-06-27',
     image: 'https://i.imgur.com/9VbTweJ.png',
-    courseUrl: 'https://platzi.com/cursos/javascript-practico/',
+    platformUrl: 'https://platzi.com/cursos/javascript-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2327-course/diploma/detalle/'
   },
   {
@@ -347,7 +347,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-04',
     image: 'https://i.imgur.com/MygLUNJ.png',
-    courseUrl: 'https://platzi.com/cursos/scope/',
+    platformUrl: 'https://platzi.com/cursos/scope/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1807-course/diploma/detalle/'
   },
   {
@@ -359,7 +359,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-05',
     image: 'https://i.imgur.com/IrpG9pi.png',
-    courseUrl: 'https://platzi.com/cursos/oop/',
+    platformUrl: 'https://platzi.com/cursos/oop/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1474-course/diploma/detalle/'
   },
   {
@@ -371,7 +371,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-29',
     image: 'https://i.imgur.com/bXE4jkU.png',
-    courseUrl: 'https://platzi.com/cursos/javascript-poo/',
+    platformUrl: 'https://platzi.com/cursos/javascript-poo/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2332-course/diploma/detalle/'
   },
   {
@@ -383,7 +383,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-08-29',
     image: 'https://i.imgur.com/3oCmxnk.png',
-    courseUrl: 'https://platzi.com/cursos/javascript-poo-intermedio/',
+    platformUrl: 'https://platzi.com/cursos/javascript-poo-intermedio/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2419-course/diploma/detalle/'
   },
   {
@@ -401,7 +401,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-06',
     image: 'https://i.imgur.com/so6tnAI.png',
-    courseUrl: 'https://platzi.com/cursos/ecmascript-6/',
+    platformUrl: 'https://platzi.com/cursos/ecmascript-6/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1815-course/diploma/detalle/'
   },
   {
@@ -413,7 +413,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-09-24',
     image: 'https://i.imgur.com/DlleS0A.png',
-    courseUrl: 'https://platzi.com/cursos/arrays/',
+    platformUrl: 'https://platzi.com/cursos/arrays/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2461-course/diploma/detalle/'
   },
   {
@@ -429,7 +429,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-06',
     image: 'https://i.imgur.com/hkE64c9.png',
-    courseUrl: 'https://platzi.com/cursos/javascript-navegador/',
+    platformUrl: 'https://platzi.com/cursos/javascript-navegador/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1798-course/diploma/detalle/'
   },
   {
@@ -447,7 +447,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-06-09',
     image: 'https://i.imgur.com/hGd5SpH.png',
-    courseUrl: 'https://platzi.com/cursos/asincronismo-js-2019/',
+    platformUrl: 'https://platzi.com/cursos/asincronismo-js-2019/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1789-course/diploma/detalle/'
   },
   {
@@ -459,7 +459,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2022-05-30',
     image: 'https://i.imgur.com/w0l5vXy.png',
-    courseUrl: 'https://platzi.com/cursos/api/',
+    platformUrl: 'https://platzi.com/cursos/api/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2985-course/diploma/detalle/'
   },
   {
@@ -471,7 +471,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'axios'],
     date: '2022-06-15',
     image: 'https://i.imgur.com/7nAJ7zA.png',
-    courseUrl: 'https://platzi.com/cursos/api-practico/',
+    platformUrl: 'https://platzi.com/cursos/api-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2986-api-practico/diploma/detalle/'
   },
   {
@@ -489,7 +489,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['npm', 'ubuntuTerminal'],
     date: '2021-06-14',
     image: 'https://i.imgur.com/mFZUNmf.png',
-    courseUrl: 'https://platzi.com/cursos/npm/',
+    platformUrl: 'https://platzi.com/cursos/npm/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1763-course/diploma/detalle/'
   },
   {
@@ -506,7 +506,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-07-25',
     image: 'https://i.imgur.com/vK0hkya.png',
-    courseUrl: 'https://platzi.com/cursos/javascript-profesional/',
+    platformUrl: 'https://platzi.com/cursos/javascript-profesional/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1642-course/diploma/detalle/'
   },
   {
@@ -518,7 +518,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['typeScript'],
     date: '2021-07-28',
     image: 'https://i.imgur.com/nw3ZFwK.png',
-    courseUrl: 'https://platzi.com/cursos/typescript-2020/',
+    platformUrl: 'https://platzi.com/cursos/typescript-2020/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1869-course/diploma/detalle/'
   },
   {
@@ -530,7 +530,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['typeScript'],
     date: '2022-04-15',
     image: 'https://i.imgur.com/287Unsl.png',
-    courseUrl: 'https://platzi.com/cursos/typescript/',
+    platformUrl: 'https://platzi.com/cursos/typescript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2878-course/diploma/detalle/'
   },
   {
@@ -542,7 +542,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['typeScript'],
     date: '2022-04-29',
     image: 'https://i.imgur.com/Gv5EoVo.png',
-    courseUrl: 'https://platzi.com/cursos/typescript-tipos-avanzados/',
+    platformUrl: 'https://platzi.com/cursos/typescript-tipos-avanzados/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2879-course/diploma/detalle/'
   },
   {
@@ -554,7 +554,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['typeScript'],
     date: '2022-05-02',
     image: 'https://i.imgur.com/AihS8DC.png',
-    courseUrl: 'https://platzi.com/cursos/typescript-poo/',
+    platformUrl: 'https://platzi.com/cursos/typescript-poo/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2880-course/diploma/detalle/'
   },
   {
@@ -570,7 +570,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['webpack', 'babel'],
     date: '2021-08-03',
     image: 'https://i.imgur.com/j5szRB2.png',
-    courseUrl: 'https://platzi.com/cursos/webpack/',
+    platformUrl: 'https://platzi.com/cursos/webpack/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2242-course/diploma/detalle/'
   },
   {
@@ -582,7 +582,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-05',
     image: 'https://i.imgur.com/ZwcSGZw.png',
-    courseUrl: 'https://platzi.com/cursos/spa-javascript/',
+    platformUrl: 'https://platzi.com/cursos/spa-javascript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1787-course/diploma/detalle/'
   },
   {
@@ -594,7 +594,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['css', 'html'],
     date: '2021-08-09',
     image: 'https://i.imgur.com/VH9NIZi.png',
-    courseUrl: 'https://platzi.com/cursos/animaciones-css-practico/',
+    platformUrl: 'https://platzi.com/cursos/animaciones-css-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2338-course/diploma/detalle/'
   },
   {
@@ -606,7 +606,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-10',
     image: 'https://i.imgur.com/EttBFqG.png',
-    courseUrl: 'https://platzi.com/cursos/devtools/',
+    platformUrl: 'https://platzi.com/cursos/devtools/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1867-course/diploma/detalle/'
   },
   {
@@ -621,7 +621,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-31',
     image: 'https://i.imgur.com/JHY8PZ3.png',
-    courseUrl: 'https://platzi.com/cursos/dom/',
+    platformUrl: 'https://platzi.com/cursos/dom/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2193-course/diploma/detalle/'
   },
   {
@@ -633,7 +633,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-25',
     image: 'https://i.imgur.com/Ak9KGBA.png',
-    courseUrl: 'https://platzi.com/cursos/web-performance/',
+    platformUrl: 'https://platzi.com/cursos/web-performance/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1973-course/diploma/detalle/'
   },
   {
@@ -645,7 +645,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript', 'html', 'css'],
     date: '2021-08-15',
     image: 'https://i.imgur.com/ufz8hWo.png',
-    courseUrl: 'https://platzi.com/cursos/accesibilidad-web/',
+    platformUrl: 'https://platzi.com/cursos/accesibilidad-web/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1802-course/diploma/detalle/'
   },
   {
@@ -657,7 +657,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['webComponents', 'javaScript', 'html', 'css'],
     date: '2021-09-04',
     image: 'https://i.imgur.com/5s5FuX4.png',
-    courseUrl: 'https://platzi.com/cursos/web-components-javascript/',
+    platformUrl: 'https://platzi.com/cursos/web-components-javascript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2199-course/diploma/detalle/'
   },
   {
@@ -673,7 +673,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-12-09',
     image: 'https://i.imgur.com/VaL7iPN.png',
-    courseUrl: 'https://platzi.com/cursos/estructuras-datos/',
+    platformUrl: 'https://platzi.com/cursos/estructuras-datos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2156-course/diploma/detalle/'
   },
   {
@@ -685,7 +685,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-11-02',
     image: 'https://i.imgur.com/1cwuB4d.png',
-    courseUrl: 'https://platzi.com/cursos/complejidad-js/',
+    platformUrl: 'https://platzi.com/cursos/complejidad-js/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2517-course/diploma/detalle/'
   },
   {
@@ -700,7 +700,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'vue', 'angular', 'svelte'],
     date: '2021-09-26',
     image: 'https://i.imgur.com/gCsAI7e.png',
-    courseUrl: 'https://platzi.com/cursos/frameworks-javascript/',
+    platformUrl: 'https://platzi.com/cursos/frameworks-javascript/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2239-course/diploma/detalle/'
   },
   {
@@ -716,7 +716,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactRouter'],
     date: '2021-10-07',
     image: 'https://i.imgur.com/Zbfa2kt.png',
-    courseUrl: 'https://platzi.com/cursos/react/',
+    platformUrl: 'https://platzi.com/cursos/react/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2444-course/diploma/detalle/'
   },
   {
@@ -732,7 +732,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactRouter'],
     date: '2021-10-10',
     image: 'https://i.imgur.com/7LLx0s8.png',
-    courseUrl: 'https://platzi.com/cursos/react-patrones-render/',
+    platformUrl: 'https://platzi.com/cursos/react-patrones-render/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2457-course/diploma/detalle/'
   },
   {
@@ -748,7 +748,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactRouter'],
     date: '2021-12-01',
     image: 'https://i.imgur.com/eJP3jq8.png',
-    courseUrl: 'https://platzi.com/cursos/react-estado/',
+    platformUrl: 'https://platzi.com/cursos/react-estado/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2597-course/diploma/detalle/'
   },
   {
@@ -766,7 +766,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactRouter', 'webpack', 'babel', 'axios'],
     date: '2021-10-15',
     image: 'https://i.imgur.com/9fcy45V.png',
-    courseUrl: 'https://platzi.com/cursos/react-practico/',
+    platformUrl: 'https://platzi.com/cursos/react-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2484-course/diploma/detalle/'
   },
   {
@@ -782,7 +782,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactRouter', 'webpack', 'babel', 'axios'],
     date: '2021-10-30',
     image: 'https://i.imgur.com/HGhzN0p.png',
-    courseUrl: 'https://platzi.com/cursos/react-hooks/',
+    platformUrl: 'https://platzi.com/cursos/react-hooks/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2118-course/diploma/detalle/'
   },
   {
@@ -798,7 +798,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'jest'],
     date: '2021-11-13',
     image: 'https://i.imgur.com/aS6bozQ.png',
-    courseUrl: 'https://platzi.com/cursos/jest/',
+    platformUrl: 'https://platzi.com/cursos/jest/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1788-course/diploma/detalle/'
   },
   {
@@ -814,7 +814,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'graphql', 'apollo', 'styledComponents', 'reactRouter', 'eslint', 'cypress', 'reactIcons', 'babel'],
     date: '2021-11-10',
     image: 'https://i.imgur.com/2Yw9acU.png',
-    courseUrl: 'https://platzi.com/cursos/react-avanzado/',
+    platformUrl: 'https://platzi.com/cursos/react-avanzado/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1601-course/diploma/detalle/'
   },
   {
@@ -825,7 +825,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2022-01-10',
     image: 'https://i.imgur.com/PxeECRh.png',
-    courseUrl: 'https://platzi.com/cursos/conseguir-trabajo-frontend/',
+    platformUrl: 'https://platzi.com/cursos/conseguir-trabajo-frontend/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2641-course/diploma/detalle/'
   },
   {
@@ -836,7 +836,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2022-03-06',
     image: 'https://i.imgur.com/ut72nJm.png',
-    courseUrl: 'https://platzi.com/cursos/conseguir-trabajo-tech/',
+    platformUrl: 'https://platzi.com/cursos/conseguir-trabajo-tech/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2656-course/diploma/detalle/'
   },
   {
@@ -851,7 +851,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['mysql'],
     date: '2021-10-18',
     image: 'https://i.imgur.com/fotaguR.png',
-    courseUrl: 'https://platzi.com/cursos/bd/',
+    platformUrl: 'https://platzi.com/cursos/bd/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1566-course/diploma/detalle/'
   },
   {
@@ -863,7 +863,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['mysql'],
     date: '2021-12-16',
     image: 'https://i.imgur.com/rS3HJe5.png',
-    courseUrl: 'https://platzi.com/cursos/sql-mysql/',
+    platformUrl: 'https://platzi.com/cursos/sql-mysql/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1272-course/diploma/detalle/'
   },
   {
@@ -875,7 +875,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['postgres'],
     date: '2021-12-26',
     image: 'https://i.imgur.com/Rtzhxja.png',
-    courseUrl: 'https://platzi.com/cursos/postgresql/',
+    platformUrl: 'https://platzi.com/cursos/postgresql/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1480-course/diploma/detalle/'
   },
   {
@@ -887,7 +887,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['postgres'],
     date: '2021-12-30',
     image: 'https://i.imgur.com/6y96T9p.png',
-    courseUrl: 'https://platzi.com/cursos/practico-sql/',
+    platformUrl: 'https://platzi.com/cursos/practico-sql/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2059-course/diploma/detalle/'
   },
   {
@@ -899,7 +899,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['mongo'],
     date: '2022-03-01',
     image: 'https://i.imgur.com/K0qq228.png',
-    courseUrl: 'https://platzi.com/cursos/mongodb/',
+    platformUrl: 'https://platzi.com/cursos/mongodb/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1533-course/diploma/detalle/'
   },
   {
@@ -913,7 +913,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2021-10-18',
     image: 'https://i.imgur.com/qzoJysb.png',
-    courseUrl: 'https://platzi.com/cursos/introduccion-backend/',
+    platformUrl: 'https://platzi.com/cursos/introduccion-backend/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2508-course/diploma/detalle/'
   },
   {
@@ -929,7 +929,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['node'],
     date: '2021-10-23',
     image: 'https://i.imgur.com/NkLrCbZ.png',
-    courseUrl: 'https://platzi.com/cursos/fundamentos-node/',
+    platformUrl: 'https://platzi.com/cursos/fundamentos-node/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1759-course/diploma/detalle/'
   },
   {
@@ -945,7 +945,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['node', 'express', 'postgres', 'sequelize'],
     date: '2021-10-24',
     image: 'https://i.imgur.com/EfGuZhG.png',
-    courseUrl: 'https://platzi.com/cursos/backend-nodejs/',
+    platformUrl: 'https://platzi.com/cursos/backend-nodejs/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2485-course/diploma/detalle/'
   },
   {
@@ -961,7 +961,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['node', 'postgres', 'express', 'sequelize'],
     date: '2022-01-22',
     image: 'https://i.imgur.com/1y5DXoD.png',
-    courseUrl: 'https://platzi.com/cursos/backend-nodejs-postgres/',
+    platformUrl: 'https://platzi.com/cursos/backend-nodejs-postgres/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2507-course/diploma/detalle/'
   },
   {
@@ -977,7 +977,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['node', 'express', 'jwt', 'sequelize', 'postgres'],
     date: '2022-01-27',
     image: 'https://i.imgur.com/W0Vl7zs.png',
-    courseUrl: 'https://platzi.com/cursos/passport/',
+    platformUrl: 'https://platzi.com/cursos/passport/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2489-course/diploma/detalle/'
   },
   {
@@ -993,7 +993,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['node', 'express', 'mongoose', 'mongo'],
     date: '2022-01-09',
     image: 'https://i.imgur.com/sKdeV8R.png',
-    courseUrl: 'https://platzi.com/cursos/nodejs-mongo-websockets/',
+    platformUrl: 'https://platzi.com/cursos/nodejs-mongo-websockets/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1689-course/diploma/detalle/'
   },
   {
@@ -1008,7 +1008,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next'],
     date: '2022-02-24',
     image: 'https://i.imgur.com/cJARyG0.png',
-    courseUrl: 'https://platzi.com/cursos/next/',
+    platformUrl: 'https://platzi.com/cursos/next/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1991-course/diploma/detalle/'
   },
   {
@@ -1024,7 +1024,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'axios', 'nextPwa', 'eslint'],
     date: '2022-03-01',
     image: 'https://i.imgur.com/DcwDKGw.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-practico/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-practico/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2690-course/diploma/detalle/'
   },
   {
@@ -1039,7 +1039,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'axios', 'eslint'],
     date: '2022-03-06',
     image: 'https://i.imgur.com/vVpWDvQ.png',
-    courseUrl: 'https://platzi.com/cursos/profesional-nextjs/',
+    platformUrl: 'https://platzi.com/cursos/profesional-nextjs/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2707-course/diploma/detalle/'
   },
   {
@@ -1054,7 +1054,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript'],
     date: '2022-03-11',
     image: 'https://i.imgur.com/IoAJpzw.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-jamstack/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-jamstack/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2362-course/diploma/detalle/'
   },
   {
@@ -1069,7 +1069,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript'],
     date: '2022-03-12',
     image: 'https://i.imgur.com/A0xiUX3.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-deploy/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-deploy/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2363-course/diploma/detalle/'
   },
   {
@@ -1084,7 +1084,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript'],
     date: '2022-03-20',
     image: 'https://i.imgur.com/eKHxRbA.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-internacionalizacion/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-internacionalizacion/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2364-course/diploma/detalle/'
   },
   {
@@ -1099,7 +1099,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript'],
     date: '2022-03-20',
     image: 'https://i.imgur.com/L5k0ZYG.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-grandes-datasets/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-grandes-datasets/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2427-course/diploma/detalle/'
   },
   {
@@ -1114,7 +1114,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript', 'nextAuth'],
     date: '2022-03-22',
     image: 'https://i.imgur.com/M2fzIFe.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-auth/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-auth/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2428-course/diploma/detalle/'
   },
   {
@@ -1129,7 +1129,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['next', 'typeScript', 'nextAuth'],
     date: '2022-03-22',
     image: 'https://i.imgur.com/xU6OlvA.png',
-    courseUrl: 'https://platzi.com/cursos/nextjs-owasp/',
+    platformUrl: 'https://platzi.com/cursos/nextjs-owasp/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2429-course/diploma/detalle/'
   },
   {
@@ -1141,7 +1141,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'nextPwa'],
     date: '2021-10-31',
     image: 'https://i.imgur.com/POhzU9Q.png',
-    courseUrl: 'https://platzi.com/cursos/pwa-react-js/',
+    platformUrl: 'https://platzi.com/cursos/pwa-react-js/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1313-course/diploma/detalle/'
   },
   {
@@ -1157,7 +1157,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactNative'],
     date: '2022-03-25',
     image: 'https://i.imgur.com/nkzIr0i.png',
-    courseUrl: 'https://platzi.com/cursos/react-native/',
+    platformUrl: 'https://platzi.com/cursos/react-native/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2556-course/diploma/detalle/'
   },
   {
@@ -1173,7 +1173,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactNative'],
     date: '2022-03-28',
     image: 'https://i.imgur.com/wpyP9fu.png',
-    courseUrl: 'https://platzi.com/cursos/react-native-listas-apis/',
+    platformUrl: 'https://platzi.com/cursos/react-native-listas-apis/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2557-course/diploma/detalle/'
   },
   {
@@ -1188,7 +1188,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'reactNative'],
     date: '2022-03-29',
     image: 'https://i.imgur.com/5XUKwiP.png',
-    courseUrl: 'https://platzi.com/cursos/react-native-formularios-almacenamiento/',
+    platformUrl: 'https://platzi.com/cursos/react-native-formularios-almacenamiento/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2558-course/diploma/detalle/'
   },
   {
@@ -1200,7 +1200,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['python'],
     date: '2021-06-02',
     image: 'https://i.imgur.com/uKQMvKN.png',
-    courseUrl: 'https://platzi.com/cursos/python/',
+    platformUrl: 'https://platzi.com/cursos/python/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1937-course/diploma/detalle/'
   },
   {
@@ -1212,7 +1212,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['html', 'css'],
     date: '2021-05-05',
     image: 'https://i.imgur.com/lIIF60t.png',
-    courseUrl: '#',
+    platformUrl: '#',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1640-frontend-developer-2019/diploma/detalle/'
   },
   {
@@ -1223,7 +1223,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2019-05-31',
     image: 'https://i.imgur.com/9XgOQv1.png',
-    courseUrl: '#',
+    platformUrl: '#',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1371-ingles-conversacion/diploma/detalle/'
   },
   {
@@ -1234,7 +1234,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2019-05-27',
     image: 'https://i.imgur.com/jZg1i4C.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1358-ingles-basico/diploma/detalle/'
   },
   {
@@ -1245,7 +1245,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2019-05-30',
     image: 'https://i.imgur.com/VlWoO7Z.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1370-ingles-gramatica/diploma/detalle/'
   },
   {
@@ -1256,7 +1256,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-08-30',
     image: 'https://i.imgur.com/gWZXhLx.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1499-ingles-1/diploma/detalle/'
   },
   {
@@ -1268,7 +1268,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['ubuntuTerminal', 'bash'],
     date: '2021-02-01',
     image: 'https://i.imgur.com/ldNu33P.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1748-terminal-2019/diploma/detalle/'
   },
   {
@@ -1280,7 +1280,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['react', 'redux'],
     date: '2022-04-02',
     image: 'https://i.imgur.com/Gx2Awo3.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2740-redux-profesional/diploma/detalle/'
   },
   {
@@ -1292,7 +1292,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['javaScript'],
     date: '2021-05-21',
     image: 'https://i.imgur.com/vyMCgrM.png',
-    courseUrl: '',
+    platformUrl: '',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1339-fundamentos-javascript-2018/diploma/detalle/'
   },
   {
@@ -1304,7 +1304,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['travis'],
     date: '2021-08-05',
     image: 'https://i.imgur.com/gruyc1o.png',
-    courseUrl: 'https://platzi.com/cursos/travis/',
+    platformUrl: 'https://platzi.com/cursos/travis/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1843-travis/diploma/detalle/'
   },
   {
@@ -1315,7 +1315,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     date: '2020-07-25',
     image: 'https://i.imgur.com/uNxVccd.png',
-    courseUrl: 'https://platzi.com/cursos/tecnologia-gerentes/',
+    platformUrl: 'https://platzi.com/cursos/tecnologia-gerentes/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1882-tecnologia-gerentes/diploma/detalle/'
   }, {
     id: 811,
@@ -1326,7 +1326,7 @@ export const certifications: CertificationsData[] = [
     technologies: ['css', 'stylus', 'sass'],
     date: '2021-05-27',
     image: 'https://i.imgur.com/EScSjsb.png',
-    courseUrl: 'https://platzi.com/cursos/preprocesadores/',
+    platformUrl: 'https://platzi.com/cursos/preprocesadores/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1665-course/diploma/detalle/'
   },
   {
@@ -1337,7 +1337,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'Technology',
     technologies: ['react', 'next', 'formik', 'yup', 'redux', 'reactRouter', 'jest'],
     certificateUrl: 'https://www.udemy.com/certificate/UC-7274fe90-b70f-4a7d-b665-e06ec5047554/',
-    courseUrl: 'https://www.udemy.com/course/react-guia-definitiva-hooks-router-redux-next-proyectos/',
+    platformUrl: 'https://www.udemy.com/course/react-guia-definitiva-hooks-router-redux-next-proyectos/',
     date: '2021-11-28',
     image: 'https://i.imgur.com/sxYXLui.png'
   },
@@ -1349,7 +1349,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-04-19',
     image: 'https://i.imgur.com/duzlswM.png',
-    courseUrl: 'Curso de Inglés Básico A1 para Principiantes',
+    platformUrl: 'Curso de Inglés Básico A1 para Principiantes',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1945-course/diploma/detalle/'
   },
   {
@@ -1360,7 +1360,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-06-08',
     image: 'https://i.imgur.com/1WJGMkg.png',
-    courseUrl: 'https://platzi.com/cursos/taller-principiantes/',
+    platformUrl: 'https://platzi.com/cursos/taller-principiantes/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2005-course/diploma/detalle/'
   },
   {
@@ -1371,7 +1371,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-09-25',
     image: 'https://i.imgur.com/4uuesjo.png',
-    courseUrl: 'https://platzi.com/cursos/presente-simple-vocabulario-comun/',
+    platformUrl: 'https://platzi.com/cursos/presente-simple-vocabulario-comun/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2393-course/diploma/detalle/'
   },
   {
@@ -1382,7 +1382,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-09-26',
     image: 'https://i.imgur.com/hmlwWOg.png',
-    courseUrl: 'https://platzi.com/cursos/fechas-horas-expresiones-simples/',
+    platformUrl: 'https://platzi.com/cursos/fechas-horas-expresiones-simples/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2395-course/diploma/detalle/'
   },
   {
@@ -1393,7 +1393,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-01',
     image: 'https://i.imgur.com/fdqynn8.png',
-    courseUrl: 'https://platzi.com/cursos/preguntas-respuestas/',
+    platformUrl: 'https://platzi.com/cursos/preguntas-respuestas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2394-course/diploma/detalle/'
   },
   {
@@ -1404,7 +1404,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-09-26',
     image: 'https://i.imgur.com/XvZarHq.png',
-    courseUrl: 'https://platzi.com/cursos/articulos-verbosmodales/',
+    platformUrl: 'https://platzi.com/cursos/articulos-verbosmodales/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2396-course/diploma/detalle/'
   },
   {
@@ -1415,7 +1415,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-01',
     image: 'https://i.imgur.com/p4HdJrM.png',
-    courseUrl: 'https://platzi.com/cursos/adverbios-sustantivos/',
+    platformUrl: 'https://platzi.com/cursos/adverbios-sustantivos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2422-course/diploma/detalle/'
   },
   {
@@ -1426,7 +1426,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-03',
     image: 'https://i.imgur.com/0kcTJ8D.png',
-    courseUrl: 'https://platzi.com/cursos/cantidad-gerundios/',
+    platformUrl: 'https://platzi.com/cursos/cantidad-gerundios/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2413-course/diploma/detalle/'
   },
   {
@@ -1437,7 +1437,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-02',
     image: 'https://i.imgur.com/KkeJVie.png',
-    courseUrl: 'https://platzi.com/cursos/a2-preposiciones-y-presente-continuo/',
+    platformUrl: 'https://platzi.com/cursos/a2-preposiciones-y-presente-continuo/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2522-course/diploma/detalle/'
   },
   {
@@ -1448,7 +1448,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-31',
     image: 'https://i.imgur.com/t8Rfj52.png',
-    courseUrl: 'https://platzi.com/cursos/conjunciones-superlativos/',
+    platformUrl: 'https://platzi.com/cursos/conjunciones-superlativos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2504-course/diploma/detalle/'
   },
   {
@@ -1459,7 +1459,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-01-28',
     image: 'https://i.imgur.com/mf2MwUf.png',
-    courseUrl: 'https://platzi.com/cursos/experiencias-pasadas/',
+    platformUrl: 'https://platzi.com/cursos/experiencias-pasadas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2655-course/diploma/detalle/'
   },
   {
@@ -1470,7 +1470,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-04',
     image: 'https://i.imgur.com/E7fiOQ3.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-basico-networking/',
+    platformUrl: 'https://platzi.com/cursos/ingles-basico-networking/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2526-course/diploma/detalle/'
   },
   {
@@ -1481,7 +1481,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-06',
     image: 'https://i.imgur.com/nxPFTNQ.png',
-    courseUrl: 'https://platzi.com/cursos/misterio/',
+    platformUrl: 'https://platzi.com/cursos/misterio/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2535-course/diploma/detalle/'
   },
   {
@@ -1492,7 +1492,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-06',
     image: 'https://i.imgur.com/OQaIG0T.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-uso-cotidiano/',
+    platformUrl: 'https://platzi.com/cursos/ingles-uso-cotidiano/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2361-course/diploma/detalle/'
   },
   {
@@ -1503,7 +1503,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-06-16',
     image: 'https://i.imgur.com/f5SUBSl.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-basico-descripciones-comparativos/',
+    platformUrl: 'https://platzi.com/cursos/ingles-basico-descripciones-comparativos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2196-course/diploma/detalle/'
   },
   {
@@ -1514,7 +1514,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-06-28',
     image: 'https://i.imgur.com/KFNCtuC.png',
-    courseUrl: 'https://platzi.com/cursos/pronunciacion-ingles/',
+    platformUrl: 'https://platzi.com/cursos/pronunciacion-ingles/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1979-course/diploma/detalle/'
   },
   {
@@ -1525,7 +1525,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-08-11',
     image: 'https://i.imgur.com/nrZE0Jh.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-basico-escritura/',
+    platformUrl: 'https://platzi.com/cursos/ingles-basico-escritura/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2256-course/diploma/detalle/'
   },
   {
@@ -1536,7 +1536,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-04-19',
     image: 'https://i.imgur.com/bkGaVrS.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-compras/',
+    platformUrl: 'https://platzi.com/cursos/ingles-compras/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2216-course/diploma/detalle/'
   },
   {
@@ -1547,7 +1547,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-15',
     image: 'https://i.imgur.com/aNKzQY8.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-intermedio-tiempo-cantidad/',
+    platformUrl: 'https://platzi.com/cursos/ingles-intermedio-tiempo-cantidad/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2290-course/diploma/detalle/'
   },
   {
@@ -1558,7 +1558,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-17',
     image: 'https://i.imgur.com/vk9zhId.png',
-    courseUrl: 'https://platzi.com/cursos/conectores-preferencias/',
+    platformUrl: 'https://platzi.com/cursos/conectores-preferencias/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2391-course/diploma/detalle/'
   },
   {
@@ -1569,7 +1569,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-19',
     image: 'https://i.imgur.com/XGCT2uG.png',
-    courseUrl: 'https://platzi.com/cursos/infinitivos-transitivos/',
+    platformUrl: 'https://platzi.com/cursos/infinitivos-transitivos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2424-course/diploma/detalle/'
   },
   {
@@ -1580,7 +1580,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-21',
     image: 'https://i.imgur.com/cLzPcwf.png',
-    courseUrl: 'https://platzi.com/cursos/presente-perfecto/',
+    platformUrl: 'https://platzi.com/cursos/presente-perfecto/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2417-course/diploma/detalle/'
   },
   {
@@ -1591,7 +1591,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-24',
     image: 'https://i.imgur.com/evBPDAj.png',
-    courseUrl: 'https://platzi.com/cursos/pronombres-clausulas/',
+    platformUrl: 'https://platzi.com/cursos/pronombres-clausulas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2418-course/diploma/detalle/'
   },
   {
@@ -1602,7 +1602,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-25',
     image: 'https://i.imgur.com/TtxAe9S.png',
-    courseUrl: 'https://platzi.com/cursos/adjetivos-voz-pasiva/',
+    platformUrl: 'https://platzi.com/cursos/adjetivos-voz-pasiva/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2464-course/diploma/detalle/'
   },
   {
@@ -1613,7 +1613,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-27',
     image: 'https://i.imgur.com/Cyfg3OQ.png',
-    courseUrl: 'https://platzi.com/cursos/prefijos-adjetivos/',
+    platformUrl: 'https://platzi.com/cursos/prefijos-adjetivos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2414-course/diploma/detalle/'
   },
   {
@@ -1624,7 +1624,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-11-29',
     image: 'https://i.imgur.com/YsyMviA.png',
-    courseUrl: 'https://platzi.com/cursos/solicitudes/',
+    platformUrl: 'https://platzi.com/cursos/solicitudes/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2519-course/diploma/detalle/'
   },
   {
@@ -1635,7 +1635,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-01',
     image: 'https://i.imgur.com/QGQvlpi.png',
-    courseUrl: 'https://platzi.com/cursos/palabras-interrogativas/',
+    platformUrl: 'https://platzi.com/cursos/palabras-interrogativas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2505-course/diploma/detalle/'
   },
   {
@@ -1646,7 +1646,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-06',
     image: 'https://i.imgur.com/R5vS46v.png',
-    courseUrl: 'https://platzi.com/cursos/comparativos-paralelos/',
+    platformUrl: 'https://platzi.com/cursos/comparativos-paralelos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2567-course/diploma/detalle/'
   },
   {
@@ -1657,7 +1657,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-05',
     image: 'https://i.imgur.com/m83N85E.png',
-    courseUrl: 'https://platzi.com/cursos/verbos-causativos/',
+    platformUrl: 'https://platzi.com/cursos/verbos-causativos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2520-course/diploma/detalle/'
   },
   {
@@ -1668,7 +1668,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-06',
     image: 'https://i.imgur.com/39lqph9.png',
-    courseUrl: 'https://platzi.com/cursos/taller-verbos-causativos/',
+    platformUrl: 'https://platzi.com/cursos/taller-verbos-causativos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2698-course/diploma/detalle/'
   },
   {
@@ -1679,7 +1679,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-12',
     image: 'https://i.imgur.com/HGHHBgB.png',
-    courseUrl: 'https://platzi.com/cursos/estructuras-paralelas/',
+    platformUrl: 'https://platzi.com/cursos/estructuras-paralelas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2580-course/diploma/detalle/'
   },
   {
@@ -1690,7 +1690,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-07',
     image: 'https://i.imgur.com/aytC4iA.png',
-    courseUrl: 'https://platzi.com/cursos/intermedio-vocabulario-expresiones/',
+    platformUrl: 'https://platzi.com/cursos/intermedio-vocabulario-expresiones/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2898-course/diploma/detalle/'
   },
   {
@@ -1701,7 +1701,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-07',
     image: 'https://i.imgur.com/K1lWqqc.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-practico-pronuncia/',
+    platformUrl: 'https://platzi.com/cursos/ingles-practico-pronuncia/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2002-course/diploma/detalle/'
   },
   {
@@ -1712,7 +1712,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-15',
     image: 'https://i.imgur.com/xwUr2Ce.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-trabajo/',
+    platformUrl: 'https://platzi.com/cursos/ingles-trabajo/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2012-course/diploma/detalle/'
   },
   {
@@ -1723,7 +1723,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-16',
     image: 'https://i.imgur.com/KW7Mu4v.png',
-    courseUrl: 'https://platzi.com/cursos/intermedio-gramatica/',
+    platformUrl: 'https://platzi.com/cursos/intermedio-gramatica/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1989-course/diploma/detalle/'
   },
   {
@@ -1734,7 +1734,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-10-21',
     image: 'https://i.imgur.com/ERt3Wy5.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-intermedio-conversacion/',
+    platformUrl: 'https://platzi.com/cursos/ingles-intermedio-conversacion/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2029-course/diploma/detalle/'
   },
   {
@@ -1745,7 +1745,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-22',
     image: 'https://i.imgur.com/Hj6eW9L.png',
-    courseUrl: 'https://platzi.com/cursos/pronunciacion-intermedio/',
+    platformUrl: 'https://platzi.com/cursos/pronunciacion-intermedio/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2010-course/diploma/detalle/'
   },
   {
@@ -1756,7 +1756,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-26',
     image: 'https://i.imgur.com/pkzKuRa.png',
-    courseUrl: 'https://platzi.com/cursos/clausulas-relativas/',
+    platformUrl: 'https://platzi.com/cursos/clausulas-relativas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2423-course/diploma/detalle/'
   },
   {
@@ -1767,7 +1767,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2021-12-29',
     image: 'https://i.imgur.com/Xje0GXf.png',
-    courseUrl: 'https://platzi.com/cursos/intenciones-comparaciones/',
+    platformUrl: 'https://platzi.com/cursos/intenciones-comparaciones/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2415-course/diploma/detalle/'
   },
   {
@@ -1778,7 +1778,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-01-03',
     image: 'https://i.imgur.com/rnDRGNN.png',
-    courseUrl: 'https://platzi.com/cursos/pasado-perfecto-pasivo-adverbiales/',
+    platformUrl: 'https://platzi.com/cursos/pasado-perfecto-pasivo-adverbiales/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2521-course/diploma/detalle/'
   },
   {
@@ -1789,7 +1789,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-01-10',
     image: 'https://i.imgur.com/qypGCe2.png',
-    courseUrl: 'https://platzi.com/cursos/condicionales-situaciones-hipoteticas/',
+    platformUrl: 'https://platzi.com/cursos/condicionales-situaciones-hipoteticas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2512-course/diploma/detalle/'
   },
   {
@@ -1800,7 +1800,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-01-27',
     image: 'https://i.imgur.com/XVTJmi9.png',
-    courseUrl: 'https://platzi.com/cursos/recursos-linguisticos/',
+    platformUrl: 'https://platzi.com/cursos/recursos-linguisticos/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2599-course/diploma/detalle/'
   },
   {
@@ -1811,7 +1811,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-02',
     image: 'https://i.imgur.com/Lq9ebt0.png',
-    courseUrl: 'https://platzi.com/cursos/habilidades-comunicacion/',
+    platformUrl: 'https://platzi.com/cursos/habilidades-comunicacion/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2574-course/diploma/detalle/'
   },
   {
@@ -1822,7 +1822,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-01-20',
     image: 'https://i.imgur.com/6r3UlRG.png',
-    courseUrl: 'https://platzi.com/cursos/gramatica-b2/',
+    platformUrl: 'https://platzi.com/cursos/gramatica-b2/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2036-course/diploma/detalle/'
   },
   {
@@ -1833,7 +1833,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-05',
     image: 'https://i.imgur.com/j6uEGfX.png',
-    courseUrl: 'https://platzi.com/cursos/inglesb2-conversacion/',
+    platformUrl: 'https://platzi.com/cursos/inglesb2-conversacion/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2065-course/diploma/detalle/'
   },
   {
@@ -1844,7 +1844,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-09',
     image: 'https://i.imgur.com/2Gvf4Eb.png',
-    courseUrl: 'https://platzi.com/cursos/frases-expresiones-comunes/',
+    platformUrl: 'https://platzi.com/cursos/frases-expresiones-comunes/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2627-course/diploma/detalle/'
   },
   {
@@ -1855,7 +1855,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-11',
     image: 'https://i.imgur.com/HQ6xS4x.png',
-    courseUrl: 'https://platzi.com/cursos/frases-expresiones-negocios/',
+    platformUrl: 'https://platzi.com/cursos/frases-expresiones-negocios/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2628-course/diploma/detalle/'
   },
   {
@@ -1866,7 +1866,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-05',
     image: 'https://i.imgur.com/rInAsIl.png',
-    courseUrl: 'https://platzi.com/cursos/reducciones-conectores/',
+    platformUrl: 'https://platzi.com/cursos/reducciones-conectores/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2699-course/diploma/detalle/'
   },
   {
@@ -1877,7 +1877,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-13',
     image: 'https://i.imgur.com/mgcGdw9.png',
-    courseUrl: 'https://platzi.com/cursos/conversacion-avanzado/',
+    platformUrl: 'https://platzi.com/cursos/conversacion-avanzado/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2020-course/diploma/detalle/'
   },
   {
@@ -1888,7 +1888,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-23',
     image: 'https://i.imgur.com/lAyoW3b.png',
-    courseUrl: 'https://platzi.com/cursos/pronunciacion-avanzado/',
+    platformUrl: 'https://platzi.com/cursos/pronunciacion-avanzado/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2056-course/diploma/detalle/'
   },
   {
@@ -1899,7 +1899,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-26',
     image: 'https://i.imgur.com/4e4e8IY.png',
-    courseUrl: 'https://platzi.com/cursos/avanzado-gramatica/',
+    platformUrl: 'https://platzi.com/cursos/avanzado-gramatica/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2068-course/diploma/detalle/'
   },
   {
@@ -1910,7 +1910,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-03',
     image: 'https://i.imgur.com/m8FIRNX.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-avanzado-trabajo/',
+    platformUrl: 'https://platzi.com/cursos/ingles-avanzado-trabajo/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2153-course/diploma/detalle/'
   },
   {
@@ -1921,7 +1921,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-10',
     image: 'https://i.imgur.com/Rvycl5E.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-customer-service/',
+    platformUrl: 'https://platzi.com/cursos/ingles-customer-service/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2213-course/diploma/detalle/'
   },
   {
@@ -1932,7 +1932,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-02-28',
     image: 'https://i.imgur.com/x4GyWhe.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-viajes/',
+    platformUrl: 'https://platzi.com/cursos/ingles-viajes/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2175-course/diploma/detalle/'
   },
   {
@@ -1943,7 +1943,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-11',
     image: 'https://i.imgur.com/Jp9mTx6.png',
-    courseUrl: 'https://platzi.com/cursos/entrevistas-ingles/',
+    platformUrl: 'https://platzi.com/cursos/entrevistas-ingles/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1965-course/diploma/detalle/'
   },
   {
@@ -1954,7 +1954,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-23',
     image: 'https://i.imgur.com/lq1xnv1.png',
-    courseUrl: 'https://platzi.com/cursos/preparacion-toefl/',
+    platformUrl: 'https://platzi.com/cursos/preparacion-toefl/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2180-course/diploma/detalle/'
   },
   {
@@ -1965,7 +1965,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-03-25',
     image: 'https://i.imgur.com/xGNYECv.png',
-    courseUrl: 'https://platzi.com/cursos/preparacion-ielts/',
+    platformUrl: 'https://platzi.com/cursos/preparacion-ielts/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2162-course/diploma/detalle/'
   },
   {
@@ -1976,7 +1976,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-03',
     image: 'https://i.imgur.com/rm2FdMy.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-developers-2020/',
+    platformUrl: 'https://platzi.com/cursos/ingles-developers-2020/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1999-course/diploma/detalle/'
   },
   {
@@ -1987,7 +1987,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-03',
     image: 'https://i.imgur.com/H92vO6w.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-marketing/',
+    platformUrl: 'https://platzi.com/cursos/ingles-marketing/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2044-course/diploma/detalle/'
   },
   {
@@ -1998,7 +1998,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-05',
     image: 'https://i.imgur.com/xVMbtfq.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-negocios/',
+    platformUrl: 'https://platzi.com/cursos/ingles-negocios/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2073-course/diploma/detalle/'
   },
   {
@@ -2009,7 +2009,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-05',
     image: 'https://i.imgur.com/sllG32W.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-finanzas/',
+    platformUrl: 'https://platzi.com/cursos/ingles-finanzas/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2080-course/diploma/detalle/'
   },
   {
@@ -2020,7 +2020,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-05',
     image: 'https://i.imgur.com/19OCoPO.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-startups/',
+    platformUrl: 'https://platzi.com/cursos/ingles-startups/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2190-course/diploma/detalle/'
   },
   {
@@ -2031,7 +2031,7 @@ export const certifications: CertificationsData[] = [
     courseCategory: 'English',
     date: '2022-04-06',
     image: 'https://i.imgur.com/VRIfZGl.png',
-    courseUrl: 'https://platzi.com/cursos/ingles-produccion/',
+    platformUrl: 'https://platzi.com/cursos/ingles-produccion/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2181-course/diploma/detalle/'
   }
 ]

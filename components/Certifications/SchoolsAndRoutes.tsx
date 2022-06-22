@@ -2,10 +2,10 @@ import React from 'react'
 
 import { useGetData } from 'hooks/useGetData'
 import { SchoolsAndRoutesData } from '@customTypes/backendTypes'
-import SchoolRouteItem from './SchoolRouteItem'
+import { CertificateItem } from './CertificateItem'
 
 const SchoolsAndRoutes = () => {
-  const [routesData, loading, error]: [SchoolsAndRoutesData[], boolean, any] = useGetData('/api/schools')
+  const [routesData, loading, error] = useGetData<SchoolsAndRoutesData>('/api/schools')
 
   const orderSchools = routesData.sort((a: SchoolsAndRoutesData, b: SchoolsAndRoutesData) => {
     return new Date(b.date).valueOf() - new Date(a.date).valueOf()
@@ -20,7 +20,7 @@ const SchoolsAndRoutes = () => {
           {loading && <p>Loading...</p>}
           {error && <p>Error...</p>}
           {routesData && orderSchools.map((route: SchoolsAndRoutesData) => (
-            <SchoolRouteItem key={route.id} routes={route} />
+            <CertificateItem key={`${route.id}-${route.name}`} certificates={route} />
           ))}
         </div>
       </section>

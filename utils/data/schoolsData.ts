@@ -8,7 +8,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     date: '2022-03-06',
     image: 'https://i.imgur.com/aYhIveo.png',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/100-escuela-javascript/diploma/detalle/',
-    routeUrl: 'https://platzi.com/escuela-javascript/',
+    platformUrl: 'https://platzi.com/escuela-javascript/',
     technologies: ['html', 'css', 'javaScript', 'react', 'next', 'reactRouter', 'webpack', 'sass', 'stylus', 'node', 'express', 'sequelize', 'mysql', 'postgres', 'jwt', 'passport', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'nodeMailer', 'dotenv', 'heroku', 'axios', 'docker', 'bcrypt', 'vercel', 'joi']
   },
   {
@@ -17,7 +17,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     name: 'Frontend with React',
     date: '2022-04-02',
     image: 'https://i.imgur.com/w65aU59.png',
-    routeUrl: 'https://platzi.com/desarrollo-react/',
+    platformUrl: 'https://platzi.com/desarrollo-react/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/8-desarrollo-react/diploma/detalle/',
     technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
@@ -27,7 +27,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     name: 'App Development with React Native',
     date: '2022-04-02',
     image: 'https://i.imgur.com/BITF0hG.png',
-    routeUrl: 'https://platzi.com/desarrollo-react-native/',
+    platformUrl: 'https://platzi.com/desarrollo-react-native/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/12-react-native/diploma/detalle/',
     technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
@@ -37,7 +37,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     name: 'English Academy',
     date: '2022-04-07',
     image: 'https://i.imgur.com/jitsPuO.png',
-    routeUrl: 'https://platzi.com/idioma-ingles/',
+    platformUrl: 'https://platzi.com/idioma-ingles/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/13-idioma-ingles/diploma/detalle/'
   }
 ]
