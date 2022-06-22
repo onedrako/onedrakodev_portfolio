@@ -9,7 +9,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     image: 'https://i.imgur.com/aYhIveo.png',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/100-escuela-javascript/diploma/detalle/',
     platformUrl: 'https://platzi.com/escuela-javascript/',
-    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'reactRouter', 'webpack', 'sass', 'stylus', 'node', 'express', 'sequelize', 'mysql', 'postgres', 'jwt', 'passport', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'nodeMailer', 'dotenv', 'heroku', 'axios', 'docker', 'bcrypt', 'vercel', 'joi']
+    technologies: ['css', 'javaScript', 'react', 'next', 'reactRouter', 'html', 'webpack', 'sass', 'stylus', 'node', 'express', 'sequelize', 'mysql', 'postgres', 'jwt', 'passport', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'nodeMailer', 'dotenv', 'heroku', 'axios', 'docker', 'bcrypt', 'vercel', 'joi']
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     image: 'https://i.imgur.com/w65aU59.png',
     platformUrl: 'https://platzi.com/desarrollo-react/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/8-desarrollo-react/diploma/detalle/',
-    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
+    technologies: ['css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'html', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const schoolAndRoutes: SchoolsAndRoutesData[] = [
     image: 'https://i.imgur.com/BITF0hG.png',
     platformUrl: 'https://platzi.com/desarrollo-react-native/',
     certificateUrl: 'https://platzi.com/p/onedrako/ruta/12-react-native/diploma/detalle/',
-    technologies: ['html', 'css', 'javaScript', 'react', 'next', 'typeScript', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
+    technologies: ['css', 'javaScript', 'react', 'next', 'typeScript', 'html', 'reactNative', 'reactRouter', 'jest', 'webpack', 'sass', 'stylus', 'git', 'github', 'babel', 'npm', 'wsl', 'ubuntuTerminal', 'vsCode', 'eslint', 'dotenv', 'axios', 'formik', 'sanitizeHtml', 'nextAuth', 'nextPwa', 'vercel']
   },
   {
     id: 4,

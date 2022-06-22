@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useGetData } from 'hooks/useGetData'
 import { SchoolsAndRoutesData } from '@customTypes/backendTypes'
 import { CertificateItem } from './CertificateItem'
 import CertificatesPageTitles from './CertificatesPageTitles'
+import { ThemeContext } from '@contexts/ThemeContext'
 
 const SchoolsAndRoutes = () => {
   const [routesData, loading, error] = useGetData<SchoolsAndRoutesData>('/api/schools')
@@ -11,6 +12,8 @@ const SchoolsAndRoutes = () => {
   const orderSchools = routesData.sort((a: SchoolsAndRoutesData, b: SchoolsAndRoutesData) => {
     return new Date(b.date).valueOf() - new Date(a.date).valueOf()
   })
+
+  const { theme } = useContext(ThemeContext)
 
   return (
     <>
@@ -31,6 +34,16 @@ const SchoolsAndRoutes = () => {
           overflow-x: auto;
           gap: 15px;
         }
+
+        .schools__elements::-webkit-scrollbar {
+        border: 1px solid ${theme.textColor};
+        border-radius: 10px;
+      }
+
+      .schools__elements::-webkit-scrollbar-thumb {
+        background-color: ${theme.textColor};
+        border-radius: 10px;
+      }
         
       `}</style>
     </>

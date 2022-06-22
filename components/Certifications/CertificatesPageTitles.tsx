@@ -1,6 +1,9 @@
-import React, { ReactNode } from 'react'
+import { ThemeContext } from '@contexts/ThemeContext'
+import React, { ReactNode, useContext } from 'react'
 
 const CertificatesPageTitles = ({ title, children }: {title: string, children: ReactNode}) => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <>
       <section className="section">
@@ -11,8 +14,10 @@ const CertificatesPageTitles = ({ title, children }: {title: string, children: R
       <style jsx>{`
         .section{
           margin-top: 30px;
-          padding: 15px 15px 0px 15px;
+          padding: 15px;
           position: relative;
+          border: 1px solid ${theme.modalBackgroundColor};
+          border-radius: 10px;
         }
         .title{
           font-size: 2.2rem;

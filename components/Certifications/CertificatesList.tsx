@@ -14,7 +14,8 @@ import ProgressBar from '@components/globalComponents/ProgressBar'
 // Types
 import { CertificationsData, EducationData, route } from '@customTypes/backendTypes'
 import { CertificatesListTitle } from '@customTypes/types'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
+import { ThemeContext } from '@contexts/ThemeContext'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
@@ -32,6 +33,8 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     progress = routeData[0]?.progress
     category = routeData[0]?.category
   }
+
+  const { theme } = useContext(ThemeContext)
 
   return (
     <>
@@ -63,7 +66,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           width: 100%;
           display: flex; 
           gap: 20px;
-          overflow-x: scroll  ;
+          overflow-x: auto ;
           margin-top: 5px;
           margin-bottom: 25px;
         }
@@ -90,6 +93,16 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
         .intersection-observer{
           height: 100px;
           width: 100px;
+        }
+
+        .CertificatesList::-webkit-scrollbar {
+          border: 1px solid ${theme.textColor};
+          border-radius: 10px;
+        }
+
+        .CertificatesList::-webkit-scrollbar-thumb {
+          background-color: ${theme.textColor};
+          border-radius: 10px;
         }
 
       `}</style>
