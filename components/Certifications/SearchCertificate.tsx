@@ -19,7 +19,7 @@ const SearchCertificate = () => {
         <h2 className="searcher__title">Search</h2>
         <input type="text" name="certificate-searcher" placeholder="Type a technology or course" onChange={(e) => handleChange(e) }/>
       </section>
-      { searchItem !== '' && searchItem.length >= 3 && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='all' searchValue={searchItem}/>}
+      { searchItem !== '' && searchItem.length >= 3 && <CertificatesList apiUrl={'api/certificates/search?find='} title="Results" type='search' searchValue={searchItem}/>}
 
       <style jsx>{`
         .searcher{

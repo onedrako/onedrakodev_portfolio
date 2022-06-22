@@ -47,7 +47,8 @@ import {
   SiPython,
   SiGraphql,
   SiApollographql,
-  SiCypress
+  SiCypress,
+  SiGnubash
 } from 'react-icons/si'
 
 import { IoLibrary } from 'react-icons/io5'
@@ -294,5 +295,9 @@ export const technologiesList = {
   cypress: {
     name: 'Cypress',
     icon: SiCypress
+  },
+  bash: {
+    name: 'Bash',
+    icon: SiGnubash
   }
 }

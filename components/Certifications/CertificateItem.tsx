@@ -23,13 +23,14 @@ const detectScreenForNumberOfElements = () => {
   if (window.innerWidth < 767) {
     return 3
   } else {
-    return 5
+    return 4
   }
 }
 
 const CertificateItem = ({ certificates }: {certificates: CertificationsData }) => {
   const { theme } = useContext(ThemeContext)
   const [numberOfElements, setNumberOfElements] = useState<number>(detectScreenForNumberOfElements())
+  const [showScroll, setShowScroll] = useState<boolean>(false)
 
   let maxNumberOfElements: number
   if (certificates.technologies?.length) {
@@ -39,8 +40,10 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
   const handleShowMoreTechnologies = () => {
     if (numberOfElements !== maxNumberOfElements) {
       setNumberOfElements(maxNumberOfElements)
+      setShowScroll(true)
     } else {
-      setNumberOfElements(3)
+      setNumberOfElements(detectScreenForNumberOfElements())
+      setShowScroll(false)
     }
   }
 
@@ -68,7 +71,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
           {certificates.technologies.length > 0 &&
             <ListOfTechnologiesInProject title="Technologies Learned" data={certificates.technologies.slice(0, numberOfElements)} projectName={`${certificates.name}`} />
           }
-          {certificates.technologies?.length > detectScreenForNumberOfElements() && <button className="certificate-technologies__button" onClick={() => handleShowMoreTechnologies() } >{numberOfElements === 3 ? 'Show All' : 'Show Less' }</button> }
+          {certificates.technologies?.length > detectScreenForNumberOfElements() && <button className="certificate-technologies__button" onClick={() => handleShowMoreTechnologies() } >{numberOfElements === detectScreenForNumberOfElements() ? 'Show All' : 'Show Less' }</button> }
         </div>
       }
     </article>
@@ -81,7 +84,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
         flex-direction: column;
         align-items: center;
         gap: 5px;
-        margin-top: 20px;
+        margin: 20px 5px;
         padding: 15px;
         border: 1px solid #ccc;
         border-radius: 15px ;
@@ -106,7 +109,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
         flex-direction: column;
         min-height: 150px;
         max-height: 225px;
-        overflow-y: scroll;
+        overflow-y: ${showScroll ? 'scroll' : 'hidden'}; //
         overflow-x: hidden;
       }
       .certificate-technologies__button{
@@ -147,6 +150,19 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
         border-radius: 10px;
         width: 140px;
       } 
+
+      .certificate-technologies::-webkit-scrollbar {
+        border: 1px solid ${theme.textColor};
+        border-radius: 10px;
+      }
+
+      .certificate-technologies::-webkit-scrollbar-thumb {
+        background-color: ${theme.textColor};
+        border-radius: 10px;
+      }
+
+
+
       @media (max-width: 767px) {
         .certificate{
           max-width: 262px;
@@ -156,6 +172,7 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
       @media (min-width: 768px) {
         .certificate{
           min-width: 345px;
+          max-width: 345px
         }
         .certificate__image{
           width: 98%;

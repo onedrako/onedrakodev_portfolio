@@ -102,7 +102,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 4 }
     ],
     courseCategory: 'Technology',
-    technologies: ['ubuntuTerminal'],
+    technologies: ['ubuntuTerminal', 'bash'],
     date: '2021-05-22',
     image: 'https://i.imgur.com/U3C1v53.png',
     courseUrl: 'https://platzi.com/cursos/terminal/',
@@ -117,7 +117,7 @@ export const certifications: CertificationsData[] = [
       { learningPath: 'Backend Development with Node.js', order: 5 }
     ],
     courseCategory: 'Technology',
-    technologies: ['git', 'github'],
+    technologies: ['git', 'github', 'ubuntuTerminal', 'bash'],
     date: '2021-01-22',
     image: 'https://i.imgur.com/twOupII.png',
     courseUrl: 'https://platzi.com/cursos/git-github/',
@@ -1265,7 +1265,7 @@ export const certifications: CertificationsData[] = [
     institution: 'Platzi',
     learningPath: [{ learningPath: 'Others', order: 6 }],
     courseCategory: 'Technology',
-    technologies: ['ubuntuTerminal'],
+    technologies: ['ubuntuTerminal', 'bash'],
     date: '2021-02-01',
     image: 'https://i.imgur.com/ldNu33P.png',
     courseUrl: '',

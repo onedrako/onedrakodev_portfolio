@@ -92,7 +92,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   // It executes for search, only when user type on search bar bringing the initial data, always start on offset 0
   useEffect(() => {
     searchSection?.current?.scrollTo(0, 0)
-    if ((endPoint.includes('search') && searchValue) && searchValue.length >= 3) {
+    if ((endPoint.includes('search') && searchValue) && searchValue.length > 2) {
       const queryParameters = 'limit=10&offset=0'
       const fetchData = async () => {
         setLoading(true)

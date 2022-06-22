@@ -46,7 +46,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
             }
             )}
             {!fullData && <span className='intersection-observer' ref={ref}>.</span>}
-            {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
+            {type === 'search' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
             {loading && <p className='loading'>Loading Certificates...</p>}
           </div>
         </CertificatesPageTitles>

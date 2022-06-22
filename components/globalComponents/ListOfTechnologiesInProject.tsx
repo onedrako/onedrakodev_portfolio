@@ -22,19 +22,20 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
       </div>
 
       <style jsx>{`
+        .technologies-list__container {
+          margin-top: 5px;
+          padding: 15px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+          gap: 15px;
+          width: 100%;
+        }
+
         .technologies-list__title {
           margin-top: 30px;
           margin-bottom: 10px;
           font-size: 1.8rem;
           text-align: center;
-        }
-
-        .technologies-list__container {
-          margin-top: 5px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-          gap: 15px;
-          width: 100%;
         }
 
         .technology-item:hover {
@@ -48,6 +49,7 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
           justify-content: center;
           flex-direction: column;
           align-items: center;
+          width: 100%;
         }
 
         
