@@ -23,13 +23,9 @@ const CertificationsComponent: NextPage = () => {
   const [certificationsGroups, loading] = useGetData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
-    if (certificationsGroups.length > 0) {
-      if (numberOfList >= certificationsGroups.length) {
-        console.log('reset')
-      }
+    if (!loading) {
+      setNumberOfList(numberOfList + 2)
     }
-    if (!loading) { setNumberOfList(numberOfList + 2) }
-    console.log(numberOfList)
   }, [inView])
 
   return (
@@ -49,11 +45,11 @@ const CertificationsComponent: NextPage = () => {
           <CertificatesList key={`CertificatesList-${certificate.title}`} apiUrl={certificate.apiUrl} title={certificate.title} type={certificate.type}/>
         )}
 
+        {/* To eliminate the observer item when data */}
         {
           (certificationsGroups.length > 0 && numberOfList >= certificationsGroups.length)
             ? null
             : <span className='intersection-observer' ref={ref}></span>
-
         }
       </main>
 

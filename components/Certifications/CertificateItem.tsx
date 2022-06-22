@@ -156,7 +156,6 @@ const CertificateItem = ({ certificates }: {certificates: CertificationsData }) 
       @media (min-width: 768px) {
         .certificate{
           min-width: 345px;
-          max-width: 345px;
         }
         .certificate__image{
           width: 98%;

@@ -9,17 +9,20 @@ import axios from 'axios'
 // searchValue: the value of the search bar
 // searchSection: the section where the results will be shown, use it to reload the scroll
 
-const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string, searchSection?: RefObject<HTMLDivElement>): [DataType[], boolean, any] => {
+const limit = 5
+
+const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string, searchSection?: RefObject<HTMLDivElement>): [DataType[], boolean, any, boolean] => {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
+  const [fullData, setFullData] = useState<boolean>(false)
 
   const defineQueryParameters = () => {
     let queryParameters
     if (data.length > 0) {
-      queryParameters = `limit=10&offset=${data.length}`
+      queryParameters = `limit=${limit}&offset=${data.length}`
     } else {
-      queryParameters = 'limit=10&offset=0'
+      queryParameters = `limit=${limit}&offset=0`
     }
     return queryParameters
   }
@@ -27,6 +30,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   // Effect that executes for schools
   useEffect(() => {
     if (!endPoint.includes('search')) {
+      console.log('Echools useEffect')
       const fetchData = async () => {
         setLoading(true)
         try {
@@ -45,11 +49,16 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   useEffect(() => {
     // For normal list
     if (inView && !endPoint.includes('search')) {
-      const queryParameters = defineQueryParameters()
       const fetchData = async () => {
         setLoading(true)
+        const queryParameters = defineQueryParameters()
         try {
           const result = await axios(`${endPoint}${queryParameters}`)
+          if (result.data.length === 0) {
+            setFullData(true)
+            setLoading(false)
+            return
+          }
           setData([...data, ...result.data])
         } catch (error: any) {
           setError(error)
@@ -60,14 +69,16 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
 
       // For search list
     } else if (inView && endPoint.includes('search')) {
-      if (data.length % 10) {
-        return
-      }
       const queryParameters = defineQueryParameters()
       const fetchData = async () => {
         setLoading(true)
         try {
           const result = await axios(`${endPoint}${searchValue}&${queryParameters}`)
+          if (result.data.length === 0) {
+            setFullData(true)
+            setLoading(false)
+            return
+          }
           setData([...data, ...result.data])
         } catch (error: any) {
           setError(error)
@@ -97,7 +108,7 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
     }
   }, [searchValue])
 
-  return [data, loading, error]
+  return [data, loading, error, fullData]
 }
 
 export { useGetData }

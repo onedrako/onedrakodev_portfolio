@@ -18,13 +18,13 @@ import { useRef } from 'react'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
-    threshold: 0.5
+    threshold: 0
   })
 
   const searchSection = useRef<HTMLDivElement>(null)
 
   const [routeData] = useGetData<EducationData>(`/api/schools/${title}`)
-  const [certificatesData, loading] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
+  const [certificatesData, loading, _, fullData] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
   let total, progress, category
 
   if (type === 'route') {
@@ -32,8 +32,6 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
     progress = routeData[0]?.progress
     category = routeData[0]?.category
   }
-
-  // console.log(inView)
 
   return (
     <>
@@ -46,9 +44,9 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
             )
           }
           )}
+          {!fullData && <span className='intersection-observer' ref={ref}>.</span>}
           {type === 'all' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
           {loading && <p className='loading'>Loading Certificates...</p>}
-          <span className='intersection-observer-certificates-item' ref={ref}></span>
         </div>
       </CertificatesPageTitles>
 
@@ -63,7 +61,7 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           width: 100%;
           display: flex; 
           gap: 20px;
-          overflow: auto;
+          overflow-x: scroll  ;
           margin-top: 5px;
           margin-bottom: 25px;
         }
@@ -87,9 +85,9 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           font-size: 2.5rem;
           padding: 15px;
         }
-        .intersection-observer-certificates-item{
+        .intersection-observer{
           height: 100px;
-          width: 100%;
+          width: 100px;
         }
 
       `}</style>
