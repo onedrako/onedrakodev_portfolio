@@ -16,10 +16,11 @@ import { CertificationsData, EducationData, route } from '@customTypes/backendTy
 import { CertificatesListTitle } from '@customTypes/types'
 import { useContext, useRef } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
+import { CertificateItemSkeleton } from './CertificateItemSkeleton'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
-    threshold: 0
+    threshold: 0.15
   })
 
   const searchSection = useRef<HTMLDivElement>(null)
@@ -48,7 +49,15 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
               )
             }
             )}
-            {!fullData && <span className='intersection-observer' ref={ref}>.</span>}
+            {!fullData &&
+            <div className='skeleton-container' ref={ref}>
+              <CertificateItemSkeleton />
+              <CertificateItemSkeleton />
+              <CertificateItemSkeleton />
+              <CertificateItemSkeleton />
+              <CertificateItemSkeleton />
+            </div>
+            }
             {type === 'search' && certificatesData.length === 0 && !loading && <p className='CertificatesList__no-results'>No results for this technology 😔, try another one</p>}
             {loading && <p className='loading'>Loading Certificates...</p>}
           </div>
@@ -90,10 +99,6 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           font-size: 2.5rem;
           padding: 15px;
         }
-        .intersection-observer{
-          height: 100px;
-          width: 100px;
-        }
 
         .CertificatesList::-webkit-scrollbar {
           border: 1px solid ${theme.textColor};
@@ -104,7 +109,9 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
           background-color: ${theme.textColor};
           border-radius: 10px;
         }
-
+        .skeleton-container{
+          display: flex;
+        }
       `}</style>
     </>
   )

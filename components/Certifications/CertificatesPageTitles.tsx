@@ -14,7 +14,7 @@ const CertificatesPageTitles = ({ title, children }: {title: string, children: R
       <style jsx>{`
         .section{
           margin-top: 30px;
-          padding: 15px;
+          padding: 15px 15px 0px 15px;
           position: relative;
           border: 1px solid ${theme.modalBackgroundColor};
           border-radius: 10px;
