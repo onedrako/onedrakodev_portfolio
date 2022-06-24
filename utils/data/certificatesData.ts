@@ -897,7 +897,7 @@ export const certifications: CertificationsData[] = [
     learningPath: [{ learningPath: 'Web Development School', level: 'Complementary', order: 97 }],
     courseCategory: 'Technology',
     technologies: ['mongo'],
-    date: '2022-03-01',
+    date: '2022-01-03',
     image: 'https://i.imgur.com/K0qq228.png',
     platformUrl: 'https://platzi.com/cursos/mongodb/',
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1533-course/diploma/detalle/'

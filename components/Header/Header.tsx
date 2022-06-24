@@ -1,4 +1,4 @@
-import { RefObject, useState } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 
 import { SideNavigation } from './SideNavigation'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 const Header = () => {
   const [isTheMenuOpen, setIsTheMenuOpen] = useState<boolean>(false)
   const [headerViewWidth, setHeaderViewWidth] = useState<number>(10)
+  const [sideBarIsVisible, setSideBarIsVisible] = useState<boolean>(false)
 
   const handleSideMenuClick = (action?: string, node?: RefObject<HTMLDivElement>): void => {
     if (action === 'open') {
@@ -27,13 +28,30 @@ const Header = () => {
     }
   }
 
+  const handleSideBarVisible = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 768) {
+        setSideBarIsVisible(true)
+      } else {
+        setSideBarIsVisible(false)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleSideBarVisible)
+  }, [])
+
   return (
     <>
       <header className='header'>
         <nav>
-          <GiHamburgerMenu color="#fff" size={25} onClick={() => handleSideMenuClick('open')} />
-          {isTheMenuOpen && <SideNavigation closeMenu={handleSideMenuClick} />}
-
+            { sideBarIsVisible &&
+            <>
+              <GiHamburgerMenu color="#fff" size={25} onClick={() => handleSideMenuClick('open')} />
+              {isTheMenuOpen && <SideNavigation closeMenu={handleSideMenuClick} />}
+            </>
+          }
         </nav>
       </header>
       <style jsx>{`
@@ -42,13 +60,10 @@ const Header = () => {
           width: ${`${headerViewWidth}vw`};
           z-index: 2;
         }
-
         nav {
           padding: 15px;
           position: relative;
         }
-
-
       `}</style>
     </>
   )

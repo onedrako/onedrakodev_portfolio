@@ -1,6 +1,6 @@
 
 // Dependencies
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 // Icons
@@ -51,6 +51,10 @@ const CertificateItem = <T extends items>({ certificates }: CertificateItemProps
       setShowScroll(false)
     }
   }
+
+  useEffect(() => {
+    addEventListener('resize', () => setNumberOfElements(detectScreenForNumberOfElements()))
+  }, [])
 
   return (
     <>

@@ -3,11 +3,11 @@ import { ThemeContext } from '@contexts/ThemeContext'
 import { ElementSelectedOnTabNav } from '@customTypes/types'
 
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 import styles from '../../styles/reactIconsStyles.module.css'
+import { NavigationListItems } from './NavigationListItems'
 
 const initialState = {
   home: false,
@@ -43,6 +43,10 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
     setSelectedNavigation(navigationObject)
   }
 
+  const action = () => {
+    closeMenu('close', navigator)
+  }
+
   useEffect(() => {
     handleSelectedNavigation()
   }, [route.pathname])
@@ -50,33 +54,10 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
   return (
     <>
       <div ref={navigator} className='SideNavigation showSideNavigation'>
-        <AiFillCloseCircle className={styles.closeIcon} color="#ffffff" size={25} onClick={() => closeMenu('close', navigator)} />
-        <ul>
-          <li className={'SideNavigation__li'} onClick={selectedNavigation.home ? () => null : () => closeMenu('close', navigator)} >
-            <Link href="/"><a>Home</a></Link>
-            {selectedNavigation.home && <hr className="bottomLineInLinkActive" />}
-          </li>
-          <li className={'SideNavigation__li'} onClick={selectedNavigation.portfolio ? () => null : () => closeMenu('close', navigator)}>
-            <Link href="/portfolio"><a>Portfolio</a></Link>
-            {selectedNavigation.portfolio && <hr className="bottomLineInLinkActive" />}
-          </li>
-
-          <li className={'SideNavigation__li'} onClick={selectedNavigation.certifications ? () => null : () => closeMenu('close', navigator)}>
-            <Link href="certifications">Certifications</Link>
-            {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
-          </li>
-
-          <li className={'SideNavigation__li'} onClick={selectedNavigation.personal ? () => null : () => closeMenu('close', navigator)}>
-            <Link href="personal">Personal</Link>
-            {selectedNavigation.personal && <hr className="bottomLineInLinkActive" />}
-          </li>
-
-          <li className={'SideNavigation__li'} onClick={selectedNavigation.about ? () => null : () => closeMenu('close', navigator)}>
-            <Link href="about">About Me</Link>
-            {selectedNavigation.about && <hr className="bottomLineInLinkActive" />}
-          </li>
-        </ul>
+        <AiFillCloseCircle className={styles.closeIcon} color="#ffffff" size={25} onClick={() => action()} />
+        <NavigationListItems selectedNavigation={selectedNavigation} action={action} />
       </div>
+
       <style jsx>{`
         .SideNavigation {
           height: 300px;
@@ -95,50 +76,14 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
           animation-duration: 1s;
           animation-fill-mode: forwards;
         }
- 
+
         .hideSideNavigation{
           animation-name: hideMenu;
           animation-duration: 1s;
           animation-fill-mode: forwards;
         }
 
-        .SideNavigation__li {
-          width: 60%;
-          height: 35px;
-          font-size: 4rem;
-          display: flex;
-          flex-direction: column;
-
-        }
-        .bottomLineInLinkActive {
-          height: 5px;
-          width: 0%;
-          background: #fff;
-          margin: 0px;
-          animation-name: stretchBorderLineActive;
-          animation-duration: 1.5s;
-          animation-fill-mode: forwards;
-        }
-        .bottomLineInLinkInactive {
-          height: 5px;
-          width: 100%;
-          background: #fff;
-          margin: 0px;
-          animation-name: stretchBorderLineInactive;
-          animation-duration: 1.5s;
-          animation-fill-mode: forwards;
-        }
-        .closeIcon {
-          position: absolute;
-        }
-
         
-        ul {
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-        }
 
         @keyframes stretchBorderLineActive {
             from {
@@ -148,15 +93,7 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
               width: 100%;
             } 
           }
-        
-        @keyframes stretchBorderLineInactive {
-          from {
-            width: 100%;
-          }
-          to {
-            width: 0%;
-          } 
-        }
+
 
         @keyframes showMenu {
           from {
