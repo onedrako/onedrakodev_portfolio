@@ -2,6 +2,7 @@ import { RefObject, useEffect, useState } from 'react'
 
 import { SideNavigation } from './SideNavigation'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import Navigation from './Navigation'
 
 const Header = () => {
   const [isTheMenuOpen, setIsTheMenuOpen] = useState<boolean>(false)
@@ -45,14 +46,15 @@ const Header = () => {
   return (
     <>
       <header className='header'>
-        <nav>
-            { sideBarIsVisible &&
-            <>
-              <GiHamburgerMenu color="#fff" size={25} onClick={() => handleSideMenuClick('open')} />
-              {isTheMenuOpen && <SideNavigation closeMenu={handleSideMenuClick} />}
-            </>
-          }
-        </nav>
+            { sideBarIsVisible
+              ? <>
+                < nav>
+                  <GiHamburgerMenu color="#fff" size={25} onClick={() => handleSideMenuClick('open')} />
+                  {isTheMenuOpen && <SideNavigation closeMenu={handleSideMenuClick} />}
+                </nav>
+              </>
+              : <Navigation/>
+            }
       </header>
       <style jsx>{`
         .header {

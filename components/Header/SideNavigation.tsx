@@ -55,7 +55,9 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
     <>
       <div ref={navigator} className='SideNavigation showSideNavigation'>
         <AiFillCloseCircle className={styles.closeIcon} color="#ffffff" size={25} onClick={() => action()} />
-        <NavigationListItems selectedNavigation={selectedNavigation} action={action} />
+        <ul>
+          <NavigationListItems selectedNavigation={selectedNavigation} action={action} />
+        </ul>
       </div>
 
       <style jsx>{`
@@ -83,17 +85,12 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
           animation-fill-mode: forwards;
         }
 
-        
-
-        @keyframes stretchBorderLineActive {
-            from {
-              width: 0%;
-            }
-            to {
-              width: 100%;
-            } 
-          }
-
+        ul {
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
 
         @keyframes showMenu {
           from {

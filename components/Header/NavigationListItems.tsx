@@ -1,48 +1,81 @@
 import { ElementSelectedOnTabNav } from '@customTypes/types'
 import Link from 'next/link'
+import { VscHome } from 'react-icons/vsc'
+import { BiBriefcase, BiUser } from 'react-icons/bi'
+import { TbCertificate } from 'react-icons/tb'
+import { CgNotes } from 'react-icons/cg'
 
 type Props = {
   selectedNavigation: ElementSelectedOnTabNav,
-  action: () => void
+  action?: () => void
 }
 
+// This component needs a ul parent element, in that defined row or column for display
 const NavigationListItems = ({ selectedNavigation, action }: Props) => {
+  let callback
+  if (action) {
+    callback = action
+  }
   return (
     <>
-      <ul>
-        <li className={'SideNavigation__li'} onClick={selectedNavigation.home ? () => null : () => action()} >
-          <Link href="/"><a>Home</a></Link>
+        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.home ? () => null : callback} >
+          <div className='SideNavigation__li--link'>
+            <VscHome/>
+            <Link href="/"><a>Home</a></Link>
+          </div>
           {selectedNavigation.home && <hr className="bottomLineInLinkActive" />}
         </li>
-        <li className={'SideNavigation__li'} onClick={selectedNavigation.portfolio ? () => null : () => action()}>
-          <Link href="/portfolio"><a>Portfolio</a></Link>
+        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.portfolio ? () => null : callback}>
+          <div className='SideNavigation__li--link'>
+            <BiBriefcase/>
+            <Link href="/portfolio"><a>Portfolio</a></Link>
+          </div>
           {selectedNavigation.portfolio && <hr className="bottomLineInLinkActive" />}
         </li>
 
-        <li className={'SideNavigation__li'} onClick={selectedNavigation.certifications ? () => null : () => action()}>
-          <Link href="certifications">Certifications</Link>
+        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.certifications ? () => null : callback}>
+          <div className='SideNavigation__li--link'>
+            <TbCertificate/>
+            <Link href="certifications">Certifications</Link>
+          </div>
           {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
         </li>
 
-        <li className={'SideNavigation__li'} onClick={selectedNavigation.personal ? () => null : () => action()}>
-          <Link href="personal">Personal</Link>
+        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.personal ? () => null : callback}>
+          <div className='SideNavigation__li--link'>
+            <CgNotes/>
+            <Link href="personal">Personal</Link>
+            </div>
           {selectedNavigation.personal && <hr className="bottomLineInLinkActive" />}
         </li>
 
-        <li className={'SideNavigation__li'} onClick={selectedNavigation.about ? () => null : () => action()}>
-          <Link href="about">About Me</Link>
+        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.about ? () => null : callback}>
+          <div className='SideNavigation__li--link'>
+            <BiUser/>
+            <Link href="about">About Me</Link>
+            </div>
           {selectedNavigation.about && <hr className="bottomLineInLinkActive" />}
         </li>
-      </ul>
+
       <style jsx>{`
         .SideNavigation__li {
-              width: 60%;
+              width: 70%;
               height: 35px;
               font-size: 4rem;
               display: flex;
               flex-direction: column;
-
+            
             }
+            
+            .SideNavigation__li--link{
+              width: 100%;
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              gap: 5px;
+              font-size: 4rem;
+            }
+
             .bottomLineInLinkActive {
               height: 5px;
               width: 0%;
@@ -65,13 +98,6 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
               position: absolute;
             }
 
-            ul {
-              padding: 0;
-              display: flex;
-              flex-direction: column;
-              gap: 15px;
-            }
-
             @keyframes stretchBorderLineInactive {
               from {
                 width: 100%;
@@ -80,6 +106,32 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
                 width: 0%;
               } 
             }
+
+            @keyframes stretchBorderLineActive {
+            from {
+              width: 0%;
+            }
+            to {
+              width: 100%;
+            } 
+          }
+
+          @media (min-width: 768px) {
+            .SideNavigation__li {
+              width: 100%;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              margin-right: 10px;
+              width: 125px;
+              font-size: 3.5rem;
+            }
+            .SideNavigation__li--link{
+              font-size: 3.5rem;
+              justify-content: center;
+              align-items: center;
+            }
+          }
         `}</style>
         </>
   )

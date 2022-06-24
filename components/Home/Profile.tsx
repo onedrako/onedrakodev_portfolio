@@ -125,6 +125,12 @@ const Profile = () => {
           font-size: 1.3rem;
           margin-top: 5px;
         }
+
+        @media (min-width: 768px) {
+          .profile-section{
+            padding-top: 80px;
+          }
+        }
       `}</style>
     </>
 
