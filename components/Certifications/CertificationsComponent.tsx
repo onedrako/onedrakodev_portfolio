@@ -13,11 +13,13 @@ import { useGetData } from '@hooks/useGetData'
 
 // Types
 import { CertificatesToRenderType } from '@customTypes/backendTypes'
+import { CertificateItemSkeleton } from './SkeletonCertificateItem'
+import CertificatesPageTitles from './CertificatesPageTitles'
 
 const CertificationsComponent: NextPage = () => {
   const [numberOfList, setNumberOfList] = useState<number>(0)
   const { ref, inView } = useInView({
-    threshold: 0
+    threshold: 0.15
   })
 
   const [certificationsGroups, loading] = useGetData<CertificatesToRenderType>('api/certifications-groups')
@@ -49,7 +51,15 @@ const CertificationsComponent: NextPage = () => {
         {
           (certificationsGroups.length > 0 && numberOfList >= certificationsGroups.length)
             ? null
-            : <span className='intersection-observer' ref={ref}></span>
+            : <CertificatesPageTitles title='Loading section'>
+              <div className='skeleton-container' ref={ref}>
+                <CertificateItemSkeleton />
+                <CertificateItemSkeleton />
+                <CertificateItemSkeleton />
+                <CertificateItemSkeleton />
+                <CertificateItemSkeleton />
+              </div>
+            </CertificatesPageTitles>
         }
       </main>
 
@@ -67,6 +77,15 @@ const CertificationsComponent: NextPage = () => {
           display: block;
           width: 100%;
           height: 100px;
+          opacity: 1;
+        }
+        .skeleton-container{
+          display: flex;
+          margin-bottom: 25px;
+          padding: 15px 15px 0px 15px;
+          font-size: 2.5rem;
+          overflow-x: hidden;
+          gap: 10px;
         }
         @media (min-width: 768px) {
           .certifications-title{

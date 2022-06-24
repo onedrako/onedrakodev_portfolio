@@ -16,11 +16,11 @@ import { CertificationsData, EducationData, route } from '@customTypes/backendTy
 import { CertificatesListTitle } from '@customTypes/types'
 import { useContext, useRef } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
-import { CertificateItemSkeleton } from './CertificateItemSkeleton'
+import { CertificateItemSkeleton } from './SkeletonCertificateItem'
 
 const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, title: route | CertificatesListTitle, type: string, searchValue?: string}) => {
   const { ref, inView } = useInView({
-    threshold: 0.15
+    threshold: 0
   })
 
   const searchSection = useRef<HTMLDivElement>(null)

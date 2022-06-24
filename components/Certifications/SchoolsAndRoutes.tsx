@@ -25,7 +25,6 @@ const SchoolsAndRoutes = () => {
             <CertificateItem key={`${route.id}-${route.name}`} certificates={route} />
           ))}
         </div>
-      {/* </section> */}
     </CertificatesPageTitles>
 
       <style jsx>{`

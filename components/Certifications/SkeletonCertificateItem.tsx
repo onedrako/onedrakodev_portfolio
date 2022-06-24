@@ -6,7 +6,7 @@ const CertificateItemSkeleton = () => {
   return (
     <>
       <article className='skeleton'>
-        <h3 className='skeleton__title'>Curso realizado por el buen Gabito</h3>
+        <h3 className='skeleton__title'>Loading this certificate</h3>
         <div className='skeleton__image'></div>
         <div className='skeleton__date'> 15/04/2021 </div>
         <div className='skeleton__links'>
@@ -25,7 +25,7 @@ const CertificateItemSkeleton = () => {
           border-radius: 10px;
           display: flex;
           flex-direction: column;
-          opacity: 0.3;
+          animation: fadeIn 5s ease-in-out infinite;
         }
         .skeleton__title{
           width: 90%;
@@ -73,6 +73,24 @@ const CertificateItemSkeleton = () => {
         height: 30px;
         background: ${theme.textColor};
       } 
+      
+      @keyframes fadeIn {
+        0% {
+          opacity: 0.8;
+        }
+        50%{
+          opacity: 0.2;
+        }
+        to {
+          opacity: 0.8;
+        }
+      }
+      @media (max-width: 767px) {
+        .skeleton{
+          min-width: 232px;
+          max-width: 232px;
+        }
+      }
       @media (min-width: 768px) {
         .skeleton__links{
           flex-direction: row;
