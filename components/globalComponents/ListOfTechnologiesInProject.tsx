@@ -89,9 +89,20 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
           text-align: center;
         }
 
-        @media (min-width: 768px){
-
+        @media (min-width: 350px){
+          .technologies-list__container {
+            grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+            gap: 30px;
+          }
+          .technology-item__name{
+            font-size: 1.5rem;
+          }
+          .technologies-list__title{
+            font-size: 2.2rem;
+          }
         }
+
+
       `}</style>
     </>
   )

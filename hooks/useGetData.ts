@@ -30,7 +30,6 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   // Effect that executes for schools
   useEffect(() => {
     if (!endPoint.includes('search')) {
-      console.log('Echools useEffect')
       const fetchData = async () => {
         setLoading(true)
         try {

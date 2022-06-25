@@ -132,11 +132,13 @@ const ProjectItem = (
             </div>
           }
 
-          <p>Description: {data.description}</p>
+          <p className='project-item--description'>Description: {data.description}</p>
 
           {/* Project´s image */}
           <div className='project-item__image'>
-            <Image width={250} height={200} style={{ borderBottomRightRadius: '10%' }} src={data.images[selectedImage]}></Image>
+            <figure className='project-item__image--item'>
+              <Image width={931} height={555} objectFit="fill" style={{ borderRadius: '15px' }} src={data.images[selectedImage]}></Image>
+            </figure>
 
             {data.images.length > 1 && selectedImage !== data.images.length - 1 &&
               <div className='project-item__image--navigation next-image' onClick={() => handleImageNavigation(selectedImage + 1)}>
@@ -180,6 +182,7 @@ const ProjectItem = (
       </article>
 
       <style jsx>{`
+
         .project-item {
           width: 100%;
           border: 1px solid #ccc;
@@ -196,20 +199,25 @@ const ProjectItem = (
         }
 
         .project-item__title {
-          font-size: 2rem;
+          font-size: 2.5rem;
           text-align: center;
           color: ${theme.activeElementColor};
         }
 
+        
         .project-item__category {
           display: flex;
           align-items: center;
           gap: 10px;
         }
 
+        .project-item--description{
+          font-size: 1.5rem;
+        }
+        
         .project-item__category-title{
           border-bottom: 1px solid #ccc;
-          font-size : 1.6rem;
+          font-size : 1.8rem;
           height: 35px;
           width: 70%;
           padding: 5px 0;
@@ -242,6 +250,10 @@ const ProjectItem = (
 
         .project-item__image--navigation:hover{
           opacity: 1;
+        }
+
+        .project-item__image--item{
+          display: block;
         }
 
         .next-image{
@@ -298,10 +310,9 @@ const ProjectItem = (
           height: 100vh;
           background: ${theme.backgroundColor};
           position: fixed;
-          z-index: 1;
+          z-index: 2;
           top: 0px;
           left: 0px;
-
         }
 
         .active-element{
@@ -346,6 +357,26 @@ const ProjectItem = (
           z-index: 3;
           cursor: pointer;
         }
+        
+
+        /* Responsive Design */
+
+        @media (min-width: 610px) {
+          .project-item{
+            max-width: 575px;
+            margin: auto;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .project-item__image--item{
+            width: 700px;
+          }
+          .project-item{
+            margin: 0 0 0 auto;
+          }
+        }
+
       `} </style>
     </>
   )

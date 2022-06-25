@@ -41,6 +41,7 @@ const Technologies = () => {
 
   const { theme } = useContext(ThemeContext)
 
+  // function to get the technologies selected by user
   const handleSelectedTechnology = (technology: keyof TechnologiesSelector): void => {
     const actualElements = { ...selectedTechnology }
 
@@ -58,6 +59,7 @@ const Technologies = () => {
     setActualTechnology(technology)
   }
 
+  // function to define the number of technologies to show
   const defineNumberOfTechnologies = (): void => {
     if (actualTechnology === 'all') {
       setNumberOfTechnologies(technologies.length)
@@ -100,13 +102,27 @@ const Technologies = () => {
         <hr />
         <nav className='technologies__filter-list'>
           <ul>
-            <li className={`technologies__filter-list--item ${selectedTechnology.all && 'active-filter'}`} onClick={() => handleSelectedTechnology('all')} >All</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.frontend && 'active-filter'}`} onClick={() => handleSelectedTechnology('frontend')}>Frontend</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.mobile && 'active-filter'}`} onClick={() => handleSelectedTechnology('mobile')}>Mobile</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.backend && 'active-filter'}`} onClick={() => handleSelectedTechnology('backend')}>Backend</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.databases && 'active-filter'}`} onClick={() => handleSelectedTechnology('databases')}>Databases</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.libraries && 'active-filter'}`} onClick={() => handleSelectedTechnology('libraries')}>{"Principal Library's"}</li>
-            <li className={`technologies__filter-list--item ${selectedTechnology.others && 'active-filter'}`} onClick={() => handleSelectedTechnology('others')}>Others</li>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.all && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item'} onClick={() => handleSelectedTechnology('all')} >All</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.frontend && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item'} onClick={() => handleSelectedTechnology('frontend')}>Frontend</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.mobile && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('mobile')}>Mobile</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.backend && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('backend')}>Backend</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.databases && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('databases')}>Databases</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.libraries && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('libraries')}>{"Principal Library's"}</li>
+            </div>
+            <div className={`technologies__filter-list--item--background ${selectedTechnology.others && 'active-filter'}`}>
+              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('others')}>Others</li>
+            </div>
           </ul>
         </nav>
         <article>
@@ -171,6 +187,7 @@ const Technologies = () => {
 
         .active-filter{
           background: ${theme.activeElementColor};
+          border-radius: 0 0 10px 0;
         }
 
         .technologies__list {
@@ -183,6 +200,56 @@ const Technologies = () => {
           border-radius: 10px;
           gap: 20px;
           /* background: ${theme.modalBackgroundColor}; */
+        }
+
+        .technologies__filter-list--background{
+          border-radius: 0 0 10px 0;
+        }
+
+        @media (min-width: 600px) {
+          .technologies{
+            position: relative;
+            min-height: 425px;
+          }
+          .technologies__list {
+            width: 75%;
+            margin-left: auto;
+          }
+          .technologies__filter-list {
+            position: absolute;
+            top: 20%;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+            padding: 10px;
+          }
+          .technologies__filter-list ul{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+          }
+          .technologies__filter-list--item {
+            border: none;
+            width: 115px;
+            position: relative;
+          }
+          .technologies__filter-list--background{
+            position: absolute;
+            width: 0%;
+          }
+          .active-filter{
+            background: ${theme.activeElementColor};
+            animation: fillBackground 1.5s ease-in-out;
+            border-radius: 0 0 10px 0;
+          }
+
+          @keyframes fillBackground {
+            0% {
+              width: 10%;
+            }
+            100% {
+              width: 100%;
+            }
+          }
         }
 
       `}</style>
