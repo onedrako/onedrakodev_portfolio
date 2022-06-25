@@ -325,7 +325,6 @@ const ProjectItem = (
           padding: 50px;
         }
 
-
         .project-item__navigation {
           display: flex;
           justify-content: center;

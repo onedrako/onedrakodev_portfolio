@@ -15,6 +15,7 @@ import type { ProjectsData } from '@customTypes/backendTypes'
 // Components
 import { ProjectItem } from './ProjectItem'
 import { PaginationBar } from './PaginationBar'
+import ListItemForFilterBar from './ListItemForFilterBar'
 
 const initialState: ProjectsSelector = {
   all: true,
@@ -92,6 +93,10 @@ const Projects = () => {
     defineNumberOfProjects()
   }, [projects, actualProject])
 
+  const listNamesFilters: string[] = ['all', 'frontend', 'mobile', 'backend', 'others']
+  const listTitlesName: string[] = ['All', 'Frontend', 'Mobile', 'Backend', 'Others']
+  const activeResponsivePx: number = 800
+
   return (
     <>
       <section className='projects'>
@@ -99,11 +104,23 @@ const Projects = () => {
         <hr />
         <nav className='projects__filter-list'>
           <ul>
-            <li className={`projects__filter-list--item ${selectedProject.all && 'active-filter'}`} onClick={() => handleSelectedProject('all')} >All</li>
+            {/* <li className={`projects__filter-list--item ${selectedProject.all && 'active-filter'}`} onClick={() => handleSelectedProject('all')} >All</li>
             <li className={`projects__filter-list--item ${selectedProject.frontend && 'active-filter'}`} onClick={() => handleSelectedProject('frontend')}>Frontend</li>
             <li className={`projects__filter-list--item ${selectedProject.mobile && 'active-filter'}`} onClick={() => handleSelectedProject('mobile')}>Mobile</li>
             <li className={`projects__filter-list--item ${selectedProject.backend && 'active-filter'}`} onClick={() => handleSelectedProject('backend')}>Backend</li>
-            <li className={`projects__filter-list--item ${selectedProject.others && 'active-filter'}`} onClick={() => handleSelectedProject('others')}>Others</li>
+            <li className={`projects__filter-list--item ${selectedProject.others && 'active-filter'}`} onClick={() => handleSelectedProject('others')}>Others</li> */}
+            {listNamesFilters.map((filter, index) => {
+              return (
+                <ListItemForFilterBar
+                  key={filter}
+                  selectedElement={selectedProject}
+                  handleSelectedElement={handleSelectedProject}
+                  element={filter}
+                  title={listTitlesName[index]}
+                  activeResponsivePx={activeResponsivePx}
+                />
+              )
+            })}
           </ul>
         </nav>
         <article>
@@ -147,9 +164,9 @@ const Projects = () => {
           </ul>
           {projects.filter(project => project.category === actualProject).length === 0 && actualProject !== 'all' &&
               <div className='projects__empty'>
-                <p className='projects__empty--text' >No personal projects yet, but can see courses projects where I´ve used this technology.</p>
                 <a className='project-item__links--item' href="https://github.com/stars/onedrako/lists/courses" target="_blank" rel="noopener noreferrer">
-                  <SiGithub size={25}></SiGithub>
+                  <p className='projects__empty--text' >No personal projects yet, but can see courses projects where I´ve used this technology.</p>
+                  <SiGithub size={150}></SiGithub>
                 </a>
               </div>
           }
@@ -164,37 +181,13 @@ const Projects = () => {
           width: 100%;
           margin: 25px auto;
           padding: 20px;
+          max-width: 800px;
         }
         .projects__title{
           font-size: 2.2rem;
         }
         .projects hr{
           width: 100%;
-        }
-
-        .projects__filter-list ul {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 6px;
-          padding: 0px;
-          margin-top: 25px;
-        }
-
-        .projects__filter-list--item {
-          list-style: none;
-          font-size: 1.5rem;
-          border: 1px solid ${theme.modalBackgroundColor};
-          border-radius: 0 0 10px 0;
-          text-align : center;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-        }
-
-        .active-filter{
-          background: ${theme.activeElementColor};
         }
 
         .projects__list {
@@ -207,6 +200,14 @@ const Projects = () => {
           border-radius: 10px;
           gap: 20px;
           /* background: ${theme.modalBackgroundColor}; */
+        }
+
+        .projects__filter-list ul {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 6px;
+          padding: 0px;
+          margin-top: 25px;
         }
 
         .projects__empty {
@@ -222,8 +223,49 @@ const Projects = () => {
           border: 1px solid ${theme.modalBackgroundColor};
         }
 
+        .project-item__links--item{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+
         .projects__empty--text {
-          font-size: 1.3rem;
+          font-size: 1.8rem;
+        }
+
+        @media (min-width: ${`${activeResponsivePx}px`}) {
+          .projects{
+            position: relative;
+            min-height: 425px;
+          }
+          .projects__list {
+            width: 75%;
+            margin-left: auto;
+          }
+          .projects__filter-list {
+            position: absolute;
+            top: 20%;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+            padding: 10px;
+          }
+          .projects__filter-list ul{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+          }
+          .projects__empty {
+            width: 80%;
+            margin: 0 0 0 auto;
+          }
+        }
+        @media (min-width: 800px) {
+          .projects {
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+            padding-bottom: 40px;
+          }
         }
         
 

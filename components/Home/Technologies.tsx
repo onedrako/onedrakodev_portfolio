@@ -12,6 +12,7 @@ import type { TechnologiesData } from '@customTypes/backendTypes'
 // Components
 import { TechnologyItem } from './TechnologyItem'
 import { PaginationBar } from './PaginationBar'
+import ListItemForFilterBar from './ListItemForFilterBar'
 
 const initialState: TechnologiesSelector = {
   all: true,
@@ -81,6 +82,10 @@ const Technologies = () => {
     }
   }
 
+  const listNamesFilters: string[] = ['all', 'frontend', 'mobile', 'backend', 'databases', 'libraries', 'others']
+  const listTitlesName: string[] = ['All', 'Frontend', 'Mobile', 'Backend', 'Databases', "Principal Library's", 'Others']
+  const activeResponsivePx: number = 600
+
   useEffect(() => {
     axios.get('/api/technologies')
       .then(res => {
@@ -102,27 +107,18 @@ const Technologies = () => {
         <hr />
         <nav className='technologies__filter-list'>
           <ul>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.all && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item'} onClick={() => handleSelectedTechnology('all')} >All</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.frontend && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item'} onClick={() => handleSelectedTechnology('frontend')}>Frontend</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.mobile && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('mobile')}>Mobile</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.backend && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('backend')}>Backend</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.databases && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('databases')}>Databases</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.libraries && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('libraries')}>{"Principal Library's"}</li>
-            </div>
-            <div className={`technologies__filter-list--item--background ${selectedTechnology.others && 'active-filter'}`}>
-              <li className={'technologies__filter-list--item '} onClick={() => handleSelectedTechnology('others')}>Others</li>
-            </div>
+            {listNamesFilters.map((filter, index) => {
+              return (
+                <ListItemForFilterBar
+                  key={filter}
+                  selectedElement={selectedTechnology}
+                  handleSelectedElement={handleSelectedTechnology}
+                  element={filter}
+                  title={listTitlesName[index]}
+                  activeResponsivePx={activeResponsivePx}
+                />
+              )
+            })}
           </ul>
         </nav>
         <article>
@@ -156,12 +152,27 @@ const Technologies = () => {
           width: 100%;
           margin: 25px auto;
           padding: 20px;
+          max-width: 800px;
         }
         .technologies__title{
           font-size: 2.2rem;
         }
         .technologies hr{
           width: 100%;
+        }
+
+
+        .technologies__list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, 100px);
+          /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+          justify-content: center;
+          list-style: none;
+          padding: 10px;
+          margin-top: 20px;
+          border-radius: 10px;
+          gap: 20px;
+          /* background: ${theme.modalBackgroundColor}; */
         }
 
         .technologies__filter-list ul {
@@ -172,44 +183,12 @@ const Technologies = () => {
           margin-top : 25px;
         }
 
-        .technologies__filter-list--item {
-          list-style: none;
-          font-size: 1.5rem;
-          border: 1px solid ${theme.modalBackgroundColor};
-          border-radius: 0 0 10px 0;
-          text-align : center;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-        }
 
-        .active-filter{
-          background: ${theme.activeElementColor};
-          border-radius: 0 0 10px 0;
-        }
 
-        .technologies__list {
-          display: grid;
-          grid-template-columns: repeat(3, 30%);
-          justify-content: center;
-          list-style: none;
-          padding: 10px;
-          margin-top: 20px;
-          border-radius: 10px;
-          gap: 20px;
-          /* background: ${theme.modalBackgroundColor}; */
-        }
-
-        .technologies__filter-list--background{
-          border-radius: 0 0 10px 0;
-        }
-
-        @media (min-width: 600px) {
+        @media (min-width: ${`${activeResponsivePx}px`}) {
           .technologies{
             position: relative;
-            min-height: 425px;
+            min-height: 500px;
           }
           .technologies__list {
             width: 75%;
@@ -227,28 +206,12 @@ const Technologies = () => {
             display: flex;
             flex-direction: column;
           }
-          .technologies__filter-list--item {
-            border: none;
-            width: 115px;
-            position: relative;
-          }
-          .technologies__filter-list--background{
-            position: absolute;
-            width: 0%;
-          }
-          .active-filter{
-            background: ${theme.activeElementColor};
-            animation: fillBackground 1.5s ease-in-out;
-            border-radius: 0 0 10px 0;
-          }
 
-          @keyframes fillBackground {
-            0% {
-              width: 10%;
-            }
-            100% {
-              width: 100%;
-            }
+        @media (min-width: 800px) {
+          .technologies{
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+            padding-bottom: 40px;
           }
         }
 
