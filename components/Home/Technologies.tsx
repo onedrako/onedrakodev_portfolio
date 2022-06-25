@@ -24,6 +24,22 @@ const initialState: TechnologiesSelector = {
   others: false
 }
 
+const defineNumberOfElements = () => {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth >= 530 && window.innerWidth < 600) {
+      return 8
+    } else if (window.innerWidth >= 600 && window.innerWidth < 700) {
+      return 9
+    } else if (window.innerWidth >= 700) {
+      return 12
+    } else {
+      return 6
+    }
+  } else {
+    return 6
+  }
+}
+
 const Technologies = () => {
   const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
@@ -38,7 +54,7 @@ const Technologies = () => {
     libraries: 1,
     others: 1
   })
-  const [elementsPerPage, setElementsPerPage] = useState<number>(6)
+  const [elementsPerPage, setElementsPerPage] = useState<number>(defineNumberOfElements())
 
   const { theme } = useContext(ThemeContext)
 
@@ -72,7 +88,7 @@ const Technologies = () => {
   // function to define the items for the pagination technologies
   const defineItems = (): {start: number, end:number} => {
     let start = 0
-    let end = 6
+    let end = elementsPerPage
     if (actualPages[actualTechnology as keyof ActualPagesTechnologiesSelector] === 1) {
       return { start, end }
     } else {
@@ -85,6 +101,11 @@ const Technologies = () => {
   const listNamesFilters: string[] = ['all', 'frontend', 'mobile', 'backend', 'databases', 'libraries', 'others']
   const listTitlesName: string[] = ['All', 'Frontend', 'Mobile', 'Backend', 'Databases', "Principal Library's", 'Others']
   const activeResponsivePx: number = 600
+
+  addEventListener('resize', () => {
+    setElementsPerPage(defineNumberOfElements())
+  }
+  )
 
   useEffect(() => {
     axios.get('/api/technologies')
@@ -122,25 +143,24 @@ const Technologies = () => {
           </ul>
         </nav>
         <article>
-            {numberOfTechnologies > elementsPerPage &&
-              <PaginationBar
-                numberOfItems={numberOfTechnologies}
-                actualSelectedItem={actualTechnology}
-                actualPages={actualPages}
-                setActualPages={setActualPages}
-                elementsForPage={elementsPerPage}
-              />
-            }
-
           <ul className='technologies__list'>
-            {selectedTechnology.all
+              {selectedTechnology.all
 
-              ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)
-              : technologies.filter(technology => technology.category === actualTechnology)
-                .slice(defineItems().start, defineItems().end)
-                .map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)}
+                ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)
+                : technologies.filter(technology => technology.category === actualTechnology)
+                  .slice(defineItems().start, defineItems().end)
+                  .map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)}
 
-          </ul>
+            </ul>
+          {numberOfTechnologies > elementsPerPage &&
+            <PaginationBar
+              numberOfItems={numberOfTechnologies}
+              actualSelectedItem={actualTechnology}
+              actualPages={actualPages}
+              setActualPages={setActualPages}
+              elementsForPage={elementsPerPage}
+            />
+          }
 
         </article>
       </section>

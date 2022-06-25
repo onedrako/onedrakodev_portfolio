@@ -37,7 +37,8 @@ const Projects = () => {
     backend: 1,
     others: 1
   })
-  const [elementsPerPage, setElementsPerPage] = useState<number>(1)
+  // const [elementsPerPage, setElementsPerPage] = useState<number>(1)
+  const elementsPerPage = 1
   const [isModalActive, setIsModalActive] = useState(false)
 
   const { theme } = useContext(ThemeContext)
@@ -124,16 +125,6 @@ const Projects = () => {
           </ul>
         </nav>
         <article>
-            {numberOfProjects > elementsPerPage &&
-              <PaginationBar
-                numberOfItems={numberOfProjects}
-                actualSelectedItem={actualProject}
-                actualPages={actualPages}
-                setActualPages={setActualPages}
-                elementsForPage={elementsPerPage}
-              />
-            }
-
           <ul className='projects__list'>
             {selectedProject.all
               ? projects.slice(defineItems().start, defineItems().end).map(project =>
@@ -162,6 +153,17 @@ const Projects = () => {
                   isActive={isModalActive}
                   />)}
           </ul>
+
+          {numberOfProjects > elementsPerPage &&
+              <PaginationBar
+                numberOfItems={numberOfProjects}
+                actualSelectedItem={actualProject}
+                actualPages={actualPages}
+                setActualPages={setActualPages}
+                elementsForPage={elementsPerPage}
+              />
+            }
+
           {projects.filter(project => project.category === actualProject).length === 0 && actualProject !== 'all' &&
               <div className='projects__empty'>
                 <a className='project-item__links--item' href="https://github.com/stars/onedrako/lists/courses" target="_blank" rel="noopener noreferrer">
