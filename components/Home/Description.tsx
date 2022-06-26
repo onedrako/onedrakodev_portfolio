@@ -1,9 +1,12 @@
-import React from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '@contexts/ThemeContext'
 
 const Description = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <>
-      <section className='short-about-me'>
+      <section className="short-about-me">
         <h2>About Me</h2>
         <hr />
         <p>{'I´m a Frontend and Backend (FullStack) JavaScript Developer.'}</p>
@@ -31,6 +34,20 @@ const Description = () => {
           font-size: 1.6rem;
           margin: 10px 0px 0px 0px;
         }
+
+        @media (min-width: 768px) {
+          .short-about-me{
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 15px;
+          }
+
+          .short-about-me p{
+            font-size: 2rem;
+            text-align: center;
+          }
+          
+        }
+
       `}</style>
     </>
   )

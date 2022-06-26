@@ -1,7 +1,15 @@
+// dependencies
 import Image from 'next/image'
-import React from 'react'
+import { useContext } from 'react'
+
+// components
+import { Description } from './Description'
+
+// contexts
+import { ThemeContext } from '@contexts/ThemeContext'
 
 const Profile = () => {
+  const { theme } = useContext(ThemeContext)
   return (
     <>
       <section className='profile-section'>
@@ -11,20 +19,23 @@ const Profile = () => {
             <Image
               src="https://pbs.twimg.com/profile_images/1097241453863014400/Z9tN1MXZ_400x400.png"
               alt="profile-image"
-              width={135}
-              height={135}
+              width={250}
+              height={250}
+              objectFit="fill"
               style={{ margin: '0 auto', borderRadius: '50%' }}
               />
           </div>
 
           <ul className="profile-section__list-of-social-Networks">
+            <h2>Social Networks</h2>
             <li>
               <a href="https://www.linkedin.com/in/gabrielhvaldez" target="_blank" rel="noreferrer noopener" >
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
                   alt="linkedIn-logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
+                  objectFit="fill"
                   />
                 <h3 className='social-network-name' >LinkedIn</h3>
               </a>
@@ -34,8 +45,9 @@ const Profile = () => {
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
                   alt="github-logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
+                  objectFit="fill"
                   style={ { background: '#ffffff', borderRadius: '35px' } }
                   />
                 <h3 className='social-network-name'>Github</h3>
@@ -46,8 +58,8 @@ const Profile = () => {
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
                   alt="twitter-logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
                   />
                 <h3 className='social-network-name' >Twitter</h3>
               </a>
@@ -55,18 +67,19 @@ const Profile = () => {
           </ul>
 
           <div className='profile-section__container--titles' >
-            <h1>{'Gabriel Hernández Valdez'}</h1>
+            <h1>Gabriel Hernández Valdez</h1>
             <hr />
             <h2>{'< OneDrako Dev />'}</h2>
             <h2>{'< FullStack JavaScript Developer />'}</h2>
           </div>
+          <Description/>
         </div>
 
       </section>
 
       <style jsx>{`
         .profile-section {
-          padding-top: 60px;
+          padding: 20px 0;
         }
 
         .profile-section__container {
@@ -84,10 +97,11 @@ const Profile = () => {
           height: 140px;
           background: #ffffff;
           border-radius: 50%;
+          padding: 3px;
         }
 
         .profile-section__container--titles{
-          margin: 5px auto;
+          margin: 35px auto;
           width: 100%;
           padding: 0 20px;
         }
@@ -114,6 +128,8 @@ const Profile = () => {
           gap: 20px;
           margin-top: 25px;
         }
+
+
         a{
           display: flex;
           width: 65px;
@@ -126,11 +142,75 @@ const Profile = () => {
           margin-top: 5px;
         }
 
+        .profile-section__list-of-social-Networks h2{
+            display: none;
+          }
+
+        hr {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
         @media (min-width: 768px) {
           .profile-section{
-            padding-top: 80px;
+            border-radius: 15px;
+            /* padding-top: 80px; */
+            max-width: 800px;
+            margin: 0 auto;
+          }
+          
+          .profile-section__container{
+            max-width: 650px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 'photo titles' 
+                                'about social'; 
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            padding: 20px;
+            gap: 10px;
+          }
+
+          .profile-section__container--image{
+            grid-area: photo;
+            place-self: center;
+            width: 250px;
+            height: 250px;
+          }
+
+          .profile-section__container--titles{
+            grid-area: about;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 15px;
+          }
+
+          .profile-section__list-of-social-Networks{
+            grid-area: social;
+            place-self: center;
+            margin: 0 auto;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 15px;
+            height: 75%;
+            width: 100%;
+            align-items: center;
+            /* display: grid;
+            grid-template-columns: 1fr 1fr ; */
+            padding: 0 20px;
+          }
+          .profile-section__list-of-social-Networks li{
+            margin: 0 auto;
+          }
+          .profile-section__list-of-social-Networks h2{
+            font-size: 2.2rem;
+            display: block;
           }
         }
+        @media (min-width: 800px) {
+          .profile-section{
+            border: 1px solid ${theme.activeElementColor};
+          }
+        } 
+
       `}</style>
     </>
 

@@ -102,10 +102,12 @@ const Technologies = () => {
   const listTitlesName: string[] = ['All', 'Frontend', 'Mobile', 'Backend', 'Databases', "Principal Library's", 'Others']
   const activeResponsivePx: number = 600
 
-  addEventListener('resize', () => {
-    setElementsPerPage(defineNumberOfElements())
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', () => {
+      setElementsPerPage(defineNumberOfElements())
+    }
+    )
   }
-  )
 
   useEffect(() => {
     axios.get('/api/technologies')
