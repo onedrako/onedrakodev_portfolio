@@ -103,13 +103,9 @@ const Projects = () => {
       <section className='projects'>
         <h2 className='projects__title'>My Projects </h2>
         <hr />
+
         <nav className='projects__filter-list'>
           <ul>
-            {/* <li className={`projects__filter-list--item ${selectedProject.all && 'active-filter'}`} onClick={() => handleSelectedProject('all')} >All</li>
-            <li className={`projects__filter-list--item ${selectedProject.frontend && 'active-filter'}`} onClick={() => handleSelectedProject('frontend')}>Frontend</li>
-            <li className={`projects__filter-list--item ${selectedProject.mobile && 'active-filter'}`} onClick={() => handleSelectedProject('mobile')}>Mobile</li>
-            <li className={`projects__filter-list--item ${selectedProject.backend && 'active-filter'}`} onClick={() => handleSelectedProject('backend')}>Backend</li>
-            <li className={`projects__filter-list--item ${selectedProject.others && 'active-filter'}`} onClick={() => handleSelectedProject('others')}>Others</li> */}
             {listNamesFilters.map((filter, index) => {
               return (
                 <ListItemForFilterBar
@@ -124,6 +120,7 @@ const Projects = () => {
             })}
           </ul>
         </nav>
+
         <article>
           <ul className='projects__list'>
             {selectedProject.all

@@ -367,7 +367,7 @@ const ProjectItem = (
           }
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 800px) {
           .project-item__image--item{
             width: 700px;
           }

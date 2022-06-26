@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import { SoftSkillsData } from '@customTypes/backendTypes'
 
@@ -47,6 +46,16 @@ const SoftSkillItem = ({ softSkill }: {softSkill: SoftSkillsData }) => {
           grid-area: description;
           font-size: 1.5rem;
           padding: 10px;
+        }
+        @media (min-width: 600px) {
+
+          .soft-skill-item__name {
+            font-size: 2.5rem;
+            text-align: start;
+          }
+          .soft-skill-item__description {
+            font-size: 2rem;
+          }
         }
       `}</style>
     </>

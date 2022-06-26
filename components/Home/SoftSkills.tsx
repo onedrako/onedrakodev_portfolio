@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { SoftSkillsData } from '@customTypes/backendTypes'
 import { PaginationBar } from './PaginationBar'
 import { SoftSkillItem } from './SoftSkillItem'
+import { ThemeContext } from '@contexts/ThemeContext'
 
 const SoftSkills = () => {
   const [softSkills, setSoftSkills] = useState<SoftSkillsData[]>([])
@@ -10,7 +11,8 @@ const SoftSkills = () => {
     all: 1
   })
 
-  const [elementsPerPage, setElementsPerPage] = useState<number>(2)
+  // const [elementsPerPage, setElementsPerPage] = useState<number>(2)
+  const elementsPerPage = 2
   const actualSkill = 'all'
   const numberOfItems = softSkills.length
 
@@ -34,11 +36,18 @@ const SoftSkills = () => {
     }
   }
 
+  const { theme } = useContext(ThemeContext)
+
   return (
     <>
       <section className='soft-skills-container'>
         <h2>Principal Soft Skills</h2>
 
+        <ul className='soft-skills-list'>
+          {softSkills.slice(defineItems().start, defineItems().end).map(softSkill => (
+            <SoftSkillItem key={`soft-skill-${softSkill.id}`} softSkill={softSkill} />
+          ))}
+        </ul>
         <PaginationBar
           numberOfItems={numberOfItems}
           actualSelectedItem={actualSkill}
@@ -46,11 +55,6 @@ const SoftSkills = () => {
           setActualPages={setActualPages}
           elementsForPage={elementsPerPage}
         />
-        <ul className='soft-skills-list'>
-          {softSkills.slice(defineItems().start, defineItems().end).map(softSkill => (
-            <SoftSkillItem key={`soft-skill-${softSkill.id}`} softSkill={softSkill} />
-          ))}
-        </ul>
       </section>
 
       <style jsx>{`
@@ -72,6 +76,16 @@ const SoftSkills = () => {
         h2 {
           font-size: 2.2rem;
           border-bottom: 1px solid #e6e6e6;
+        }
+
+        @media (min-width: 800px) {
+          .soft-skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 25px;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+          }
         }
       `}</style>
     </>
