@@ -11,6 +11,7 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
 
   return (
     <>
+      <article className='technologies-list' >
       <h3 className='technologies-list__title'>{title}</h3>
       <div className='technologies-list__container'>
         {data.map(elem =>
@@ -20,6 +21,7 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
             </div>
         )}
       </div>
+      </article>
 
       <style jsx>{`
         .technologies-list__container {
@@ -101,7 +103,6 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
             font-size: 2.2rem;
           }
         }
-
 
       `}</style>
     </>

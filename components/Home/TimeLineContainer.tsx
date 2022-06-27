@@ -6,16 +6,17 @@ import { CategoryOptions } from './CategoryOptions'
 
 import { ThemeContext } from '@contexts/ThemeContext'
 import { LaboralExperienceData, EducationData, educationCategory, jobCategory } from '@customTypes/backendTypes'
+import Link from 'next/link'
 
-const TimeLineContainer = (
-  { title, orientation, endPoint, categories, redirectTo }:
-  {
-    title: string,
-    orientation:string,
-    endPoint:string
-    categories : educationCategory[] | jobCategory[],
-    redirectTo?: string
-  }) => {
+type Props = {
+  title: string,
+  orientation:string,
+  endPoint:string
+  categories : educationCategory[] | jobCategory[],
+  redirectTo?: string
+}
+
+const TimeLineContainer = ({ title, orientation, endPoint, categories, redirectTo }: Props) => {
   type typeData = LaboralExperienceData | EducationData
   const [data, setData] = useState<typeData[]>([])
 
@@ -33,17 +34,24 @@ const TimeLineContainer = (
       <section className='container'>
         <div className='titles-container'>
           <h2>{title}</h2>
-          {redirectTo && <button type='button' className='seeAllButton'>See all</button>}
+          {redirectTo &&
+            <Link href="/certifications">
+              <a className='seeAllButton'>See all</a>
+            </Link>
+            }
         </div>
         <CategoryOptions categories={categories} title={title}/>
         <TimeLine data={data} orientation={orientation} />
       </section>
+
       <style jsx>{`
         .container {
           display: flex;
           flex-direction: column;
           padding: 0 25px;
           margin : 30px 0 ;
+          grid-area: ${orientation};
+          height: fit-content;
         }
         .titles-container {
           display: flex;
@@ -58,13 +66,36 @@ const TimeLineContainer = (
           color: ${theme.textColor};
           border-radius: 5px;
           cursor: pointer;
+          /* text-align: center; */
+          display: flex;
+          justify-content: center;
+          align-items: center; 
         }
         h2{
           font-size: 2.2rem;
           border-bottom: 1px solid #ccc;
           width: 75%;
         }
+        @media (min-width: 650px) {
+          .container {
+            max-width: 600px;
+            margin: 30px auto;
+            border: 1px solid ${theme.modalBackgroundColor};
+            border-radius: 10px;
+            padding: 25px;
+          }
+          .seeAllButton {
+            font-size: 1.5rem;
+            width: 100px;
+          }
+
+        @media (min-width: 1000px) {
+          .container {
+            max-width: 900px;
+          }
+        }
       `}</style>
+
     </>
   )
 }

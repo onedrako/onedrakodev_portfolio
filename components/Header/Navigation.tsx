@@ -54,7 +54,7 @@ const Navigation = () => {
         .navBar {
           display: flex;
           width: 100vw;
-          padding: 10px;
+          padding: 10px 30px 10px 30px;
           background-color: ${theme.backgroundColor};
           border-bottom: 3px solid ${theme.modalBackgroundColor};        
         }

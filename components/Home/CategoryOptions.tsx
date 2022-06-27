@@ -1,14 +1,16 @@
 import { CategoryColorsForTimeLine } from '@utils/constants'
 import { educationCategory, jobCategory } from '@customTypes/backendTypes'
+import { ThemeContext } from '@contexts/ThemeContext'
+import { useContext } from 'react'
 
 const CategoryOptions = ({ categories, title }: {categories : educationCategory[] | jobCategory[], title: string}) => {
   const defineColorPoint = (category: string) => {
     return CategoryColorsForTimeLine[category as keyof typeof CategoryColorsForTimeLine]
   }
-
+  const { theme } = useContext(ThemeContext)
   return (
     <>
-      <div>
+      <div className='categories-container'>
       {categories.map((category, index) =>
         <div key={`${title}-${index}`} className="categories">
           <span className='categories-circle' style={{ border: `2px solid ${defineColorPoint(category)}` }}></span>
@@ -32,6 +34,18 @@ const CategoryOptions = ({ categories, title }: {categories : educationCategory[
         }
         .categories-category {
           font-size: 1.5rem;
+        }
+
+        @media (min-width: 500px) {
+          .categories-container {
+          display: flex;
+          gap: 10px;
+          border: 1px solid ${theme.modalBackgroundColor};
+          margin: 10px 0;
+          border-radius: 10px;
+          padding: 0 10px;
+          width: fit-content;
+          }
         }
       `}</style>
     </>

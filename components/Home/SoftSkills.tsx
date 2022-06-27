@@ -63,6 +63,7 @@ const SoftSkills = () => {
           flex-direction: column;
           padding: 0 25px;
           margin-top: 25px;
+          grid-area: softSkills;
         }
 
         .soft-skills-list {

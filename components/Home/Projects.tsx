@@ -101,7 +101,7 @@ const Projects = () => {
   return (
     <>
       <section className='projects'>
-        <h2 className='projects__title'>My Projects </h2>
+        <h2 className='projects__title'>Portfolio / My Projects </h2>
         <hr />
 
         <nav className='projects__filter-list'>
@@ -181,6 +181,7 @@ const Projects = () => {
           margin: 25px auto;
           padding: 20px;
           max-width: 800px;
+          grid-area : projects;
         }
         .projects__title{
           font-size: 2.2rem;

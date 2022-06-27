@@ -175,6 +175,7 @@ const Technologies = () => {
           margin: 25px auto;
           padding: 20px;
           max-width: 800px;
+          grid-area: technologies;
         }
         .technologies__title{
           font-size: 2.2rem;

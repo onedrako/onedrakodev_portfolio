@@ -54,7 +54,7 @@ const SoftSkillItem = ({ softSkill }: {softSkill: SoftSkillsData }) => {
             text-align: start;
           }
           .soft-skill-item__description {
-            font-size: 2rem;
+            font-size: 1.8rem;
           }
         }
       `}</style>

@@ -24,27 +24,18 @@ import ListOfTechnologiesInProject from '@components/globalComponents/ListOfTech
 import type { ProjectsData } from '@customTypes/backendTypes'
 import type { ActualPagesProjectsSelector } from '@customTypes/types'
 
-const ProjectItem = (
-  {
-    data,
-    numberOfProjects,
-    projectsForPage,
-    actualPages,
-    actualSelectedProject,
-    setPages,
-    isActive,
-    setModalActive
-  }:
-    {
-      data: ProjectsData,
-      numberOfProjects: number,
-      projectsForPage: number,
-      actualPages: ActualPagesProjectsSelector,
-      actualSelectedProject: string,
-      setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
-      isActive: boolean,
-      setModalActive: Dispatch<SetStateAction<boolean>>
-    }) => {
+type Props = {
+  data: ProjectsData,
+  numberOfProjects: number,
+  projectsForPage: number,
+  actualPages: ActualPagesProjectsSelector,
+  actualSelectedProject: string,
+  setPages: Dispatch<SetStateAction<ActualPagesProjectsSelector>>
+  isActive: boolean,
+  setModalActive: Dispatch<SetStateAction<boolean>>
+}
+
+const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, actualSelectedProject, setPages, isActive, setModalActive }:Props) => {
   // const [isActive, setIsActive] = useState(false)
   const { theme } = useContext(ThemeContext)
   const [selectedImage, setSelectedImage] = useState<number>(0)
@@ -75,12 +66,14 @@ const ProjectItem = (
     setModalActive(true)
     container.current?.classList.add('modal')
     item.current?.classList.add('active-element')
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
   }
 
   const closeModal = () => {
     setModalActive(false)
     container.current?.classList.remove('modal')
     item.current?.classList.remove('active-element')
+    document.getElementsByTagName('body')[0].style.overflow = 'visible'
   }
 
   const handleImageNavigation = (image: number) => {
@@ -153,10 +146,11 @@ const ProjectItem = (
               </div>
             }
           </div>
-
-          {data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name} />}
-          {(isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} projectName={data.name} />}
-          {(isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} projectName={data.name} />}
+          <div className='project-item__technologies'>
+            {data.stack.length > 0 && <ListOfTechnologiesInProject title='Stack used:' data={data.stack} projectName={data.name} />}
+            {(isActive && data.libraries.length > 0) && <ListOfTechnologiesInProject title='Principal Libraries:' data={data.libraries} projectName={data.name} />}
+            {(isActive && data.environment.length > 0) && <ListOfTechnologiesInProject title='Environment Technologies:' data={data.environment} projectName={data.name} />}
+          </div>
 
           {/* Button to open modal and see the details of the project */}
           {!isActive && <button className="project-item__see-details-button" type="button" onClick={() => openModal()}>See more</button>}
@@ -185,7 +179,7 @@ const ProjectItem = (
 
         .project-item {
           width: 100%;
-          border: 1px solid #ccc;
+          border: 1px solid ${theme.textColor};
           border-radius: 15px;
           font-size: 2.2rem;
           padding: 15px;
@@ -216,7 +210,7 @@ const ProjectItem = (
         }
         
         .project-item__category-title{
-          border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid ${theme.textColor};
           font-size : 1.8rem;
           height: 35px;
           width: 70%;
@@ -225,12 +219,15 @@ const ProjectItem = (
         }
 
         .project-item__image{
-          width: 100%;
+          max-width: 100%;
           height: auto;
           display: flex;
           justify-content: center;
-          border-radius: 50%;
+          border-radius: 15px;
+          padding: 1px;
           position: relative;
+          border: 1px solid ${theme.textColor};
+          margin: 0 auto;
         }
 
         .project-item__image--navigation{
@@ -268,9 +265,10 @@ const ProjectItem = (
 
         .project-item__links {
           display: flex;
-          gap: 10px;
+          gap: 5px;
           justify-content: space-around;
-          margin : 15px 0;
+          margin : 15px auto;
+          max-width: 350px;
         }
 
         .project-item__links--item {
@@ -281,7 +279,7 @@ const ProjectItem = (
           font-size: 2rem;
           padding: 8px;
           border-radius: 15px;
-          border: 1px solid #ccc;
+          border: 1px solid ${theme.textColor};
         }
 
         .project-item__icon-text{
@@ -306,19 +304,20 @@ const ProjectItem = (
         }
 
         .modal{
-          width: 100vw;
-          height: 100vh;
+          width: 100%;
+          height: 100%;
           background: ${theme.backgroundColor};
           position: fixed;
           z-index: 2;
           top: 0px;
           left: 0px;
+          overflow-x: hidden;
         }
 
         .active-element{
-          width: 95%;
-          height: 90%;
-          margin: auto;
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
           margin-top: 45px;
           overflow: auto;
           border: none;
@@ -356,23 +355,79 @@ const ProjectItem = (
           z-index: 3;
           cursor: pointer;
         }
-        
+
 
         /* Responsive Design */
 
+        @media (min-width: 425px){
+          .project-item__links{
+            gap: 30px;
+          }
+        }
+
         @media (min-width: 610px) {
           .project-item{
-            max-width: 575px;
-            margin: auto;
+            ${isActive ? 'width: 100%;' : 'max-width: 575px;'}
+            ${isActive && 'padding: 75px;'}
           }
+
         }
 
         @media (min-width: 800px) {
           .project-item__image--item{
-            width: 700px;
+            max-width: 700px;
+            height: fit-content;
           }
           .project-item{
-            margin: 0 0 0 auto;
+            ${isActive ? 'margin: 0 auto;' : 'margin: 0 0 0 auto;'}
+          }
+          .project-item__category-title{
+            font-size: 2.2rem;
+          }
+          
+          .project-item--description{
+            font-size: 1.8rem;
+          }
+        }
+
+        @media (min-width: 1000px) {
+          .project-item{
+            ${isActive && (
+              `display: grid;
+              grid-template-columns: 50% 45%;
+              grid-template-rows: 50px 50px 80px auto auto; 
+              gap: 15px 35px;
+              grid-template-areas: 
+                "title technologies"
+                "category technologies"
+                "links technologies"
+                "description technologies"
+                "image technologies";
+                `
+            )
+          }
+          }
+          .project-item__title{
+            ${isActive && 'grid-area: title;'}
+          }
+          .project-item__category{
+            ${isActive && 'grid-area:category ;'}
+          }
+          .project-item--description{
+            ${isActive && 'grid-area:description ;'}
+          }
+          .project-item__links{
+            ${isActive && 'grid-area:links ;'}
+          }
+          .project-item__image{
+            ${isActive && 'grid-area:image ;'}
+            height: fit-content;
+          }
+          .project-item__technologies{
+            ${isActive && 'grid-area:technologies ;'}
+          }
+          .close{
+            right: 50px;
           }
         }
 
