@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 
 // Context
 import { ThemeContext } from '@contexts/ThemeContext'
@@ -9,6 +10,8 @@ import { technologiesList } from '@utils/listOfTechnologiesIcons'
 const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: string, data: string[], projectName:string}) => {
   const { theme } = useContext(ThemeContext)
 
+  const route = useRouter()
+  console.log(route.pathname)
   return (
     <>
       <article className='technologies-list' >
@@ -93,7 +96,7 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
 
         @media (min-width: 350px){
           .technologies-list__container {
-            grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(${route.pathname === 'certifications' ? '40' : '55'}, 1fr));
             gap: 30px;
           }
           .technology-item__name{

@@ -475,6 +475,18 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/2986-api-practico/diploma/detalle/'
   },
   {
+    id: 36,
+    name: 'Diploma del Curso Profesional de Consumo de API REST con JavaScript',
+    institution: 'Platzi',
+    learningPath: [{ learningPath: 'Web Development School', level: 'Intermediate', order: 36 }],
+    courseCategory: 'Technology',
+    technologies: ['javaScript', 'axios'],
+    date: '2022-06-28',
+    image: 'https://i.imgur.com/HaEAv30.png',
+    platformUrl: 'https://platzi.com/cursos/api-profesional/',
+    certificateUrl: 'https://platzi.com/p/onedrako/curso/2942-course/diploma/detalle/'
+  },
+  {
     id: 37,
     name: 'Curso de Gestión de Dependencias y Paquetes con NPM',
     institution: 'Platzi',

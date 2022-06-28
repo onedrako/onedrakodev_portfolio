@@ -25,10 +25,10 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
           </div>
           {selectedNavigation.home && <hr className="bottomLineInLinkActive" />}
         </li>
-        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.portfolio ? () => null : callback}>
+        <li className={'SideNavigation__li vertical inactive'} onClick={selectedNavigation.portfolio ? () => null : callback}>
           <div className='SideNavigation__li--link'>
             <BiBriefcase/>
-            <Link href="/portfolio"><a>Portfolio</a></Link>
+            <Link href="/#"><a>Portfolio</a></Link>
           </div>
           {selectedNavigation.portfolio && <hr className="bottomLineInLinkActive" />}
         </li>
@@ -41,18 +41,18 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
           {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
         </li>
 
-        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.personal ? () => null : callback}>
+        <li className={'SideNavigation__li vertical inactive'} onClick={selectedNavigation.personal ? () => null : callback}>
           <div className='SideNavigation__li--link'>
             <CgNotes/>
-            <Link href="personal">Personal</Link>
+            <Link href="#">Personal</Link>
             </div>
           {selectedNavigation.personal && <hr className="bottomLineInLinkActive" />}
         </li>
 
-        <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.about ? () => null : callback}>
+        <li className={'SideNavigation__li vertical inactive'} onClick={selectedNavigation.about ? () => null : callback}>
           <div className='SideNavigation__li--link'>
             <BiUser/>
-            <Link href="about">About Me</Link>
+            <Link href="#">About Me</Link>
             </div>
           {selectedNavigation.about && <hr className="bottomLineInLinkActive" />}
         </li>
@@ -97,6 +97,9 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
             .closeIcon {
               position: absolute;
             }
+            .inactive{
+              opacity: 0.3;
+            }
 
             @keyframes stretchBorderLineInactive {
               from {
@@ -123,7 +126,7 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
               align-items: center;
               text-align: center;
               margin-right: 10px;
-              width: 125px;
+              width: fit-content;
               font-size: 3.5rem;
             }
             .SideNavigation__li--link{

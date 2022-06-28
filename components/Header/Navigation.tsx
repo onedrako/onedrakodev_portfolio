@@ -64,6 +64,11 @@ const Navigation = () => {
           gap: 10px;
           justify-content: end;
         }
+        @media (min-width: 768px) {
+          ul{
+            gap: 20px;
+          }
+        }
       `}</style>
     </>
   )

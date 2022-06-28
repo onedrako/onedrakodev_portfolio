@@ -117,7 +117,7 @@ const CertificateItem = <T extends items>({ certificates }: CertificateItemProps
         width: 100%;
         flex-direction: column;
         min-height: 150px;
-        max-height: 225px;
+        max-height: 240px;
         overflow-y: ${showScroll ? 'scroll' : 'hidden'}; //
         overflow-x: hidden;
       }
