@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
+import { useContext, useState } from 'react'
 import { SoftSkillsData } from '@customTypes/backendTypes'
 import { PaginationBar } from './PaginationBar'
 import { SoftSkillItem } from './SoftSkillItem'
 import { ThemeContext } from '@contexts/ThemeContext'
+import { useGetSimpleData } from '@hooks/useGetSimpleData'
+import { SoftSkillsSkeleton } from './skeletons/SoftSkillsSkeleton'
 
 const SoftSkills = () => {
-  const [softSkills, setSoftSkills] = useState<SoftSkillsData[]>([])
+  const [softSkills, loading] = useGetSimpleData<SoftSkillsData>('/api/soft-skills')
   const [actualPages, setActualPages] = useState<{all: number}>({
     all: 1
   })
@@ -16,13 +17,7 @@ const SoftSkills = () => {
   const actualSkill = 'all'
   const numberOfItems = softSkills.length
 
-  useEffect(() => {
-    axios.get('/api/soft-skills')
-      .then(res => {
-        const data = res.data as SoftSkillsData[]
-        setSoftSkills(data)
-      })
-  }, [])
+  const { theme } = useContext(ThemeContext)
 
   const defineItems = (): {start: number, end:number} => {
     let start = 0
@@ -36,17 +31,17 @@ const SoftSkills = () => {
     }
   }
 
-  const { theme } = useContext(ThemeContext)
-
   return (
     <>
       <section className='soft-skills-container'>
         <h2>Principal Soft Skills</h2>
 
         <ul className='soft-skills-list'>
-          {softSkills.slice(defineItems().start, defineItems().end).map(softSkill => (
+          {loading
+            ? <SoftSkillsSkeleton/>
+            : softSkills.slice(defineItems().start, defineItems().end).map(softSkill => (
             <SoftSkillItem key={`soft-skill-${softSkill.id}`} softSkill={softSkill} />
-          ))}
+            ))}
         </ul>
         <PaginationBar
           numberOfItems={numberOfItems}
