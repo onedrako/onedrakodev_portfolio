@@ -36,7 +36,7 @@ const NavigationListItems = ({ selectedNavigation, action }: Props) => {
         <li className={'SideNavigation__li vertical'} onClick={selectedNavigation.certifications ? () => null : callback}>
           <div className='SideNavigation__li--link'>
             <TbCertificate/>
-            <Link href="certifications">Certifications</Link>
+            <Link href="/certifications">Certifications</Link>
           </div>
           {selectedNavigation.certifications && <hr className="bottomLineInLinkActive" />}
         </li>

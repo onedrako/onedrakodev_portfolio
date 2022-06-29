@@ -177,10 +177,10 @@ const Projects = () => {
         .projects {
           display: flex;
           flex-direction: column;
-          width: 100%;
+          max-width: 90%;
           margin: 25px auto;
-          padding: 20px;
-          max-width: 800px;
+          padding: 10px;
+          /* max-width: 800px; */
           grid-area : projects;
         }
         .projects__title{

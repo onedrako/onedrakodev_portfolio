@@ -363,12 +363,12 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           .project-item__links{
             gap: 30px;
           }
-        }
+        }|
 
         @media (min-width: 610px) {
           .project-item{
             ${isActive ? 'width: 100%;' : 'max-width: 575px;'}
-            ${isActive && 'padding: 75px;'}
+            ${isActive ? 'padding: 75px;' : 'padding: 15px;'}
           }
 
         }

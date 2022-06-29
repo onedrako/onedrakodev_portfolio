@@ -12,17 +12,28 @@ const HomeComponent = () => {
   return (
     <>
       <main>
-        <div className="divisor"style={{ paddingTop: '75px', gridArea: 'div' }}></div>
-          <Profile />
-          <Technologies/>
-          <Projects/>
-          <SoftSkills/>
-          <TimeLineContainer title={'Laboral Experience'} orientation={'left'} endPoint={'/api/laboral'} categories={laboralCategories} />
-          <TimeLineContainer title={'Education'} orientation={'right'} endPoint={'/api/education'} categories={educationCategories} redirectTo="/" />
+        <div className="divisor"></div>
+        <Profile />
+        <Technologies/>
+        <Projects/>
+        <SoftSkills/>
+        <TimeLineContainer title={'Laboral Experience'} orientation={'left'} endPoint={'/api/laboral'} categories={laboralCategories} />
+        <TimeLineContainer title={'Education'} orientation={'right'} endPoint={'/api/education'} categories={educationCategories} redirectTo="/" />
       </main>
       <style jsx>{`
-        @media (min-width: 1440px) {
         main {
+          /* max-width: 99%; */
+          margin: 0 auto;
+          /* overflow-x: hidden; */
+        }
+        .divisor{
+          width: 100%;
+          padding-top: 75px;
+          grid-area: div;
+        }
+
+        @media (min-width: 1440px) {
+          main {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-template-areas:
@@ -31,10 +42,9 @@ const HomeComponent = () => {
           "technologies softSkills"
           "projects projects"
           "right left";
+          padding: 15px;
           gap: 20px;
-          padding: 10px
         }
-
       }
       `}</style>
     </>

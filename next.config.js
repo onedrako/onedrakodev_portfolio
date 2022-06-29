@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withPWA = require('next-pwa')
+
+module.exports = withPWA({
+  pwa: {
+    dest: 'public', // Destino
+    register: true, // Registrar el service worker
+    mode: 'production',
+    disable: false
+  },
   reactStrictMode: true,
   images: {
     domains: [
@@ -18,6 +26,4 @@ const nextConfig = {
       'scontent.fmex2-1.fna.fbcdn.net'
     ]
   }
-}
-
-module.exports = nextConfig
+})

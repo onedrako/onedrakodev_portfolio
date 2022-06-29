@@ -79,7 +79,8 @@ const Profile = () => {
 
       <style jsx>{`
         .profile-section {
-          padding: 20px 0;
+          /* padding: 0 15px; */
+          margin : 0 auto;
           width: 100%;
           grid-area: profile;
         }

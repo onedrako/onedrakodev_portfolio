@@ -11,7 +11,6 @@ const ListOfTechnologiesInProject = ({ title, data, projectName }: {title: strin
   const { theme } = useContext(ThemeContext)
 
   const route = useRouter()
-  console.log(route.pathname)
   return (
     <>
       <article className='technologies-list' >

@@ -41,6 +41,13 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleSideBarVisible)
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 768) {
+        setSideBarIsVisible(true)
+      } else {
+        setSideBarIsVisible(false)
+      }
+    }
   }, [])
 
   return (

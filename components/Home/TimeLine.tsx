@@ -65,7 +65,7 @@ const TimeLine = <T extends typeData>({ data, orientation }: Props<T>) => {
         .timeLine-container {
           display: grid;
           grid-template-columns: 1fr;
-          margin: 10px 0 0 15px;
+          /* margin: 10px 0 0 15px; */
           padding: 0 25px;
         }
         .timeLine-item {
