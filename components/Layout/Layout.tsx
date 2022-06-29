@@ -8,6 +8,7 @@ const Layout = ({ children, conditionForStyle }: {children: ReactNode, condition
   return (
     <>
       <Header />
+      <div className="divisor"></div>
       {children}
 
       <style jsx global>{`
@@ -15,6 +16,11 @@ const Layout = ({ children, conditionForStyle }: {children: ReactNode, condition
           background-color: ${theme.backgroundColor};
           color: ${theme.textColor};
           font-size: 4rem;
+        }
+        .divisor{
+          width: 100%;
+          padding-top: 75px;
+          grid-area: div;
         }
       `}
       </style>

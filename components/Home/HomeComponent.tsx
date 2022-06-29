@@ -26,11 +26,7 @@ const HomeComponent = () => {
           margin: 0 auto;
           /* overflow-x: hidden; */
         }
-        .divisor{
-          width: 100%;
-          padding-top: 75px;
-          grid-area: div;
-        }
+
 
         @media (min-width: 1440px) {
           main {

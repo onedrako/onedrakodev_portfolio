@@ -4,6 +4,18 @@ import type { ProjectsData } from 'types/backendTypes'
 const allProjects: ProjectsData[] = [
   {
     id: 1,
+    name: 'Personal Portfolio',
+    description: 'My personal portfolio, I´m using this to show my projects, my skills and hope this will be the page of my personal brand.',
+    githubUrl: 'https://github.com/onedrako/onedrakodev_portfolio',
+    projectUrl: '#',
+    category: 'frontend',
+    images: ['https://i.imgur.com/2RI6JO4.png', 'https://i.imgur.com/renN5it.png', 'https://i.imgur.com/AjhqUtL.png', 'https://i.imgur.com/itxIURU.png', 'https://i.imgur.com/RNakv7X.png', 'https://i.imgur.com/PB26iNX.png', 'https://i.imgur.com/vmZNm3L.png', 'https://i.imgur.com/xkYCYeC.png', 'https://i.imgur.com/wwSX65W.png'],
+    stack: ['next', 'react', 'typeScript', 'cssInJs', 'javaScript', 'jsx'],
+    libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'i18next', 'axios', 'dotenv'],
+    environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
+  },
+  {
+    id: 2,
     name: 'Form to introduce yourself v2',
     description: 'I´m on a discord channel, people use to introduce themselves with a message, I thought it was a good idea to create an app to generate this introduction. Users can put some information about them and can generate an image that can download and put it on the discord channel.',
     githubUrl: 'https://github.com/onedrako/onedrako-socials-page',
@@ -15,7 +27,7 @@ const allProjects: ProjectsData[] = [
     environment: ['vercel', 'webpack', 'babel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
   },
   {
-    id: 2,
+    id: 3,
     name: 'Game week for streams',
     description: 'For a streaming, people usually ask the schedule and the game for the day, so i built a web where they can see it for every week and with the schedule for the place they are from',
     githubUrl: 'https://github.com/onedrako/onedrako-socials-page',
@@ -27,7 +39,7 @@ const allProjects: ProjectsData[] = [
     environment: ['vercel', 'webpack', 'babel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
   },
   {
-    id: 3,
+    id: 4,
     name: 'Backend for game schedules for streams',
     description: 'The backend for the game schedules for streams, it has authentication to update the info for the frontend, password recovery and The CRUD functions for every endpoint ',
     githubUrl: 'https://github.com/onedrako/onedrako_web_backend',
@@ -39,7 +51,7 @@ const allProjects: ProjectsData[] = [
     environment: ['heroku', 'docker', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
   },
   {
-    id: 4,
+    id: 5,
     name: 'Schedules announces for Study With Me stream',
     description: 'I made this for a person who was doing their schedules for a "Study With Me" streaming  manually, I programmed it to update her schedule for the week, can make it with different options for each day, and finally can download three schedules images for three countries',
     githubUrl: 'https://github.com/onedrako/theWinterGallerySchedules_Frontend',
@@ -51,7 +63,7 @@ const allProjects: ProjectsData[] = [
     environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
   },
   {
-    id: 5,
+    id: 6,
     name: 'Backend for the Schedules announces for Study With Me stream',
     description: 'The backend for the schedules announces for Study With Me stream, it has authentication to update the info for the frontend, password recovery and The CRUD functions for every endpoint',
     githubUrl: 'https://github.com/onedrako/TheWinterGallerySchedules',
@@ -61,18 +73,6 @@ const allProjects: ProjectsData[] = [
     stack: ['node', 'express', 'postgres'],
     libraries: ['sequelize', 'jwt', 'passport', 'nodeMailer', 'bcrypt', 'joi', 'dotenv'],
     environment: ['heroku', 'docker', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'npm']
-  },
-  {
-    id: 6,
-    name: 'Personal Portfolio',
-    description: 'My personal portfolio, I´m using this to show my projects, my skills and hope this will be the page of my personal brand.',
-    githubUrl: 'https://github.com/onedrako/onedrakodev_portfolio',
-    projectUrl: '#',
-    category: 'frontend',
-    images: ['https://i.imgur.com/Z9D8mb7.png'],
-    stack: ['next', 'react', 'typeScript', 'cssInJs', 'javaScript', 'jsx'],
-    libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'i18next', 'axios', 'dotenv'],
-    environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
   },
   {
     id: 7,

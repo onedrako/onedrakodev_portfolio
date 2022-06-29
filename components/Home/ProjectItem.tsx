@@ -444,6 +444,34 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           .close{
             right: 50px;
           }
+          
+        }
+        @media (min-width: 1500px) {
+          .project-item{
+            ${isActive && (
+              'max-width: 1500px;'
+            )
+          }
+          }
+          .next{
+          right: 5%;
+        }
+  
+        .prev{
+          left: 5%;
+        }
+        }
+        @media (min-width: 1900px) {
+          .next{
+          right: 10%;
+        }
+  
+        .prev{
+          left: 10%;
+        }
+        .close{
+          right: 10%;
+        }
         }
 
       `} </style>

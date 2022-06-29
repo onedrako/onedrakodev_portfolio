@@ -71,7 +71,7 @@ const CertificationsComponent: NextPage = () => {
         }
         .certifications-title{
           font-size: 2.5rem;
-          padding: 50px 15px 0px 15px;
+          padding: 0 15px 0px 15px;
         }
         .intersection-observer{
           display: block;
