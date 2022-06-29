@@ -12,7 +12,6 @@ const HomeComponent = () => {
   return (
     <>
       <main>
-        <div className="divisor"></div>
         <Profile />
         <Technologies/>
         <Projects/>
@@ -22,11 +21,8 @@ const HomeComponent = () => {
       </main>
       <style jsx>{`
         main {
-          /* max-width: 99%; */
           margin: 0 auto;
-          /* overflow-x: hidden; */
         }
-
 
         @media (min-width: 1440px) {
           main {

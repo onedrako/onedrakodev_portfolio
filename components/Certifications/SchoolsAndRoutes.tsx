@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { useGetData } from 'hooks/useGetData'
+import { useGetCertificatesData } from '@hooks/useGetCertificatesData'
 import { SchoolsAndRoutesData } from '@customTypes/backendTypes'
 import { CertificateItem } from './CertificateItem'
 import CertificatesPageTitles from './CertificatesPageTitles'
@@ -8,7 +8,7 @@ import { ThemeContext } from '@contexts/ThemeContext'
 import { CertificateItemSkeleton } from './skeletons/CertificateItemSkeleton'
 
 const SchoolsAndRoutes = () => {
-  const [routesData, loading, error] = useGetData<SchoolsAndRoutesData>('/api/schools')
+  const [routesData, loading, error] = useGetCertificatesData<SchoolsAndRoutesData>('/api/schools')
 
   const orderSchools = routesData.sort((a: SchoolsAndRoutesData, b: SchoolsAndRoutesData) => {
     return new Date(b.date).valueOf() - new Date(a.date).valueOf()

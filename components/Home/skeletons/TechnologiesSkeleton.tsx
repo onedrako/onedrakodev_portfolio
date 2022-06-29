@@ -1,7 +1,7 @@
 import { ThemeContext } from '@contexts/ThemeContext'
 import { useContext } from 'react'
 
-const TechnologiesSkeleton = () => {
+const TechnologiesSkeleton = ({ itemHeight }: {itemHeight: string}) => {
   const { theme } = useContext(ThemeContext)
   return (
     <>
@@ -11,7 +11,7 @@ const TechnologiesSkeleton = () => {
       </li>
       <style jsx>{`
         .container {
-          height: 80px;
+          height: ${itemHeight};
           display: flex;
           flex-direction: column;
           gap: 10%;
@@ -25,7 +25,7 @@ const TechnologiesSkeleton = () => {
           border-radius: 50%;
         }
         .title {
-          width: 75%;
+          width: 65%;
           height:20%;
           background-color: ${theme.textColor};
           border-radius: 10px;

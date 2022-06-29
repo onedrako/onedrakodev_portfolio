@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import CertificatesPageTitles from './CertificatesPageTitles'
 
 // Custom Hooks
-import { useGetData } from '@hooks/useGetData'
+import { useGetCertificatesData } from '@hooks/useGetCertificatesData'
 
 // Components
 import { CertificateItem } from './CertificateItem'
@@ -25,8 +25,8 @@ const CertificatesList = ({ apiUrl, title, type, searchValue }: {apiUrl:string, 
 
   const searchSection = useRef<HTMLDivElement>(null)
 
-  const [routeData] = useGetData<EducationData>(`/api/schools/${title}`)
-  const [certificatesData, loading, error, fullData] = useGetData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
+  const [routeData] = useGetCertificatesData<EducationData>(`/api/schools/${title}`)
+  const [certificatesData, loading, error, fullData] = useGetCertificatesData<CertificationsData>(apiUrl, inView, searchValue, searchSection)
   let total, progress, category
 
   if (type === 'route') {

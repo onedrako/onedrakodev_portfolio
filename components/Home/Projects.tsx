@@ -1,6 +1,5 @@
 // Dependencies
 import { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
 
 // Icons
 import { SiGithub } from 'react-icons/si'
@@ -16,6 +15,8 @@ import type { ProjectsData } from '@customTypes/backendTypes'
 import { ProjectItem } from './ProjectItem'
 import { PaginationBar } from './PaginationBar'
 import ListItemForFilterBar from './ListItemForFilterBar'
+import { useGetSimpleData } from '@hooks/useGetSimpleData'
+import ProjectItemSkeleton from './skeletons/ProjectItemSkeleton'
 
 const initialState: ProjectsSelector = {
   all: true,
@@ -26,7 +27,7 @@ const initialState: ProjectsSelector = {
 }
 
 const Projects = () => {
-  const [projects, setProjects] = useState<ProjectsData[] | []>([])
+  const [projects, loading] = useGetSimpleData<ProjectsData>('/api/projects')
   const [selectedProject, setSelectedProject] = useState<ProjectsSelector>(initialState)
   const [actualProject, setActualProject] = useState<string>('all')
   const [numberOfProjects, setNumberOfProjects] = useState<number>(projects.length)
@@ -82,15 +83,6 @@ const Projects = () => {
   }
 
   useEffect(() => {
-    axios.get('/api/projects')
-      .then(res => {
-        const data = res.data as ProjectsData[]
-        setProjects(data)
-      })
-    defineNumberOfProjects()
-  }, [])
-
-  useEffect(() => {
     defineNumberOfProjects()
   }, [projects, actualProject])
 
@@ -123,8 +115,11 @@ const Projects = () => {
 
         <article>
           <ul className='projects__list'>
-            {selectedProject.all
-              ? projects.slice(defineItems().start, defineItems().end).map(project =>
+
+            {loading
+              ? <ProjectItemSkeleton/>
+              : selectedProject.all
+                ? projects.slice(defineItems().start, defineItems().end).map(project =>
                 <ProjectItem
                   key={`project-${project.id}`}
                   data={project}
@@ -136,9 +131,9 @@ const Projects = () => {
                   setModalActive={setIsModalActive}
                   isActive={isModalActive}
                   />)
-              : projects.filter(project => project.category === actualProject)
-                .slice(defineItems().start, defineItems().end)
-                .map(project => <ProjectItem
+                : projects.filter(project => project.category === actualProject)
+                  .slice(defineItems().start, defineItems().end)
+                  .map(project => <ProjectItem
                   key={`project-${project.id}`}
                   data={project}
                   actualPages={actualPages}

@@ -12,8 +12,8 @@ import type { TechnologiesData } from '@customTypes/backendTypes'
 import { TechnologyItem } from './TechnologyItem'
 import { PaginationBar } from './PaginationBar'
 import ListItemForFilterBar from './ListItemForFilterBar'
-import { useGetData } from '@hooks/useGetData'
 import { TechnologiesSkeleton } from './skeletons/TechnologiesSkeleton'
+import { useGetSimpleData } from '@hooks/useGetSimpleData'
 
 const initialState: TechnologiesSelector = {
   all: true,
@@ -36,7 +36,7 @@ const defineNumberOfElements = () => {
     if (window.innerWidth >= 700) {
       return 12
     }
-    if (window.innerWidth > 360) {
+    if (window.innerWidth > 400) {
       return 6
     } else {
       return 4
@@ -47,8 +47,7 @@ const defineNumberOfElements = () => {
 }
 
 const Technologies = () => {
-  // const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
-  const [technologies, loading] = useGetData<TechnologiesData>('/api/technologies')
+  const [technologies, loading] = useGetSimpleData<TechnologiesData>('/api/technologies')
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
   const [actualTechnology, setActualTechnology] = useState<string>('all')
   const [numberOfTechnologies, setNumberOfTechnologies] = useState<number>(technologies.length)
@@ -123,7 +122,7 @@ const Technologies = () => {
   const skeletonElements = () => {
     const elements = []
     for (let i = 0; i < elementsPerPage; i++) {
-      elements.push(<TechnologiesSkeleton key={i} />)
+      elements.push(<TechnologiesSkeleton key={i} itemHeight="80px"/>)
     }
     return elements
   }

@@ -9,7 +9,7 @@ import { SchoolsAndRoutes } from './SchoolsAndRoutes'
 import { SearchCertificate } from './SearchCertificate'
 
 // CustomHooks
-import { useGetData } from '@hooks/useGetData'
+import { useGetCertificatesData } from '@hooks/useGetCertificatesData'
 
 // Types
 import { CertificatesToRenderType } from '@customTypes/backendTypes'
@@ -22,7 +22,7 @@ const CertificationsComponent: NextPage = () => {
     threshold: 0.15
   })
 
-  const [certificationsGroups, loading] = useGetData<CertificatesToRenderType>('api/certifications-groups')
+  const [certificationsGroups, loading] = useGetCertificatesData<CertificatesToRenderType>('api/certifications-groups')
 
   useEffect(() => {
     if (!loading) {

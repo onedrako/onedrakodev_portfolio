@@ -11,7 +11,7 @@ import axios from 'axios'
 
 const limit = 5
 
-const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string, searchSection?: RefObject<HTMLDivElement>): [DataType[], boolean, any, boolean] => {
+const useGetCertificatesData = <DataType>(endPoint: string, inView?:boolean, searchValue?: string, searchSection?: RefObject<HTMLDivElement>): [DataType[], boolean, any, boolean] => {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(null)
@@ -110,4 +110,4 @@ const useGetData = <DataType>(endPoint: string, inView?:boolean, searchValue?: s
   return [data, loading, error, fullData]
 }
 
-export { useGetData }
+export { useGetCertificatesData }
