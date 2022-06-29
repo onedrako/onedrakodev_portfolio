@@ -97,7 +97,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
 
   return (
     <>
-      <article ref={container}>
+      <article className='project-item-container' ref={container}>
         <div ref={item} className="project-item" >
           <h2 className="project-item__title">{data.name}</h2>
           <div className='project-item__category'>
@@ -321,7 +321,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           margin-top: 45px;
           overflow: auto;
           border: none;
-          padding: 50px;
+          padding: 55px;
         }
 
         .project-item__navigation {
@@ -360,15 +360,30 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
         /* Responsive Design */
 
         @media (min-width: 425px){
+          .project-item-container{
+            margin: 0 auto;
+          }
           .project-item__links{
             gap: 30px;
           }
-        }|
+          .project-item__icon-text{
+            font-size: 1.5rem;
+          }
+        }
 
         @media (min-width: 610px) {
           .project-item{
             ${isActive ? 'width: 100%;' : 'max-width: 575px;'}
             ${isActive ? 'padding: 75px;' : 'padding: 15px;'}
+          }
+          .project-item__title{
+            font-size: 3rem;
+          }
+          .project-item__category{
+            font-size: 2.4rem;
+          }
+          .project-item--description{
+            font-size: 1.8rem;
           }
 
         }
@@ -377,17 +392,16 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           .project-item__image--item{
             max-width: 700px;
             height: fit-content;
+            margin: 0 auto;
           }
           .project-item{
             ${isActive ? 'margin: 0 auto;' : 'margin: 0 0 0 auto;'}
+            max-width: 800px;
           }
           .project-item__category-title{
             font-size: 2.2rem;
           }
           
-          .project-item--description{
-            font-size: 1.8rem;
-          }
         }
 
         @media (min-width: 1000px) {
@@ -395,7 +409,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
             ${isActive && (
               `display: grid;
               grid-template-columns: 50% 45%;
-              grid-template-rows: 50px 50px 80px auto auto; 
+              grid-template-rows: auto 50px 80px auto auto; 
               gap: 15px 35px;
               grid-template-areas: 
                 "title technologies"
@@ -403,6 +417,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
                 "links technologies"
                 "description technologies"
                 "image technologies";
+              max-width: 1400px;
                 `
             )
           }

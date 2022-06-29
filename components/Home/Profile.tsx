@@ -17,7 +17,7 @@ const Profile = () => {
 
           <div className='profile-section__container--image'>
             <Image
-              src="https://pbs.twimg.com/profile_images/1097241453863014400/Z9tN1MXZ_400x400.png"
+              src="https://pbs.twimg.com/profile_images/1542017404426928128/mexU6Mdd_400x400.jpg"
               alt="profile-image"
               width={250}
               height={250}

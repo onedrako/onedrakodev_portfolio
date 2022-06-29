@@ -264,7 +264,7 @@ const Projects = () => {
           .projects {
             border: 1px solid ${theme.modalBackgroundColor};
             border-radius: 10px;
-            padding-bottom: 40px;
+            padding: 20px;
           }
         }
         
