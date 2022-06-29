@@ -5,7 +5,7 @@ import { SchoolsAndRoutesData } from '@customTypes/backendTypes'
 import { CertificateItem } from './CertificateItem'
 import CertificatesPageTitles from './CertificatesPageTitles'
 import { ThemeContext } from '@contexts/ThemeContext'
-import { CertificateItemSkeleton } from './CertificateItemSkeleton'
+import { CertificateItemSkeleton } from './skeletons/CertificateItemSkeleton'
 
 const SchoolsAndRoutes = () => {
   const [routesData, loading, error] = useGetData<SchoolsAndRoutesData>('/api/schools')

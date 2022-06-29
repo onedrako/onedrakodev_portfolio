@@ -1,6 +1,5 @@
 // dependencies
 import { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
 
 // Context
 import { ThemeContext } from '@contexts/ThemeContext'
@@ -13,6 +12,8 @@ import type { TechnologiesData } from '@customTypes/backendTypes'
 import { TechnologyItem } from './TechnologyItem'
 import { PaginationBar } from './PaginationBar'
 import ListItemForFilterBar from './ListItemForFilterBar'
+import { useGetData } from '@hooks/useGetData'
+import { TechnologiesSkeleton } from './skeletons/TechnologiesSkeleton'
 
 const initialState: TechnologiesSelector = {
   all: true,
@@ -28,20 +29,26 @@ const defineNumberOfElements = () => {
   if (typeof window !== 'undefined') {
     if (window.innerWidth >= 530 && window.innerWidth < 600) {
       return 8
-    } else if (window.innerWidth >= 600 && window.innerWidth < 700) {
+    }
+    if (window.innerWidth >= 600 && window.innerWidth < 700) {
       return 9
-    } else if (window.innerWidth >= 700) {
+    }
+    if (window.innerWidth >= 700) {
       return 12
-    } else {
+    }
+    if (window.innerWidth > 360) {
       return 6
+    } else {
+      return 4
     }
   } else {
-    return 6
+    return 4
   }
 }
 
 const Technologies = () => {
-  const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
+  // const [technologies, setTechnologies] = useState<TechnologiesData[] | []>([])
+  const [technologies, loading] = useGetData<TechnologiesData>('/api/technologies')
   const [selectedTechnology, setSelectedTechnology] = useState<TechnologiesSelector>(initialState)
   const [actualTechnology, setActualTechnology] = useState<string>('all')
   const [numberOfTechnologies, setNumberOfTechnologies] = useState<number>(technologies.length)
@@ -110,17 +117,16 @@ const Technologies = () => {
   }
 
   useEffect(() => {
-    axios.get('/api/technologies')
-      .then(res => {
-        const data = res.data as TechnologiesData[]
-        setTechnologies(data)
-      })
-    defineNumberOfTechnologies()
-  }, [])
-
-  useEffect(() => {
     defineNumberOfTechnologies()
   }, [technologies, actualTechnology])
+
+  const skeletonElements = () => {
+    const elements = []
+    for (let i = 0; i < elementsPerPage; i++) {
+      elements.push(<TechnologiesSkeleton key={i} />)
+    }
+    return elements
+  }
 
   return (
     <>
@@ -146,12 +152,14 @@ const Technologies = () => {
         </nav>
         <article>
           <ul className='technologies__list'>
-              {selectedTechnology.all
-
+            {loading
+              ? skeletonElements()
+              : selectedTechnology.all
                 ? technologies.slice(defineItems().start, defineItems().end).map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)
                 : technologies.filter(technology => technology.category === actualTechnology)
                   .slice(defineItems().start, defineItems().end)
-                  .map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)}
+                  .map(technology => <TechnologyItem key={`technology-${technology.id}`} data={technology} />)
+            }
 
             </ul>
           {numberOfTechnologies > elementsPerPage &&
