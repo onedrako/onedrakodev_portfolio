@@ -63,7 +63,7 @@ const SideNavigation = ({ closeMenu }: { closeMenu: (action?: string, node?:RefO
       <style jsx>{`
         .SideNavigation {
           height: 300px;
-          width:  90%;
+          width:  95%;
           position: absolute;
           top: 15px;
           left: -300px;

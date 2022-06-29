@@ -5,6 +5,7 @@ import { SchoolsAndRoutesData } from '@customTypes/backendTypes'
 import { CertificateItem } from './CertificateItem'
 import CertificatesPageTitles from './CertificatesPageTitles'
 import { ThemeContext } from '@contexts/ThemeContext'
+import { CertificateItemSkeleton } from './CertificateItemSkeleton'
 
 const SchoolsAndRoutes = () => {
   const [routesData, loading, error] = useGetData<SchoolsAndRoutesData>('/api/schools')
@@ -19,7 +20,14 @@ const SchoolsAndRoutes = () => {
     <>
     <CertificatesPageTitles title="Schools and Routes Completed">
         <div className='schools__elements'>
-          {loading && <p>Loading...</p>}
+          {loading &&
+          <>
+            <CertificateItemSkeleton />
+            <CertificateItemSkeleton />
+            <CertificateItemSkeleton />
+            <CertificateItemSkeleton />
+            <CertificateItemSkeleton />
+          </>}
           {error && <p>Error...</p>}
           {routesData && orderSchools.map((route: SchoolsAndRoutesData) => (
             <CertificateItem key={`${route.id}-${route.name}`} certificates={route} />

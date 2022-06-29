@@ -13,7 +13,7 @@ import { useGetData } from '@hooks/useGetData'
 
 // Types
 import { CertificatesToRenderType } from '@customTypes/backendTypes'
-import { CertificateItemSkeleton } from './SkeletonCertificateItem'
+import { CertificateItemSkeleton } from './CertificateItemSkeleton'
 import CertificatesPageTitles from './CertificatesPageTitles'
 
 const CertificationsComponent: NextPage = () => {
