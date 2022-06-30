@@ -3,7 +3,14 @@ import { educationCategory, jobCategory } from '@customTypes/backendTypes'
 import { ThemeContext } from '@contexts/ThemeContext'
 import { useContext } from 'react'
 
-const CategoryOptions = ({ categories, title }: {categories : educationCategory[] | jobCategory[], title: string}) => {
+interface Props<T> {
+  categories: T[]
+  title: string
+}
+
+type typeData = educationCategory | jobCategory
+
+const CategoryOptions = <T extends typeData>({ categories, title }: Props<T>) => {
   const defineColorPoint = (category: string) => {
     return CategoryColorsForTimeLine[category as keyof typeof CategoryColorsForTimeLine]
   }

@@ -23,6 +23,7 @@ const SoftSkillsSkeleton = () => {
           display: flex;
           flex-direction: column;
           gap: 15px;
+          animation: fadeIn 5s ease-in-out infinite;
         }
         .soft-skill-skeleton__titles {
           width: 100%;
@@ -45,6 +46,17 @@ const SoftSkillsSkeleton = () => {
           height: 150px;
           ${defaultOptions}
         }
+        @keyframes fadeIn {
+        0% {
+          opacity: 0.8;
+        }
+        50%{
+          opacity: 0.2;
+        }
+        to {
+          opacity: 0.8;
+        }
+      }
 
       `}</style>
     </>

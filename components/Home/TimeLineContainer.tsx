@@ -1,12 +1,20 @@
-import { useEffect, useState, useContext } from 'react'
-import axios from 'axios'
+// Dependencies
+import { useContext } from 'react'
+import Link from 'next/link'
 
+// Components
 import { TimeLine } from './TimeLine'
 import { CategoryOptions } from './CategoryOptions'
+import { TimeLineTimeSkeleton } from './skeletons/TimeLineTimeSkeleton'
 
+// Context
 import { ThemeContext } from '@contexts/ThemeContext'
+
+// Custom Hooks
+import { useGetSimpleData } from '@hooks/useGetSimpleData'
+
+// Types
 import { LaboralExperienceData, EducationData, educationCategory, jobCategory } from '@customTypes/backendTypes'
-import Link from 'next/link'
 
 type Props = {
   title: string,
@@ -16,18 +24,11 @@ type Props = {
   redirectTo?: string
 }
 
+type typeData = LaboralExperienceData | EducationData
+
 const TimeLineContainer = ({ title, orientation, endPoint, categories, redirectTo }: Props) => {
-  type typeData = LaboralExperienceData | EducationData
-  const [data, setData] = useState<typeData[]>([])
-
+  const [data, loading] = useGetSimpleData<typeData>(endPoint)
   const { theme } = useContext(ThemeContext)
-
-  useEffect(() => {
-    axios.get(endPoint)
-      .then((res: { data: typeData[] }) => {
-        setData(res.data.sort((a:typeData, b:typeData) => b.id - a.id))
-      })
-  }, [])
 
   return (
     <>
@@ -41,7 +42,11 @@ const TimeLineContainer = ({ title, orientation, endPoint, categories, redirectT
             }
         </div>
         <CategoryOptions categories={categories} title={title}/>
-        <TimeLine data={data} orientation={orientation} />
+        {loading
+          ? <TimeLineTimeSkeleton orientation={orientation} />
+          : <TimeLine data={data.sort((a, b) => b.id - a.id)} orientation={orientation} />
+        }
+
       </section>
 
       <style jsx>{`

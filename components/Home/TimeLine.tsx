@@ -65,7 +65,6 @@ const TimeLine = <T extends typeData>({ data, orientation }: Props<T>) => {
         .timeLine-container {
           display: grid;
           grid-template-columns: 1fr;
-          /* margin: 10px 0 0 15px; */
           padding: 0 25px;
         }
         .timeLine-item {
@@ -120,13 +119,11 @@ const TimeLine = <T extends typeData>({ data, orientation }: Props<T>) => {
           gap: 5px;
           align-items: center;
           width: 50px;
-          /* height: 100px; */
           position: absolute;
           top: 30%;
           ${timeLineOrientationStyleElements.datesOrientation}
-          /* left: -26px; */
-
         }
+        
         .timeLine-item__dates--circle {
           background: ${theme.backgroundColor};
           border-radius: 50%;
