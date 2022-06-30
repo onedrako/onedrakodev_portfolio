@@ -38,10 +38,14 @@ const SoftSkills = () => {
 
         <ul className='soft-skills-list'>
           {loading
-            ? <SoftSkillsSkeleton/>
+            ? <>
+              <SoftSkillsSkeleton/>
+              <SoftSkillsSkeleton/>
+            </>
             : softSkills.slice(defineItems().start, defineItems().end).map(softSkill => (
             <SoftSkillItem key={`soft-skill-${softSkill.id}`} softSkill={softSkill} />
             ))}
+
         </ul>
         <PaginationBar
           numberOfItems={numberOfItems}
@@ -76,6 +80,7 @@ const SoftSkills = () => {
 
         @media (min-width: 800px) {
           .soft-skills-container {
+            min-width: 700px;
             max-width: 800px;
             margin: 0 auto;
             padding: 25px;

@@ -115,7 +115,6 @@ const Projects = () => {
 
         <article>
           <ul className='projects__list'>
-
             {loading
               ? <ProjectItemSkeleton/>
               : selectedProject.all
@@ -260,6 +259,7 @@ const Projects = () => {
             border: 1px solid ${theme.modalBackgroundColor};
             border-radius: 10px;
             padding: 20px;
+            min-width: 750px;
           }
         }
         

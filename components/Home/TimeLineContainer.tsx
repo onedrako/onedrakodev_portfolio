@@ -46,7 +46,6 @@ const TimeLineContainer = ({ title, orientation, endPoint, categories, redirectT
           ? <TimeLineTimeSkeleton orientation={orientation} />
           : <TimeLine data={data.sort((a, b) => b.id - a.id)} orientation={orientation} />
         }
-
       </section>
 
       <style jsx>{`
@@ -96,6 +95,7 @@ const TimeLineContainer = ({ title, orientation, endPoint, categories, redirectT
 
         @media (min-width: 1000px) {
           .container {
+            min-width: 600px;
             max-width: 900px;
           }
         }

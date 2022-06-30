@@ -108,6 +108,7 @@ const ProjectItemSkeleton = () => {
         }
         @media (min-width: 800px) {
           .project-container-skeleton {
+            min-height: 750px;
             max-width: 800px;
           }
         }

@@ -19,11 +19,12 @@ const SoftSkillsSkeleton = () => {
       <style jsx>{`
         .soft-skill-skeleton {
           width: 100%;
-          height: 230px;
+          height: 180px;
           display: flex;
           flex-direction: column;
           gap: 15px;
           animation: fadeIn 5s ease-in-out infinite;
+          margin-top: 15px;
         }
         .soft-skill-skeleton__titles {
           width: 100%;
@@ -43,9 +44,17 @@ const SoftSkillsSkeleton = () => {
         }
         .soft-skill-skeleton__description {
           width: 100%;
-          height: 150px;
+          height: 125px;
           ${defaultOptions}
         }
+        
+        @media (min-width: 1400px) {
+          .soft-skill-skeleton {
+            padding: 0 40px;
+            max-width: 800px;
+          }
+        }
+
         @keyframes fadeIn {
         0% {
           opacity: 0.8;
@@ -56,6 +65,7 @@ const SoftSkillsSkeleton = () => {
         to {
           opacity: 0.8;
         }
+        
       }
 
       `}</style>
