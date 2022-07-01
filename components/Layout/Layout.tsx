@@ -3,7 +3,7 @@ import { useContext, ReactNode } from 'react'
 import { ThemeContext } from '@contexts/ThemeContext'
 import Header from '../Header/Header'
 
-const Layout = ({ children, conditionForStyle }: {children: ReactNode, conditionForStyle: boolean }) => {
+const Layout = ({ children }: {children: ReactNode }) => {
   const { theme } = useContext(ThemeContext)
   return (
     <>
