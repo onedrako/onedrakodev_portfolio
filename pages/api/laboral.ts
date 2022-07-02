@@ -21,7 +21,7 @@ const laboralExperience: LaboralExperienceData[] = [
     endDate: '2018-03-01',
     category: 'Business',
     description: 'Principally Organization for the Area',
-    iconUrl: 'https://scontent.fmex2-1.fna.fbcdn.net/v/t39.30808-6/278902765_301499715488295_5890620305360763434_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Lkh6oS57uukAX8cJ2iM&_nc_ht=scontent.fmex2-1.fna&oh=00_AT-8u4ScKDNMV4p_WBxJebDfajc828LFLFfJbSL1SPexKQ&oe=629C744B',
+    iconUrl: 'https://i.imgur.com/G55Mj0h.png',
     important: true
   },
   {
@@ -32,7 +32,7 @@ const laboralExperience: LaboralExperienceData[] = [
     endDate: '2019-02-01',
     category: 'Business',
     description: 'Organization in general and for the data of area, providers negotiation and control',
-    iconUrl: 'https://scontent.fmex2-1.fna.fbcdn.net/v/t39.30808-6/278902765_301499715488295_5890620305360763434_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Lkh6oS57uukAX8cJ2iM&_nc_ht=scontent.fmex2-1.fna&oh=00_AT-8u4ScKDNMV4p_WBxJebDfajc828LFLFfJbSL1SPexKQ&oe=629C744B',
+    iconUrl: 'https://i.imgur.com/G55Mj0h.png',
     important: true
   },
   {

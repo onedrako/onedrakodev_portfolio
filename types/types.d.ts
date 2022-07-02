@@ -8,6 +8,7 @@ export interface ThemeColors {
   textColor: string
   modalBackgroundColor: string
   activeElementColor: string
+  titleText: string
 }
 
 // HEADER / NAVIGATION

@@ -36,7 +36,7 @@ const TimeLine = <T extends typeData>({ data, orientation }: Props<T>) => {
           <article className='timeLine-item' key={`timeLine-experience-${item.id}`} >
             <div className='timeLine-item__titles' >
               <figure className='timeLine-item__container-image'>
-                <Image className='timeLine-item__image' src={item.iconUrl} width={50} height={50} style={{ borderRadius: `${50}%` }} ></Image>
+                <Image className='timeLine-item__image' src={item.iconUrl} width={50} height={50} style={{ borderRadius: `${50}%` }} alt={`${item.institution}-icon-image`} ></Image>
               </figure>
               <div>
 

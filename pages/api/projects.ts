@@ -11,7 +11,7 @@ const allProjects: ProjectsData[] = [
     category: 'frontend',
     images: ['https://i.imgur.com/2RI6JO4.png', 'https://i.imgur.com/renN5it.png', 'https://i.imgur.com/AjhqUtL.png', 'https://i.imgur.com/itxIURU.png', 'https://i.imgur.com/RNakv7X.png', 'https://i.imgur.com/PB26iNX.png', 'https://i.imgur.com/vmZNm3L.png', 'https://i.imgur.com/xkYCYeC.png', 'https://i.imgur.com/wwSX65W.png'],
     stack: ['next', 'react', 'typeScript', 'cssInJs', 'javaScript', 'jsx'],
-    libraries: ['nextPwa', 'nextAuth', 'sanitizeHtml', 'formik', 'reactIcons', 'yup', 'i18next', 'axios', 'dotenv'],
+    libraries: ['nextPwa', 'reactIcons', 'axios'],
     environment: ['vercel', 'git', 'eslint', 'github', 'ubuntuTerminal', 'vsCode', 'wsl', 'yarn']
   },
   {

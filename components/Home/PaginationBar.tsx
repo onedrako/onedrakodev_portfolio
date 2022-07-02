@@ -29,26 +29,6 @@ const PaginationBar = ({
   const maxNumberOfPages = Math.ceil(numberOfItems / elementsForPage)
   const actualPage = actualPages[actualSelectedItem as keyof (ActualPagesTechnologiesSelector | ActualPagesProjectsSelector | {all:number})]
 
-  // let size:number = 0.90
-
-  // const defineSize = ():number => {
-  //   if (maxNumberOfPages >= elementsForPage && (maxNumberOfPages !== actualPage)) {
-  //     size = 0.95
-  //     return size
-  //   } else if (maxNumberOfPages <= 2) {
-  //     size = 0.50
-  //     return size
-  //   } else if (maxNumberOfPages === actualPage) {
-  //     size = 0.70
-  //     return size
-  //   } else {
-  //     size = 0.90
-  //     return size
-  //   }
-  // }
-
-  // defineSize()
-
   const handleNumberOfPages = (pageToGo:number): void => {
     if (isNaN(pageToGo) || pageToGo === 0) {
       return
@@ -91,7 +71,7 @@ const PaginationBar = ({
             <FcPrevious size={15} />
           </span>
 
-          {/* Prev Pages - firstpage in all, division in case we have more elements far than actual, and before the actual  -2 and -1 */}
+          {/* Prev Pages - first page in all, division in case we have more elements far than actual, and before the actual  -2 and -1 */}
           {actualPage !== 1 && <span className="pagination-bar__element" onClick={() => handleNumberOfPages(1)} ><div>1</div></span> }
           {actualPage > 3 && <span className="pagination-bar__division">...</span> }
           {(actualPage !== 1 && actualPage - 1 !== 1) && (actualPage !== 2 && actualPage > 4) && actualPage < 5 && <span className=" pagination-bar__element" onClick={() => handleNumberOfPages(actualPage - 2)}><div>{actualPage - 2 }</div></span> }
@@ -124,7 +104,6 @@ const PaginationBar = ({
         .pagination-bar {
           display: flex;
           height: 35px;
-          
           width: 275px;
           justify-content: space-between;
           align-items: center;

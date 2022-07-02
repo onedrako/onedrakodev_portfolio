@@ -1,7 +1,7 @@
 import { useState, createContext, ReactNode } from 'react'
 
 import { defineGlobalTheme } from '@utils/defineGlobalTheme'
-import { darkBackgroundColor, darkTextColor, darkModalBackgroundColor, darkActiveElement } from '@utils/constants'
+import { darkBackgroundColor, darkTextColor, darkModalBackgroundColor, darkActiveElement, darkTitleText } from '@utils/constants'
 
 import { ThemeColors, Theme } from '@customTypes/types'
 
@@ -16,7 +16,8 @@ const ThemeContext = createContext<ThemeContextType>(
       backgroundColor: darkBackgroundColor,
       textColor: darkTextColor,
       modalBackgroundColor: darkModalBackgroundColor,
-      activeElementColor: darkActiveElement
+      activeElementColor: darkActiveElement,
+      titleText: darkTitleText
     },
     toggleTheme: (theme: Theme): void => {}
   }
@@ -27,7 +28,8 @@ const ThemeProvider = ({ children }: {children: ReactNode}) => {
     backgroundColor: darkBackgroundColor,
     textColor: darkTextColor,
     modalBackgroundColor: darkModalBackgroundColor,
-    activeElementColor: darkActiveElement
+    activeElementColor: darkActiveElement,
+    titleText: darkTitleText
   })
 
   const toggleTheme = (userThemePreference: Theme): void => {

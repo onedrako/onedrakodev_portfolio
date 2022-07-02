@@ -130,7 +130,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           {/* Project´s image */}
           <div className='project-item__image'>
             <figure className='project-item__image--item'>
-              <Image width={931} height={555} objectFit="fill" style={{ borderRadius: '15px' }} src={data.images[selectedImage]}></Image>
+              <Image width={931} height={555} objectFit="fill" style={{ borderRadius: '15px' }} src={data.images[selectedImage]} alt='project image'></Image>
             </figure>
 
             {data.images.length > 1 && selectedImage !== data.images.length - 1 &&
@@ -195,7 +195,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
         .project-item__title {
           font-size: 2.5rem;
           text-align: center;
-          color: ${theme.activeElementColor};
+          color: ${theme.titleText};
         }
 
         

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
+import { ThemeContext } from '@contexts/ThemeContext'
 import { defineColorPoint } from '@utils/defineColorPoint'
 
 const ProgressBar = ({ category, progress, total }: {category: string, progress: number, total: number }) => {
+  const { theme } = useContext(ThemeContext)
   return (
     <>
       <div className="progress" >
@@ -26,13 +28,13 @@ const ProgressBar = ({ category, progress, total }: {category: string, progress:
           margin: 0 auto; 
         }
         .progress--percentage {
-          border: 1px solid #ccc;
+          border: 1px solid ${theme.textColor};
           border-radius: 15px ;
           width: 100%;   
           height: 25px;
         }
         .progress--percentage--bar {
-          border-right: 1px solid #ccc;
+          border-right: 1px solid ${theme.textColor};
           border-radius: 15px ;
           width: 100%;   
           height: 100%;
@@ -40,6 +42,7 @@ const ProgressBar = ({ category, progress, total }: {category: string, progress:
         .progress--text{
           font-size: 1.4rem;
           text-align: center;
+          color: ${theme.textColor};
         }
         @media (min-width: 768px){
           .progress{
