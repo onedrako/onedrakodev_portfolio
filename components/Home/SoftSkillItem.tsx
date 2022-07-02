@@ -4,13 +4,13 @@ import { SoftSkillsData } from '@customTypes/backendTypes'
 const SoftSkillItem = ({ softSkill }: {softSkill: SoftSkillsData }) => {
   return (
     <>
-      <article className='soft-skill-item'>
+      <li className='soft-skill-item'>
         <h3 className='soft-skill-item__name'>{softSkill.name}</h3>
         <figure className='soft-skill-item__image'>
           <Image src={softSkill.icon} width={50} height={50} alt ={`${softSkill.name} icon`}></Image>
         </figure>
         <p className='soft-skill-item__description' >{softSkill.description}</p>
-      </article>
+      </li>
 
       <style jsx>{`
 

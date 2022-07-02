@@ -59,7 +59,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
     )
   }
 
-  const container = useRef<HTMLElement>(null)
+  const container = useRef<HTMLLIElement>(null)
   const item = useRef<HTMLDivElement>(null)
 
   const openModal = () => {
@@ -97,7 +97,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
 
   return (
     <>
-      <article className='project-item-container' ref={container}>
+      <li className='project-item-container' ref={container}>
         <div ref={item} className="project-item" >
           <h2 className="project-item__title">{data.name}</h2>
           <div className='project-item__category'>
@@ -173,7 +173,7 @@ const ProjectItem = ({ data, numberOfProjects, projectsForPage, actualPages, act
           }
 
         </div>
-      </article>
+      </li>
 
       <style jsx>{`
 

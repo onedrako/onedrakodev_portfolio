@@ -12,6 +12,7 @@ export default function Document () {
         <meta name="robots" content="index, follow"/>
         <meta name="keywords" content="Gabriel Hernandez Valdez, Gabriel Hernandez, onedrako, OneDrako, react,js, next frontend developer, backend developer, fullstack developer, javascript, web developer, developer, portfolio, developer porfolio" />
         <meta name="author" content="onedrako"/>
+        <meta name="theme-color" content="#00040a"/>
         <link rel="apple-touch-icon" href="/https://i.imgur.com/jBuNYci.png"></link>
         <html lang="en"/>
       <body>
