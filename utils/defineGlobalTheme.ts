@@ -1,12 +1,15 @@
 import {
   darkBackgroundColor,
   darkTextColor,
+  darkModalBackgroundColor,
+  darkActiveElement,
+  darkTitleText,
+
   lightBackgroundColor,
   lightTextColor,
-  darkModalBackgroundColor,
   lightModalBackgroundColor,
-  darkActiveElement,
-  lightActiveElement
+  lightActiveElement,
+  lightTitleText
 } from './constants'
 import { ThemeColors } from '@customTypes/types'
 
@@ -16,14 +19,16 @@ export const defineGlobalTheme = (theme: string): ThemeColors => {
       backgroundColor: darkBackgroundColor,
       textColor: darkTextColor,
       modalBackgroundColor: darkModalBackgroundColor,
-      activeElementColor: darkActiveElement
+      activeElementColor: darkActiveElement,
+      titleText: darkTitleText
     }
   } else {
     return {
       backgroundColor: lightBackgroundColor,
       textColor: lightTextColor,
       modalBackgroundColor: lightModalBackgroundColor,
-      activeElementColor: lightActiveElement
+      activeElementColor: lightActiveElement,
+      titleText: lightTitleText
     }
   }
 }
