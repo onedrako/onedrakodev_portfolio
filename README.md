@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="title">Personal Web / Portfolio </h1>
 
-## Getting Started
+### I made this project to have my own web for my Developer Portafolio and in the future have my own blog.
 
-First, run the development server:
+<p align="center"><img src="https://i.imgur.com/M4wgjGC.png" alt="project-image"></p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Web
+See this project online on the next url: [www.onedrako.com](https://www.onedrako.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+For the first version I thought this project to have 5 sections
+<ul>
+  <li> Home: To have an introduction, technologies I use, a little section for the projects, seft skills,  laboral experience and education.</li>
+  <li> Portfolio (In progress): To have every project with more details than are in the main section.</li>
+  <li> Certifications: To have the details for every course I've taken</li>
+  <li> Personal (In progress): To have my blog and tutorials </li>
+  <li> About (In progress): Think to put my personal bio, my hobbies, the auto download for my CV and other software I work with </li>
+</ul>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+Coded by Onedrako(Gabito) 🐉
