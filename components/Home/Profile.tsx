@@ -29,7 +29,7 @@ const Profile = () => {
           <ul className="profile-section__list-of-social-Networks">
             <h2>Social Networks</h2>
             <li>
-              <a href="https://www.linkedin.com/in/gabrielhvaldez" target="_blank" rel="noreferrer noopener" >
+              <a href="https://www.linkedin.com/in/gabrielhvaldez/?locale=en_US" target="_blank" rel="noreferrer noopener" >
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
                   alt="linkedIn-logo"
