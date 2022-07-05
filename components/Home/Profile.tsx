@@ -53,7 +53,7 @@ const Profile = () => {
                 <h3 className='social-network-name'>Github</h3>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="https://twitter.com/OneDrako" target="_blank" rel="noreferrer noopener">
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
@@ -63,7 +63,7 @@ const Profile = () => {
                   />
                 <h3 className='social-network-name' >Twitter</h3>
               </a>
-            </li>
+            </li> */}
           </ul>
 
           <div className='profile-section__container--titles' >
