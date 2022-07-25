@@ -48,7 +48,9 @@ import {
   SiGraphql,
   SiApollographql,
   SiCypress,
-  SiGnubash
+  SiGnubash,
+  SiNestjs,
+  SiSwagger
 } from 'react-icons/si'
 
 import { IoLibrary } from 'react-icons/io5'
@@ -299,5 +301,18 @@ export const technologiesList = {
   bash: {
     name: 'Bash',
     icon: SiGnubash
+  },
+  nestjs: {
+    name: 'Nest.js',
+    icon: SiNestjs
+  },
+  swagger: {
+    name: 'Swagger',
+    icon: SiSwagger
+  },
+  typeorm: {
+    name: 'TypeORM',
+    icon: IoLibrary
   }
+
 }

@@ -1009,6 +1009,51 @@ export const certifications: CertificationsData[] = [
     certificateUrl: 'https://platzi.com/p/onedrako/curso/1689-course/diploma/detalle/'
   },
   {
+    id: 112,
+    name: 'Backend con Nest Js',
+    institution: 'Platzi',
+    learningPath: [
+      { learningPath: 'Web Development School', level: 'Complementary', order: 112 },
+      { learningPath: 'Backend Development with Node.js', order: 25 }
+    ],
+    courseCategory: 'Technology',
+    technologies: ['node', 'nestjs', 'typeScript'],
+    date: '2022-07-13',
+    image: 'https://i.imgur.com/wq98lgv.png',
+    platformUrl: 'https://platzi.com/cursos/nestjs/',
+    certificateUrl: 'https://platzi.com/p/onedrako/curso/2272-nestjs/diploma/detalle/'
+  },
+  {
+    id: 113,
+    name: 'Curso de NestJS: Programación Modular, Documentación con Swagger y Deploy',
+    institution: 'Platzi',
+    learningPath: [
+      { learningPath: 'Web Development School', level: 'Complementary', order: 113 },
+      { learningPath: 'Backend Development with Node.js', order: 25 }
+    ],
+    courseCategory: 'Technology',
+    technologies: ['node', 'nestjs', 'swagger', 'typeScript'],
+    date: '2022-07-16',
+    image: 'https://i.imgur.com/IPLDd9k.png',
+    platformUrl: 'https://platzi.com/cursos/nestjs-modular/',
+    certificateUrl: 'https://platzi.com/p/onedrako/curso/2274-nestjs-modular/diploma/detalle/'
+  },
+  {
+    id: 114,
+    name: 'Curso de NestJS: Persistencia de Datos con TypeORM',
+    institution: 'Platzi',
+    learningPath: [
+      { learningPath: 'Web Development School', level: 'Complementary', order: 114 },
+      { learningPath: 'Backend Development with Node.js', order: 25 }
+    ],
+    courseCategory: 'Technology',
+    technologies: ['node', 'nestjs', 'typeorm', 'typeScript'],
+    date: '2022-07-25',
+    image: 'https://i.imgur.com/e90L1QO.png',
+    platformUrl: 'https://platzi.com/cursos/nestjs-typeorm/',
+    certificateUrl: 'https://platzi.com/p/onedrako/curso/2282-nestjs-typeorm/diploma/detalle/'
+  },
+  {
     id: 117,
     name: 'Curso de Next.js',
     institution: 'Platzi',

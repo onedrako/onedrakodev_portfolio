@@ -88,7 +88,7 @@ export const education: EducationData[] = [
     endDate: 'Present',
     category: 'Technology',
     title: 'Backend Development with Node.js',
-    progress: 20,
+    progress: 23,
     total: 32,
     iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   },
@@ -99,7 +99,7 @@ export const education: EducationData[] = [
     endDate: 'Present',
     category: 'Technology',
     title: 'Web Development School',
-    progress: 70,
+    progress: 73,
     total: 121,
     iconUrl: 'https://i.imgur.com/Tj5Un8g.png'
   }

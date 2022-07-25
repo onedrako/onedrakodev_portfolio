@@ -10,7 +10,7 @@ const Description = () => {
         <h2>About Me</h2>
         <hr />
         <p>{'I´m a Frontend and Backend (FullStack) JavaScript Developer.'}</p>
-        <p>{'Also I´m a bachelor on administration by UNAM (Universidad Autónoma de México).'}</p>
+        <p>{'Also I´m a bachelor on administration by UNAM (National Autonomous University of Mexico).'}</p>
       </section>
 
       <style jsx>{`
