@@ -42,7 +42,7 @@ const laboralExperience: LaboralExperienceData[] = [
     startDate: '2019-07-17',
     endDate: '2021-03-31',
     category: 'Business',
-    description: 'I found a Dark Mexican Kitchen in Mexico City, was in charge of Supply, Budget, cost and forecast, management before the authorities, contact to suppliers, customer service, human resources management y maintenance for the unit.',
+    description: 'I founded a Dark Mexican Kitchen in Mexico City, was in charge of Supply, Budget, cost and forecast, management before the authorities, contact to suppliers, customer service, human resources management y maintenance for the unit.',
     iconUrl: 'https://i.imgur.com/5vFcRNi.png',
     important: true
   }
